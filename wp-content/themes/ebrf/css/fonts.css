@@ -1,0 +1,161 @@
+﻿@font-face {
+    font-family: 'proxima_nova';
+    src: url('../fonts/proxima/proxima_nova_black.eot');
+    src: url('../fonts/proxima/proxima_nova_black.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proxima/proxima_nova_black.woff2') format('woff2'),
+         url('../fonts/proxima/proxima_nova_black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('../fonts/proxima/proxima_nova_bold.eot');
+    src: url('../fonts/proxima/proxima_nova_bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proxima/proxima_nova_bold.woff2') format('woff2'),
+         url('../fonts/proxima/proxima_nova_bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'proxima_nova';
+    src: url(../fonts/proxima/'proxima_nova_semibold.eot');
+    src: url('../fonts/proxima/proxima_nova_semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proxima/proxima_nova_semibold.woff2') format('woff2'),
+         url('../fonts/proxima/proxima_nova_semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('../fonts/proxima/proxima_nova_regular.eot');
+    src: url('../fonts/proxima/proxima_nova_regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proxima/proxima_nova_regular.woff2') format('woff2'),
+         url('../fonts/proxima/proxima_nova_regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('../fonts/proxima/proxima_nova_light.eot');
+    src: url('../fonts/proxima/proxima_nova_light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proxima/proxima_nova_light.woff2') format('woff2'),
+         url('../fonts/proxima/proxima_nova_light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('../fonts/proxima/proxima_nova_thin.eot');
+    src: url('../fonts/proxima/proxima_nova_thin.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proxima/proxima_nova_thin.woff2') format('woff2'),
+         url('../fonts/proxima/proxima_nova_thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/iconmoon/icomoon.eot?q0666u');
+  src:  url('../fonts/iconmoon/icomoon.eot?q0666u#iefix') format('embedded-opentype'),
+    url('../fonts/iconmoon/icomoon.ttf?q0666u') format('truetype'),
+    url('../fonts/iconmoon/icomoon.woff?q0666u') format('woff'),
+    url('../fonts/iconmoon/icomoon.svg?q0666u#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+  content: "\e915";
+}
+.icon-filter:before {
+  content: "\e916";
+}
+.icon-bag:before {
+  content: "\e900";
+}
+.icon-calendar:before {
+  content: "\e901";
+}
+.icon-card:before {
+  content: "\e902";
+}
+.icon-check:before {
+  content: "\e903";
+}
+.icon-choise:before {
+  content: "\e904";
+}
+.icon-clock:before {
+  content: "\e905";
+}
+.icon-docs:before {
+  content: "\e906";
+}
+.icon-early:before {
+  content: "\e907";
+}
+.icon-envelope:before {
+  content: "\e908";
+}
+.icon-eye:before {
+  content: "\e909";
+}
+.icon-give:before {
+  content: "\e90a";
+}
+.icon-hand:before {
+  content: "\e90b";
+}
+.icon-hands:before {
+  content: "\e90c";
+}
+.icon-list:before {
+  content: "\e90d";
+}
+.icon-magnify:before {
+  content: "\e90e";
+}
+.icon-man:before {
+  content: "\e90f";
+}
+.icon-money:before {
+  content: "\e910";
+}
+.icon-percent:before {
+  content: "\e911";
+}
+.icon-question:before {
+  content: "\e912";
+}
+.icon-summ:before {
+  content: "\e913";
+}
+.icon-transition:before {
+  content: "\e914";
+}
+.icon-arrow-up:before {
+  content: "\ea3a";
+}
+.icon-arrow-right:before {
+  content: "\ea3c";
+}
+.icon-arrow-down:before {
+  content: "\ea3e";
+}
+.icon-arrow-left:before {
+  content: "\ea40";
+}
