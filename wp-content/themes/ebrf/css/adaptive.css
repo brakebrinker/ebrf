@@ -71,7 +71,10 @@
 	}
 	
 }
-@media(max-width:991px){	
+@media(max-width:991px){
+	body{
+		font-size:14px;
+	}
 	.wrapper{
 		max-width:768px;
 	}

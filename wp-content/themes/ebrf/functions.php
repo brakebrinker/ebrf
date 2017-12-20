@@ -137,3 +137,31 @@ $wp_customize->add_control(
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 
+//подключаем миниатюры постов
+add_theme_support( 'post-thumbnails' ); // для всех типов постов
+
+// удаление полей комментариев
+function remove_comment_fields($fields) {
+unset($fields['url']);
+unset($fields['email']);
+return $fields;
+}
+add_filter('comment_form_default_fields', 'remove_comment_fields');
+
+//изменение порядка полей комментариев
+function sort_comment_fields( $fields ){
+    $new_fields = array();
+    $myorder = array('author','email','url','comment'); // порядок полей
+ 
+    foreach( $myorder as $key ){
+        $new_fields[ $key ] = $fields[ $key ];
+        unset( $fields[ $key ] );
+    }
+ 
+    if( $fields )
+        foreach( $fields as $key => $val )
+            $new_fields[ $key ] = $val;
+    return $new_fields;
+}
+add_filter('comment_form_fields', 'sort_comment_fields' );
+
