@@ -1,3 +1,12 @@
+<?php 
+$argsAtr = array(
+	'numberposts' => 6,
+	'orderby'     => 'rand',
+	'exclude'     => array(get_the_ID()),
+);
+
+$statiAlsoPosts = get_posts( $argsAtr );
+?>
 <?php get_header(); ?>
 	<main>
 		<div class="wrapper">
@@ -10,7 +19,9 @@
 			</div>
 			<div class="aside-wrapper">
 				<aside class="aside_right">
+					<?php if (!dynamic_sidebar("postin-widget-area") ) : ?> 
 					<div class="dummy"></div>
+					<?php endif; ?>
 				</aside>
 				<div class="page-content">
 					<?php while ( have_posts() ) : the_post(); ?>
@@ -107,135 +118,39 @@
 					<?php wp_list_comments($arrComment, get_comments($argss)); ?>
 					</ul>
 					<h2>Единая заявка во все банки:</h2>
-					<form class="double-form blue-form">
-						<div class="double-form__item">
-							<input type="text" placeholder="Имя">
-							<input type="tel" placeholder="Телефон">
-							<input type="email" placeholder="Email">
-						</div>
-						<div class="double-form__item">
-							<input type="text" placeholder="Сумма">
-							<input type="tel" placeholder="Срок кредитования">
-							<button class="btn_block">Получить займ</button>
-						</div>
-					</form>
-					<?php echo do_shortcode('[contact-form-7 id="14" title="Единая заявка во все банки" html_class="double-form blue-form"]');  ?>
+					<?php echo do_shortcode('[contact-form-7 id="28" title="Единая заявка во все банки" html_class="blue-form"]');  ?>
 					<h2>Похожие статьи</h2>
 					<div class="blog">
+						<?php foreach ($statiAlsoPosts as $post) { setup_postdata($post)?>
 						<div class="post-loop">
-							<a href="post.php" class="block-link"></a>
-							<img src="img/post/1.jpg" alt="" class="post-loop__img">							
+							<a href="<?php the_permalink(); ?>" class="block-link"></a>
+							
+							<?php if ( has_post_thumbnail()) { ?>
+							<?php the_post_thumbnail(array(270, 150), array('alt' => get_the_title(),
+								'class' => "post-loop__img"
+							)); ?>
+							<?php } else { ?>
+								<img src="<?php bloginfo('template_url'); ?>/img/post/no_photo.png" alt="" class="post-loop__img">
+							<?php } ?>
 							<div class="post-loop__content">
-								<h5 class="post-loop__title">Займы онлайн и другие способы решения проблем с деньгами </h5>
-								<p class="post-loop__text">Готовясь к поездке за рубеж, необходимо захватить с собой достаточное количество наличных, банковскую карту. Путешественники также часто оформляют займы онлайн, чтобы запастись деньгами для отдыха.</p>
+								<h5 class="post-loop__title"><?php the_title(); ?></h5>
+								<div class="post-loop__text"><?php the_content(); ?></div>
 								<div class="post-loop__tools">
 									<div class="post-loop__char">
 										<i class="icon-eye"></i>
-										<span>105</span>
+										<span><?php echo get_post_meta ($post->ID,'views',true); ?></span>
 									</div>
 									<div class="post-loop__char">
 										<i class="fa-comment-o fa-flip-horizontal"></i>
-										<span>5</span>
+										<span><?php comments_number('0', '1', '%'); ?></span>
 									</div>
-									<div class="post-loop__date">16 ноября 2017</div>
+									<div class="post-loop__date"><?php the_date("j F Y"); ?></div>
 								</div>
 							</div>
 						</div>
-						<div class="post-loop">
-							<a href="post.php" class="block-link"></a>
-							<img src="img/post/2.jpg" alt="" class="post-loop__img">
-							<div class="post-loop__content">
-								<h5 class="post-loop__title">Займы онлайн: причины и виды реструктуризации долгов</h5>
-								<p class="post-loop__text">Оформление микрокредитов онлайн не только помогает решать проблемы, но и налагает ответственность, ведь заемщик обязуется вовремя выполнить обязательства. Однако обстоятельства иногда вынуждают «растягивать удовольствие». На языке финансистов это называется реструктуризацией долга. Воспользоваться возможностью не увязнуть в штрафах и получить передышку могут клиенты банков и МФО.</p>
-								<div class="post-loop__tools">
-									<div class="post-loop__char">
-										<i class="icon-eye"></i>
-										<span>105</span>
-									</div>
-									<div class="post-loop__char">
-										<i class="fa-comment-o fa-flip-horizontal"></i>
-										<span>5</span>
-									</div>
-									<div class="post-loop__date">16 ноября 2017</div>
-								</div>
-							</div>
-						</div>
-						<div class="post-loop">
-							<a href="post.php" class="block-link"></a>
-							<img src="img/post/3.jpg" alt="" class="post-loop__img">
-							<div class="post-loop__content">
-								<h5 class="post-loop__title">Займы онлайн, кредитная история и трудоустройство</h5>
-								<p class="post-loop__text">Оформляя кредиты в банках или займы онлайн в МФО, всегда своевременно погашайте задолженность перед финансовыми организациями, чтобы не испортить кредитную историю. Это необходимо делать не только для беспроблемного оформления ссуд в будущем. Кредитную историю людей изучают работодатели, оценивая их надежность. Имея долги или прослыв злостным неплательщиком, вы вряд ли получите хорошую должность.</p>
-								<div class="post-loop__tools">
-									<div class="post-loop__char">
-										<i class="icon-eye"></i>
-										<span>105</span>
-									</div>
-									<div class="post-loop__char">
-										<i class="fa-comment-o fa-flip-horizontal"></i>
-										<span>5</span>
-									</div>
-									<div class="post-loop__date">16 ноября 2017</div>
-								</div>
-							</div>
-						</div>
-						<div class="post-loop">
-							<a href="post.php" class="block-link"></a>
-							<img src="img/post/4.jpg" alt="" class="post-loop__img">
-							<div class="post-loop__content">
-								<h5 class="post-loop__title">Оформить микрокредит онлайн или одолжить деньги ?</h5>
-								<p class="post-loop__text">Если вам срочно потребовались деньги, оформите микрокредит на карту, обратившись в надежную МФО. Конечно, вы можете прибегнуть к помощи друзей или знакомых, но зачем лишний раз их беспокоить? К тому же, попросив что-то у человека, вы будете ему обязаны, а дополнительная нагрузка никому не идет на пользу.</p>
-								<div class="post-loop__tools">
-									<div class="post-loop__char">
-										<i class="icon-eye"></i>
-										<span>105</span>
-									</div>
-									<div class="post-loop__char">
-										<i class="fa-comment-o fa-flip-horizontal"></i>
-										<span>5</span>
-									</div>
-									<div class="post-loop__date">16 ноября 2017</div>
-								</div>
-							</div>
-						</div>
-						<div class="post-loop">
-							<a href="post.php" class="block-link"></a>
-							<img src="img/post/5.jpg" alt="" class="post-loop__img">
-							<div class="post-loop__content">
-								<h5 class="post-loop__title">Помогаем студентам оформить хорошую кредитную историю</h5>
-								<p class="post-loop__text">Студенческая жизнь полна искушений, а денег вечно не хватает. Займы онлайн помогают в осуществлении планов: благодаря им молодые люди позволяют себе поход на вечеринку или дорогостоящую покупку Микрокредитование в МФО избавляет от необходимости просить деньги у родителей и способствует формированию финансовой грамотности.</p>
-								<div class="post-loop__tools">
-									<div class="post-loop__char">
-										<i class="icon-eye"></i>
-										<span>105</span>
-									</div>
-									<div class="post-loop__char">
-										<i class="fa-comment-o fa-flip-horizontal"></i>
-										<span>5</span>
-									</div>
-									<div class="post-loop__date">16 ноября 2017</div>
-								</div>
-							</div>
-						</div>
-						<div class="post-loop">
-							<a href="post.php" class="block-link"></a>
-							<img src="img/post/6.jpg" alt="" class="post-loop__img">
-							<div class="post-loop__content">
-								<h5 class="post-loop__title">Как взять займ онлайн: расчет максимальной величины ссуды</h5>
-								<p class="post-loop__text">Решая финансовые трудности, люди чаще обращаются в МФО, а не в банки. Микрофинансовые организации, выдающие займы онлайн, не выдвигают к заемщикам жестких требований. Они не требуют от клиентов подготовки большого пакета документов, предоставления залога. В МФО можно оформлять ссуды, не превышающие 1 миллиона рублей. Как же рассчитать оптимальную величину займа, чтобы дожить до зарплаты, а затем без проблем погасить задолженность?</p>
-								<div class="post-loop__tools">
-									<div class="post-loop__char">
-										<i class="icon-eye"></i>
-										<span>105</span>
-									</div>
-									<div class="post-loop__char">
-										<i class="fa-comment-o fa-flip-horizontal"></i>
-										<span>5</span>
-									</div>
-									<div class="post-loop__date">16 ноября 2017</div>
-								</div>
-							</div>
-						</div>						
+						<?php } 
+						wp_reset_postdata();
+						?>
 					</div>
 				</div>
 			</div>

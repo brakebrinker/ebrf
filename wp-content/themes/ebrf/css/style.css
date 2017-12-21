@@ -550,7 +550,11 @@ aside{
 	background-color:#fff;
 	border-radius:3%;
 	width:100%;
+	margin:0;
+}
+.double-form__item span{
 	margin:0 0 20px;
+	display: inline-block;
 }
 .double-form{
 	display:flex;
@@ -559,7 +563,7 @@ aside{
 .double-form__item{
 	width:calc(50% - 35px);
 }
-.double-form span:last-child input {
+.double-form span:last-child {
     margin-bottom: 0;
 }
 .blog{
@@ -1026,4 +1030,9 @@ footer{
 .footer-menu a{
 	display:block;
 	padding:20px 0;
+}
+
+span.wpcf7-not-valid-tip {
+    font-size: 12px;
+    line-height: 1.1;
 }
