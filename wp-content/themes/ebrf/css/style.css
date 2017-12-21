@@ -552,7 +552,6 @@ aside{
 	width:100%;
 	margin:0 0 20px;
 }
-
 .double-form{
 	display:flex;
 	justify-content:space-between;
@@ -560,8 +559,8 @@ aside{
 .double-form__item{
 	width:calc(50% - 35px);
 }
-.double-form input:last-child{
-	margin-bottom:0;
+.double-form span:last-child input {
+    margin-bottom: 0;
 }
 .blog{
 	display:flex;
@@ -807,7 +806,17 @@ a.pagination__item.active{
 .review .fa-star{
 	font-size:inherit !important;
 }
-.review__head{
+.comments {
+	list-style: none;
+}
+.comments .comment-body {
+	margin-bottom:30px;
+}
+.comments > li ul {
+    list-style: none;
+}
+.review__head,
+.comment-meta {
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
@@ -815,13 +824,31 @@ a.pagination__item.active{
 	padding:10px 30px;
 	font-size:12px;
 }
-.reviewer{
+.comment-author.vcard{
+	font-size:16px;
+	font-weight:bold;
+	color:#448aff;
+	margin:0;
+	line-height:1;
+}
+.reviewer, .comment-awaiting-moderation, .comment-content p{
 	margin:0;
 }
-.review__text{
+.comment-metadata, .comment-awaiting-moderation{
+	color: #334681;
+}
+.review__text, .comment-content{
 	padding:25px;
 	border:2px solid #f6f7f9;
 	border-top:none;
+}
+.comment .reply a {
+    font-size: 12px;
+    text-decoration: underline;
+    color: #448aff;
+}
+.comment .reply a:hover {
+	color: #334681;
 }
 .review-form{
 	margin:30px 0;

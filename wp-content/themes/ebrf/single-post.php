@@ -31,19 +31,81 @@
 						<div class="ya-share2" data-services="facebook,gplus,twitter,linkedin,vkontakte,odnoklassniki" data-counter=""></div>
 					</div>
 					<h2>Комментарии</h2>
-					<form action="#" class="comment-form">
-						<input type="text" name="username" class="block" placeholder="Ваше имя" />
-						<textarea name="comment" rows="6" class="block" placeholder="Введите ваш комментарий"></textarea>
-						<button class="btn_big">Отправить комментарий</button>
-					</form>
 					<?php 
 					$defaults = array(
 						'fields' => array(
 						'author' => '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"  class="block" placeholder="Ваше имя"' . $aria_req . $html_req . ' />'
 						),
-						'comment_field'        => '<textarea id="comment" name="comment"  rows="6" class="block" placeholder="Введите ваш комментарий"  aria-required="true" required="required"></textarea>'
+						'comment_field'        => '<textarea id="comment" name="comment"  rows="6" class="block" placeholder="Введите ваш комментарий"  aria-required="true" required="required"></textarea>',
+						'submit_button'        => '<button name="%1$s" type="submit"  id="%2$s" class="btn_big %3$s">%4$s</button>',
+						'title_reply'          => __( '' ),
+						'comment_notes_before' => ''
 					); ?>
+					<?php 
+					$argss = array(
+						'author_email'        => '',
+						'author__in'          => '',
+						'author__not_in'      => '',
+						'include_unapproved'  => '',
+						'fields'              => '',
+						'comment__in'         => '',
+						'comment__not_in'     => '',
+						'karma'               => '',
+						'number'              => '',
+						'offset'              => '',
+						'no_found_rows'       => true,
+						'orderby'             => '',
+						'order'               => 'DESC',
+						'parent'              => '',
+						'post_author__in'     => '',
+						'post_author__not_in' => '',
+						'post_id'             => get_queried_object_id(),
+						'post__in'            => '',
+						'post__not_in'        => '',
+						'post_author'         => '',
+						'post_name'           => '',
+						'post_parent'         => '',
+						'post_status'         => '',
+						'post_type'           => '',
+						'status'              => 'all',
+						'type'                => '',
+						'type__in'            => '',
+						'type__not_in'        => '',
+						'user_id'             => '',
+						'search'              => '',
+						'count'               => false,
+						'meta_key'            => '',
+						'meta_value'          => '',
+						'meta_query'          => '',
+						'date_query'          => null, // See WP_Date_Query
+						'hierarchical'        => false,
+						'update_comment_meta_cache'  => true,
+						'update_comment_post_cache'  => false,
+					);
+					?>
 					<?php comment_form($defaults); ?>
+					<?php
+						$arrComment = array(
+							'walker'            => null,
+							'max_depth'         => '',
+							'style'             => 'ul',
+							'callback'          => null,
+							'end-callback'      => null,
+							'type'              => 'all',
+							'reply_text'        => 'Ответить',
+							'page'              => '',
+							'per_page'          => 0,
+							'avatar_size'       => 0,
+							'reverse_top_level' => null,
+							'reverse_children'  => '',
+							'format'            => 'html5', // или xhtml, если HTML5 не поддерживается темой
+							'short_ping'        => false,    // С версии 3.6,
+							'echo'              => true,     // true или false
+						);
+					?>
+					<ul class="comments">
+					<?php wp_list_comments($arrComment, get_comments($argss)); ?>
+					</ul>
 					<h2>Единая заявка во все банки:</h2>
 					<form class="double-form blue-form">
 						<div class="double-form__item">
@@ -57,6 +119,7 @@
 							<button class="btn_block">Получить займ</button>
 						</div>
 					</form>
+					<?php echo do_shortcode('[contact-form-7 id="14" title="Единая заявка во все банки" html_class="double-form blue-form"]');  ?>
 					<h2>Похожие статьи</h2>
 					<div class="blog">
 						<div class="post-loop">
