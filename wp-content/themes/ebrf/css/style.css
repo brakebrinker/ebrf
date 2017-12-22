@@ -912,6 +912,9 @@ a.pagination__item.active,
 .cmp__links{
 	font-size:14px;
 }
+.cmp__links p{
+	margin: 0;
+}
 .cmp-block{
 	display:flex;
 	border:2px solid #f2f4f6;
@@ -932,6 +935,7 @@ a.pagination__item.active,
 }
 .cmp-block__img{
 	margin:20px 0;
+	height: auto;
 }
 .progress{
 	height:10px;
