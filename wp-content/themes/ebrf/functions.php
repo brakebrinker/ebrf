@@ -169,11 +169,44 @@ add_filter('comment_form_fields', 'sort_comment_fields' );
 register_sidebar(array(
     'name' => __('Виджеты внутри записи Статьи'),
     'id' => 'postin-widget-area',
-    'description' => __('Виджеты внутри записи поста'),
+    'description' => __('Виджеты внутри записи поста справа'),
     'before_widget' => '',
     'after_widget' => '',
     'before_title' => '<h3><a href="#">',
     'after_title' => '</a></h3>',
+));
+
+// Область виджетов страница Blog
+register_sidebar(array(
+    'name' => __('Виджеты на странице Blog'),
+    'id' => 'blog-widget-area',
+    'description' => __('Виджеты на странице Blog справа'),
+    'before_widget' => '<div class="post-nav">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="post-nav__title">',
+    'after_title' => '</h4>',
+));
+
+// Область виджетов страница Единая заявка
+register_sidebar(array(
+    'name' => __('Виджеты на странице Единая заявка'),
+    'id' => 'order-widget-area',
+    'description' => __('Виджеты на странице Единая заявка справа'),
+    'before_widget' => '<div class="post-nav">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="post-nav__title">',
+    'after_title' => '</h4>',
+));
+
+// Область виджетов страница Калькулятор
+register_sidebar(array(
+    'name' => __('Виджеты на странице Калькулятор'),
+    'id' => 'calc-widget-area',
+    'description' => __('Виджеты на странице Калькулятор справа'),
+    'before_widget' => '<div class="post-nav">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="post-nav__title">',
+    'after_title' => '</h4>',
 ));
 
 /* Подсчет количества посещений страниц

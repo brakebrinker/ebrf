@@ -41,6 +41,7 @@ $statiAlsoPosts = get_posts( $argsAtr );
 						</div>					
 						<div class="ya-share2" data-services="facebook,gplus,twitter,linkedin,vkontakte,odnoklassniki" data-counter=""></div>
 					</div>
+					<?php if ( comments_open() || get_comments_number() ) : ?>
 					<h2>Комментарии</h2>
 					<?php 
 					$defaults = array(
@@ -117,37 +118,14 @@ $statiAlsoPosts = get_posts( $argsAtr );
 					<ul class="comments">
 					<?php wp_list_comments($arrComment, get_comments($argss)); ?>
 					</ul>
-					<h2>Единая заявка во все банки:</h2>
-					<?php echo do_shortcode('[contact-form-7 id="28" title="Единая заявка во все банки" html_class="blue-form"]');  ?>
+					<?php endif; ?>
+
+					<?php get_template_part( 'templates/union', 'order' ); ?>
+
 					<h2>Похожие статьи</h2>
 					<div class="blog">
 						<?php foreach ($statiAlsoPosts as $post) { setup_postdata($post)?>
-						<div class="post-loop">
-							<a href="<?php the_permalink(); ?>" class="block-link"></a>
-							
-							<?php if ( has_post_thumbnail()) { ?>
-							<?php the_post_thumbnail(array(270, 150), array('alt' => get_the_title(),
-								'class' => "post-loop__img"
-							)); ?>
-							<?php } else { ?>
-								<img src="<?php bloginfo('template_url'); ?>/img/post/no_photo.png" alt="" class="post-loop__img">
-							<?php } ?>
-							<div class="post-loop__content">
-								<h5 class="post-loop__title"><?php the_title(); ?></h5>
-								<div class="post-loop__text"><?php the_content(); ?></div>
-								<div class="post-loop__tools">
-									<div class="post-loop__char">
-										<i class="icon-eye"></i>
-										<span><?php echo get_post_meta ($post->ID,'views',true); ?></span>
-									</div>
-									<div class="post-loop__char">
-										<i class="fa-comment-o fa-flip-horizontal"></i>
-										<span><?php comments_number('0', '1', '%'); ?></span>
-									</div>
-									<div class="post-loop__date"><?php the_date("j F Y"); ?></div>
-								</div>
-							</div>
-						</div>
+						<?php get_template_part( 'templates/post', 'preview' ); ?>
 						<?php } 
 						wp_reset_postdata();
 						?>

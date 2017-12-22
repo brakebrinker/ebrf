@@ -676,7 +676,12 @@ aside{
 	text-align: center;
 	margin:10px 0 30px
 }
-.pagination__item{
+.navigation.pagination h2{
+	display: none;
+}
+.pagination__item,
+.page-numbers
+{
 	width:30px;
 	height:30px;
 	border:2px solid #f2f4f6;
@@ -685,12 +690,14 @@ aside{
 	display:inline-block;
 	user-select:none;
 }
-.pagination__item.next{
+.pagination__item.next,
+.next.page-numbers{
 	width:150px;
 }
 
 a.pagination__item:active,
-a.pagination__item.active{
+a.pagination__item.active,
+.page-numbers.current{
 	border-color:#377dff;
 	background:rgba(55,125,255,.2);
 }
@@ -704,7 +711,11 @@ a.pagination__item.active{
 	line-height:40px;
 	background-color: #377dff;
 }
-.post-nav__link{
+.post-nav ul {
+	margin: 0;
+}
+.post-nav__link,
+.post-nav .cat-item{
 	display:block;
 	line-height:39px;
 	padding:0 15px;
