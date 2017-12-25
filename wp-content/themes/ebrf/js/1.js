@@ -116,4 +116,44 @@ $('.menu-btn,.filter-btn').click(function(e){
 		trg.slideUp();
 	}	
 })
+
+//установка рейтинга компании
+var fastar = $('.review-form__rating .fa-star');
+var clickFlag = false;
+
+fastar.mouseenter( function() {
+	setStarsRate($(this).index());
+});
+
+fastar.mouseleave( function() {
+	if (!clickFlag) {
+		nullStarsRate();
+	}
+});
+
+fastar.on('click', function() {
+	var rate = $(this).index() + 1;
+
+	setStarsRate($(this).index());
+	$('#review-rate').val(rate);
+	$('.review-form__rating .rating-number').text('(' + rate + ')');
+	clickFlag = true;
+});
+
+function setStarsRate(index) {
+	nullStarsRate();
+	for (var i = 0; i <= index; i++) {
+		fastar.eq(i).addClass('hov');
+	}
+}
+
+function nullStarsRate() {
+	fastar.each(function() {
+		$(this).removeClass('hov');
+	});
+}
+
+//скрыть сообщение
+$('.msg-time-hide').delay(10000).fadeOut('slow');
+
 });

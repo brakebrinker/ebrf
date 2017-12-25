@@ -747,6 +747,9 @@ a.pagination__item.active,
 	color:#ff9200;
 	margin-right:5px;
 }
+.rating i.fa-star:hover, .rating i.fa-star.hov {
+    color: #fdf125;
+}
 .rev-link{
 	text-decoration:underline;
 	margin-left:10px;
@@ -820,6 +823,22 @@ a.pagination__item.active,
 }
 .review .fa-star{
 	font-size:inherit !important;
+}
+.review__head .rev-link {
+	display: none;
+}
+.rev-link, .rating-number {
+	vertical-align: text-bottom;
+}
+.msg-success {
+    background: #ddefe0;
+    padding: 10px 20px;
+    color: #36543a;
+}
+.msg-error {
+    background: #efdddd;
+    padding: 10px 20px;
+    color: #543636;
 }
 .comments {
 	list-style: none;
