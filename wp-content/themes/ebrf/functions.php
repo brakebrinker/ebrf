@@ -209,6 +209,39 @@ register_sidebar(array(
     'after_title' => '</h4>',
 ));
 
+// Область виджетов страница Список компаний
+register_sidebar(array(
+    'name' => __('Виджеты на странице Список компаний'),
+    'id' => 'company-list-widget-area',
+    'description' => __('Виджеты на странице Список компаний справа'),
+    'before_widget' => '<div class="post-nav">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="post-nav__title">',
+    'after_title' => '</h4>',
+));
+
+// Область виджетов страница Компании
+register_sidebar(array(
+    'name' => __('Виджеты на странице Компании'),
+    'id' => 'company-widget-area',
+    'description' => __('Виджеты на странице Компании справа'),
+    'before_widget' => '<div class="post-nav">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="post-nav__title">',
+    'after_title' => '</h4>',
+));
+
+// Область виджетов страница Каталог
+register_sidebar(array(
+    'name' => __('Виджеты на странице Каталог'),
+    'id' => 'catalog-widget-area',
+    'description' => __('Виджеты на странице Каталог справа'),
+    'before_widget' => '<div class="post-nav">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="post-nav__title">',
+    'after_title' => '</h4>',
+));
+
 /* Подсчет количества посещений страниц
 ---------------------------------------------------------- */
 add_action('wp_head', 'kama_postviews');

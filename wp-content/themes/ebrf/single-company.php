@@ -106,7 +106,9 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 						<span class="clause__text">Процентная ставка</span>
 					</div>
 				</div>
+				<?php if (!dynamic_sidebar("company-widget-area") ) : ?> 
 				<div class="dummy"></div>
+				<?php endif; ?>
 			</aside>
 			<?php while ( have_posts() ) : the_post(); ?>
 			<div class="page-content">					
@@ -219,31 +221,21 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 								}
 								?>
 
-								<?php if( have_rows('company_cashout') ): 
-									$count = 0;
-								?>
+								<?php if( have_rows('company_cashout') ): ?>
 								<dt><i class="cmp-list__icon icon-envelope"></i> <span>Способ выплаты:</span></dt>
 								<dd>
-									<?php echo count(have_rows('company_cashout')); ?>
 								<?php while( have_rows('company_cashout') ): the_row();
 								$cashoutTitle = get_sub_field('title');
-								$count++;
-
-									if ($count == 1)
-									echo $cashoutTitle; 
+									echo '<span class="cash-in-out-title">' . $cashoutTitle . '</span>'; 
 								endwhile; ?>
 								</dd>
 								<?php endif; ?>
 
-								<?php if( have_rows('company_cashin') ): 
-									$count = 0;
-								?>
+								<?php if( have_rows('company_cashin') ): ?>
 								<dt><i class="cmp-list__icon icon-money"></i> <span>Способ оплаты:</span></dt>
 								<dd><?php while( have_rows('company_cashin') ): the_row();
 								$cashinTitle = get_sub_field('title');
-								$count++;
-									if ($count == 1)
-									echo $cashinTitle; 
+									echo '<span class="cash-in-out-title">' . $cashinTitle . '</span>'; 
 								endwhile; ?>
 								</dd>
 								<?php endif; ?>
@@ -311,6 +303,7 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 					</div>
 				</div>
 				<?php the_content(); ?>
+				<?php if (!empty($reviews)) {?>
 				<h2 id="reviews-block" class="left">Отзывы</h2>
 				<?php 
 				foreach($reviews as $post){ setup_postdata($post); ?>
@@ -327,6 +320,7 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 				</div>
 				<?php }
 				wp_reset_postdata();
+				}
 				?>
 				<h2>Оставить отзыв</h2>
 				<form action="" class="review-form" method="post">

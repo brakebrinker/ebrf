@@ -1028,6 +1028,12 @@ a.pagination__item.active,
 	font-size:17px;
 	margin-right:2px;
 }
+.cash-in-out-title::after {
+    content: ", ";
+}
+.cash-in-out-title:last-child::after {
+	content: none;
+}
 .cmp-list dd{
 	font-size:14px;
 	font-weight:bold;
