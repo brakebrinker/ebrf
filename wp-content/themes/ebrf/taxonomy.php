@@ -1,9 +1,20 @@
 <?php 
 //$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+$queried_object = get_queried_object();
+$taxonomy = $queried_object->taxonomy;
+$term_id = $queried_object->term_id;
+
 $args = array(
 	'post_type' => 'company',
 	'posts_per_page' => -1,
 	'post_status' => 'publish',
+	'field' => 'slug',
+	'tax_query' => array(
+		array(
+			'taxonomy' => $taxonomy,
+			'terms' => $term_id
+		)
+	)
 	//'paged' => $paged,
 	// 'meta_query' => array(
 	// 	array(
@@ -22,12 +33,12 @@ query_posts($args);
 		<?php endif; ?>
 	</div>
 	<?php if ( have_posts() ) : ?>
-	<form action="" class="search-form" method="get">
+	<form action="#" class="search-form">
 		<div class="wrapper">
 			<h4 class="search-form__title">Поиск</h4>
-			<input type="text" placeholder="Сумма" name="s_summ">
-			<input type="text" placeholder="Срок" name="s_timeterm">
-			<input type="text" placeholder="Процент" name="s_percent">
+			<input type="text" placeholder="Сумма">
+			<input type="text" placeholder="Срок">
+			<input type="text" placeholder="Процент">
 			<button class="btn_big">Найти</button>
 		</div>
 	</form>

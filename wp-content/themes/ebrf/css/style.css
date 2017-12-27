@@ -85,6 +85,7 @@ label .checkbox{
 }
 .text-checkbox{
 	margin:9px 0 0;
+	display: inline-block;
 }
 .text-checkbox input{
 	display:none;
@@ -100,7 +101,8 @@ label .checkbox{
 	text-align:center;
 	min-width:60px;
 }
-input:checked + .text-checkbox__item{
+input:checked + .text-checkbox__item, 
+.text-checkbox__item.current{
 	border-color:#377dff;
 	color:#377dff;
 	background:rgba(55,125,255,.2)
@@ -701,7 +703,7 @@ a.pagination__item.active,
 	border-color:#377dff;
 	background:rgba(55,125,255,.2);
 }
-.post-nav{
+.post-nav:not(".widget-text"){
 	margin-bottom:60px;
 	font-size:16px;
 }

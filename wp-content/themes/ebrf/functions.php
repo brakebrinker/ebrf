@@ -284,3 +284,94 @@ global $user_ID, $post;
     }
     return true;
 }
+
+//фильтр в каталоге
+function go_filter() {
+    $args = array(); // подготовим массив 
+    $args['meta_query'] = array('relation' => 'AND'); // отношение между условиями, у нас это "И то И это", можно ИЛИ(OR)
+    global $wp_query; // нужно заглобалить текущую выборку постов
+
+    // if (!empty($_GET['payment'])) { // если передан массив с фильтром по комнатам
+    //     $args['meta_query'][] = array( // пешем условия в meta_query
+    //         'key' => 'company_cashout', // название произвольного поля
+    //         'value' => (int) $_GET['payment'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+    //         'compare' => 'LIKE'
+    //     );
+    // }
+
+    if (!empty($_GET['s_summ'])) {
+        $ressum = $_GET['s_summ'];
+        $compare = '>=';
+        $startField = 'company_summ_do';
+
+        // if ($_GET['s_summ'] == '') {
+        //     $ressum = 0;
+        //     $compare = '>=';
+        //     $startField = 'company_summ_ot';
+        // }
+        // if ($_GET['s_summ'] == 'bolshe') {
+        //     $ressum = 100000;
+        //     $compare = '>=';
+        //     $startField = 'company_summ_do';
+        // }
+
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => $startField, // название произвольного поля
+            'value' => (int) $ressum,
+            'type' => 'numeric', // тип поля - число
+            'compare' => $compare
+        );
+    }
+
+    if (!empty($_GET['s_timeterm'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_term_do', // название произвольного поля
+            'value' => (int) $_GET['s_timeterm'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '>='
+        );
+    }
+
+    if (!empty($_GET['s_percent'])) { // если передан массив с фильтром по комнатам
+        echo (float) $_GET['s_percent'];
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_interest_rate_num', // название произвольного поля
+            'value' => (float) $_GET['s_percent'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '<='
+        );
+    }
+
+    if (!empty($_GET['recommended'] == true)) {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_recommended', // название произвольного поля
+            'value' => true, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '='
+        );
+    }
+
+    if (!empty($_GET['bad_ki'] == true)) {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_credit_history', // название произвольного поля
+            'value' => 1, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '='
+        );
+    }
+
+    if (!empty($_GET['allday'] == true)) {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_workmode_allday', // название произвольного поля
+            'value' => true, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '='
+        );
+    }
+
+    if (!empty($_GET['prolongation'] == true)) {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_renewal', // название произвольного поля
+            'value' => 1, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '='
+        );
+    }
+
+    query_posts(array_merge($args,$wp_query->query)); // сшиваем текущие условия выборки стандартного цикла wp с новым массивом переданным из формы и фильтруем
+}
