@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Дек 27 2017 г., 16:59
--- Версия сервера: 5.6.37
--- Версия PHP: 5.5.38
+-- Хост: localhost
+-- Время создания: Дек 27 2017 г., 23:39
+-- Версия сервера: 10.1.28-MariaDB
+-- Версия PHP: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -227,11 +227,11 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (199, 'widget_tag_cloud', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (200, 'widget_nav_menu', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (201, 'widget_custom_html', 'a:2:{i:2;a:2:{s:5:\"title\";s:0:\"\";s:7:\"content\";s:907:\"<div class=\"schema\">\r\n			<div class=\"schema__item\">\r\n				<i class=\"schema__icon icon-give\"></i>\r\n				<p class=\"schema__text\">1. Получение предложений</p>\r\n			</div>\r\n			<span class=\"icon-arrow-right schema__arrow\"></span>\r\n			<div class=\"schema__item\">\r\n				<i class=\"schema__icon icon-choise\"></i>\r\n				<p class=\"schema__text\">2. Выбор предложения</p>\r\n			</div>\r\n			<span class=\"icon-arrow-right schema__arrow central\"></span>\r\n			<div class=\"schema__item\">\r\n				<i class=\"schema__icon icon-transition\"></i>\r\n				<p class=\"schema__text\">3. Переход на официальном сайте кредитов и оформление</p>\r\n			</div>\r\n			<span class=\"icon-arrow-right schema__arrow\"></span>\r\n			<div class=\"schema__item\">\r\n				<i class=\"schema__icon icon-money\"></i>\r\n				<p class=\"schema__text\">4. Получение денег</p>\r\n			</div>\r\n		</div>\";}s:12:\"_multiwidget\";i:1;}', 'yes'),
-(202, 'cron', 'a:4:{i:1514397615;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1514403156;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1514446376;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
+(202, 'cron', 'a:4:{i:1514446356;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1514446376;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1514484015;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
 (203, 'theme_mods_twentyseventeen', 'a:2:{s:18:\"custom_css_post_id\";i:-1;s:16:\"sidebars_widgets\";a:2:{s:4:\"time\";i:1513524591;s:4:\"data\";a:4:{s:19:\"wp_inactive_widgets\";a:0:{}s:9:\"sidebar-1\";a:6:{i:0;s:8:\"search-2\";i:1;s:14:\"recent-posts-2\";i:2;s:17:\"recent-comments-2\";i:3;s:10:\"archives-2\";i:4;s:12:\"categories-2\";i:5;s:6:\"meta-2\";}s:9:\"sidebar-2\";a:0:{}s:9:\"sidebar-3\";a:0:{}}}}', 'yes'),
 (215, 'can_compress_scripts', '1', 'no'),
 (248, 'current_theme', '', 'yes'),
-(249, 'theme_mods_ebrf', 'a:3:{i:0;b:0;s:18:\"nav_menu_locations\";a:0:{}s:18:\"custom_css_post_id\";i:-1;}', 'yes'),
+(249, 'theme_mods_ebrf', 'a:3:{i:0;b:0;s:18:\"nav_menu_locations\";a:3:{s:3:\"top\";i:4;s:7:\"top_sub\";i:73;s:6:\"bottom\";i:74;}s:18:\"custom_css_post_id\";i:-1;}', 'yes'),
 (250, 'theme_switched', '', 'yes'),
 (253, 'recently_activated', 'a:0:{}', 'yes'),
 (256, 'acf_version', '4.4.12', 'yes'),
@@ -283,8 +283,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (405, 'cool-griwpc-ver', '9.0.3', 'yes'),
 (406, 'griwpc-params', 'a:15:{s:6:\"active\";s:1:\"0\";s:8:\"site_key\";s:40:\"6Lc4OysUAAAAAHfCfYAcNwjH5iLvObqffg5TKsOE\";s:10:\"secret_key\";s:40:\"6Lc4OysUAAAAAHBpMBV1V98hXsZOaUWJIiLcXlGN\";s:15:\"recaptcha_theme\";s:5:\"light\";s:14:\"recaptcha_size\";s:6:\"normal\";s:14:\"recaptcha_type\";s:5:\"image\";s:14:\"recaptcha_lang\";s:2:\"-1\";s:14:\"recaptcha_mode\";s:4:\"spam\";s:15:\"recaptcha_align\";s:4:\"left\";s:6:\"formID\";s:11:\"commentform\";s:8:\"buttonID\";s:6:\"submit\";s:13:\"recaptcha_tag\";s:1:\"p\";s:13:\"recaptcha_css\";s:54:\".google-recaptcha-container{display:block;clear:both;}\";s:24:\"old_themes_compatibility\";s:1:\"0\";s:15:\"allowCreditMode\";s:1:\"0\";}', 'yes'),
 (415, 'wpcf7', 'a:2:{s:7:\"version\";s:5:\"4.9.2\";s:13:\"bulk_validate\";a:4:{s:9:\"timestamp\";i:1513864996;s:7:\"version\";s:5:\"4.9.2\";s:11:\"count_valid\";i:1;s:13:\"count_invalid\";i:0;}}', 'yes'),
-(416, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-4.9.1.zip\";s:6:\"locale\";s:5:\"ru_RU\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-4.9.1.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"4.9.1\";s:7:\"version\";s:5:\"4.9.1\";s:11:\"php_version\";s:5:\"5.2.4\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"4.7\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1514360027;s:15:\"version_checked\";s:5:\"4.9.1\";s:12:\"translations\";a:0:{}}', 'no'),
-(418, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1514360035;s:7:\"checked\";a:4:{s:4:\"ebrf\";s:0:\"\";s:13:\"twentyfifteen\";s:3:\"1.9\";s:15:\"twentyseventeen\";s:3:\"1.4\";s:13:\"twentysixteen\";s:3:\"1.4\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no'),
+(416, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-4.9.1.zip\";s:6:\"locale\";s:5:\"ru_RU\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-4.9.1.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"4.9.1\";s:7:\"version\";s:5:\"4.9.1\";s:11:\"php_version\";s:5:\"5.2.4\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"4.7\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1514403346;s:15:\"version_checked\";s:5:\"4.9.1\";s:12:\"translations\";a:0:{}}', 'no'),
+(418, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1514403354;s:7:\"checked\";a:4:{s:4:\"ebrf\";s:0:\"\";s:13:\"twentyfifteen\";s:3:\"1.9\";s:15:\"twentyseventeen\";s:3:\"1.4\";s:13:\"twentysixteen\";s:3:\"1.4\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no'),
 (430, 'WPCF_VERSION', '2.2.21', 'no'),
 (431, 'wpcf-version', '2.2.21', 'yes');
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
@@ -318,12 +318,14 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (544, 'waystopay_14_waystopay', '112', 'no'),
 (545, '_waystopay_14_waystopay', 'field_5a4238415a79a', 'no'),
 (554, 'category_children', 'a:0:{}', 'yes'),
-(565, 'waystopay_children', 'a:0:{}', 'yes'),
-(568, '_site_transient_timeout_theme_roots', '1514361829', 'no'),
-(569, '_site_transient_theme_roots', 'a:4:{s:4:\"ebrf\";s:7:\"/themes\";s:13:\"twentyfifteen\";s:7:\"/themes\";s:15:\"twentyseventeen\";s:7:\"/themes\";s:13:\"twentysixteen\";s:7:\"/themes\";}', 'no'),
-(570, '_site_transient_update_plugins', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1514360033;s:8:\"response\";a:1:{s:19:\"akismet/akismet.php\";O:8:\"stdClass\":11:{s:2:\"id\";s:21:\"w.org/plugins/akismet\";s:4:\"slug\";s:7:\"akismet\";s:6:\"plugin\";s:19:\"akismet/akismet.php\";s:11:\"new_version\";s:5:\"4.0.2\";s:3:\"url\";s:38:\"https://wordpress.org/plugins/akismet/\";s:7:\"package\";s:56:\"https://downloads.wordpress.org/plugin/akismet.4.0.2.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:59:\"https://ps.w.org/akismet/assets/icon-128x128.png?rev=969272\";s:2:\"2x\";s:59:\"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272\";s:7:\"default\";s:59:\"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272\";}s:7:\"banners\";a:2:{s:2:\"1x\";s:61:\"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904\";s:7:\"default\";s:61:\"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:5:\"4.9.1\";s:13:\"compatibility\";O:8:\"stdClass\":0:{}}}s:12:\"translations\";a:0:{}s:9:\"no_update\";a:9:{s:30:\"advanced-custom-fields/acf.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:36:\"w.org/plugins/advanced-custom-fields\";s:4:\"slug\";s:22:\"advanced-custom-fields\";s:6:\"plugin\";s:30:\"advanced-custom-fields/acf.php\";s:11:\"new_version\";s:6:\"4.4.12\";s:3:\"url\";s:53:\"https://wordpress.org/plugins/advanced-custom-fields/\";s:7:\"package\";s:72:\"https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.12.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-128x128.png?rev=1082746\";s:2:\"2x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746\";s:7:\"default\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746\";}s:7:\"banners\";a:3:{s:2:\"2x\";s:78:\"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099\";s:2:\"1x\";s:77:\"https://ps.w.org/advanced-custom-fields/assets/banner-772x250.jpg?rev=1729102\";s:7:\"default\";s:78:\"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099\";}s:11:\"banners_rtl\";a:0:{}}s:36:\"contact-form-7/wp-contact-form-7.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:28:\"w.org/plugins/contact-form-7\";s:4:\"slug\";s:14:\"contact-form-7\";s:6:\"plugin\";s:36:\"contact-form-7/wp-contact-form-7.php\";s:11:\"new_version\";s:5:\"4.9.2\";s:3:\"url\";s:45:\"https://wordpress.org/plugins/contact-form-7/\";s:7:\"package\";s:63:\"https://downloads.wordpress.org/plugin/contact-form-7.4.9.2.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-128x128.png?rev=984007\";s:2:\"2x\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=984007\";s:7:\"default\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=984007\";}s:7:\"banners\";a:3:{s:2:\"2x\";s:69:\"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901\";s:2:\"1x\";s:68:\"https://ps.w.org/contact-form-7/assets/banner-772x250.png?rev=880427\";s:7:\"default\";s:69:\"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901\";}s:11:\"banners_rtl\";a:0:{}}s:22:\"cyr3lat/cyr-to-lat.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:21:\"w.org/plugins/cyr3lat\";s:4:\"slug\";s:7:\"cyr3lat\";s:6:\"plugin\";s:22:\"cyr3lat/cyr-to-lat.php\";s:11:\"new_version\";s:3:\"3.5\";s:3:\"url\";s:38:\"https://wordpress.org/plugins/cyr3lat/\";s:7:\"package\";s:54:\"https://downloads.wordpress.org/plugin/cyr3lat.3.5.zip\";s:5:\"icons\";a:0:{}s:7:\"banners\";a:0:{}s:11:\"banners_rtl\";a:0:{}}s:33:\"duplicate-post/duplicate-post.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:28:\"w.org/plugins/duplicate-post\";s:4:\"slug\";s:14:\"duplicate-post\";s:6:\"plugin\";s:33:\"duplicate-post/duplicate-post.php\";s:11:\"new_version\";s:5:\"3.2.1\";s:3:\"url\";s:45:\"https://wordpress.org/plugins/duplicate-post/\";s:7:\"package\";s:63:\"https://downloads.wordpress.org/plugin/duplicate-post.3.2.1.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:67:\"https://ps.w.org/duplicate-post/assets/icon-128x128.png?rev=1612753\";s:2:\"2x\";s:67:\"https://ps.w.org/duplicate-post/assets/icon-256x256.png?rev=1612753\";s:7:\"default\";s:67:\"https://ps.w.org/duplicate-post/assets/icon-256x256.png?rev=1612753\";}s:7:\"banners\";a:2:{s:2:\"1x\";s:69:\"https://ps.w.org/duplicate-post/assets/banner-772x250.png?rev=1612986\";s:7:\"default\";s:69:\"https://ps.w.org/duplicate-post/assets/banner-772x250.png?rev=1612986\";}s:11:\"banners_rtl\";a:0:{}}s:9:\"hello.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:25:\"w.org/plugins/hello-dolly\";s:4:\"slug\";s:11:\"hello-dolly\";s:6:\"plugin\";s:9:\"hello.php\";s:11:\"new_version\";s:3:\"1.6\";s:3:\"url\";s:42:\"https://wordpress.org/plugins/hello-dolly/\";s:7:\"package\";s:58:\"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:63:\"https://ps.w.org/hello-dolly/assets/icon-128x128.jpg?rev=969907\";s:2:\"2x\";s:63:\"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=969907\";s:7:\"default\";s:63:\"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=969907\";}s:7:\"banners\";a:2:{s:2:\"1x\";s:65:\"https://ps.w.org/hello-dolly/assets/banner-772x250.png?rev=478342\";s:7:\"default\";s:65:\"https://ps.w.org/hello-dolly/assets/banner-772x250.png?rev=478342\";}s:11:\"banners_rtl\";a:0:{}}s:58:\"recaptcha-in-wp-comments-form/recaptcha-in-wp-comments.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:43:\"w.org/plugins/recaptcha-in-wp-comments-form\";s:4:\"slug\";s:29:\"recaptcha-in-wp-comments-form\";s:6:\"plugin\";s:58:\"recaptcha-in-wp-comments-form/recaptcha-in-wp-comments.php\";s:11:\"new_version\";s:5:\"9.0.3\";s:3:\"url\";s:60:\"https://wordpress.org/plugins/recaptcha-in-wp-comments-form/\";s:7:\"package\";s:78:\"https://downloads.wordpress.org/plugin/recaptcha-in-wp-comments-form.9.0.3.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:82:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/icon-128x128.png?rev=1445586\";s:2:\"2x\";s:82:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/icon-256x256.png?rev=1445586\";s:7:\"default\";s:82:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/icon-256x256.png?rev=1445586\";}s:7:\"banners\";a:3:{s:2:\"2x\";s:85:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/banner-1544x500.png?rev=1445586\";s:2:\"1x\";s:84:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/banner-772x250.png?rev=1445586\";s:7:\"default\";s:85:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/banner-1544x500.png?rev=1445586\";}s:11:\"banners_rtl\";a:0:{}}s:37:\"tinymce-advanced/tinymce-advanced.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:30:\"w.org/plugins/tinymce-advanced\";s:4:\"slug\";s:16:\"tinymce-advanced\";s:6:\"plugin\";s:37:\"tinymce-advanced/tinymce-advanced.php\";s:11:\"new_version\";s:5:\"4.6.7\";s:3:\"url\";s:47:\"https://wordpress.org/plugins/tinymce-advanced/\";s:7:\"package\";s:65:\"https://downloads.wordpress.org/plugin/tinymce-advanced.4.6.7.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:68:\"https://ps.w.org/tinymce-advanced/assets/icon-128x128.png?rev=971511\";s:2:\"2x\";s:68:\"https://ps.w.org/tinymce-advanced/assets/icon-256x256.png?rev=971511\";s:7:\"default\";s:68:\"https://ps.w.org/tinymce-advanced/assets/icon-256x256.png?rev=971511\";}s:7:\"banners\";a:2:{s:2:\"1x\";s:70:\"https://ps.w.org/tinymce-advanced/assets/banner-772x250.png?rev=894078\";s:7:\"default\";s:70:\"https://ps.w.org/tinymce-advanced/assets/banner-772x250.png?rev=894078\";}s:11:\"banners_rtl\";a:0:{}}s:14:\"types/wpcf.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:19:\"w.org/plugins/types\";s:4:\"slug\";s:5:\"types\";s:6:\"plugin\";s:14:\"types/wpcf.php\";s:11:\"new_version\";s:6:\"2.2.21\";s:3:\"url\";s:36:\"https://wordpress.org/plugins/types/\";s:7:\"package\";s:55:\"https://downloads.wordpress.org/plugin/types.2.2.21.zip\";s:5:\"icons\";a:4:{s:2:\"1x\";s:58:\"https://ps.w.org/types/assets/icon-128x128.png?rev=1625832\";s:2:\"2x\";s:58:\"https://ps.w.org/types/assets/icon-256x256.png?rev=1625832\";s:3:\"svg\";s:50:\"https://ps.w.org/types/assets/icon.svg?rev=1009056\";s:7:\"default\";s:50:\"https://ps.w.org/types/assets/icon.svg?rev=1009056\";}s:7:\"banners\";a:3:{s:2:\"2x\";s:61:\"https://ps.w.org/types/assets/banner-1544x500.png?rev=1681816\";s:2:\"1x\";s:60:\"https://ps.w.org/types/assets/banner-772x250.png?rev=1681816\";s:7:\"default\";s:61:\"https://ps.w.org/types/assets/banner-1544x500.png?rev=1681816\";}s:11:\"banners_rtl\";a:0:{}}s:33:\"wp-postratings/wp-postratings.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:28:\"w.org/plugins/wp-postratings\";s:4:\"slug\";s:14:\"wp-postratings\";s:6:\"plugin\";s:33:\"wp-postratings/wp-postratings.php\";s:11:\"new_version\";s:4:\"1.85\";s:3:\"url\";s:45:\"https://wordpress.org/plugins/wp-postratings/\";s:7:\"package\";s:62:\"https://downloads.wordpress.org/plugin/wp-postratings.1.85.zip\";s:5:\"icons\";a:2:{s:3:\"svg\";s:58:\"https://ps.w.org/wp-postratings/assets/icon.svg?rev=978014\";s:7:\"default\";s:58:\"https://ps.w.org/wp-postratings/assets/icon.svg?rev=978014\";}s:7:\"banners\";a:3:{s:2:\"2x\";s:70:\"https://ps.w.org/wp-postratings/assets/banner-1544x500.jpg?rev=1206761\";s:2:\"1x\";s:69:\"https://ps.w.org/wp-postratings/assets/banner-772x250.jpg?rev=1206761\";s:7:\"default\";s:70:\"https://ps.w.org/wp-postratings/assets/banner-1544x500.jpg?rev=1206761\";}s:11:\"banners_rtl\";a:0:{}}}}', 'no'),
 (579, 'document_children', 'a:0:{}', 'yes'),
-(585, 'typeofborrower_children', 'a:0:{}', 'yes');
+(585, 'typeofborrower_children', 'a:0:{}', 'yes'),
+(589, '_site_transient_timeout_theme_roots', '1514405148', 'no'),
+(590, '_site_transient_theme_roots', 'a:4:{s:4:\"ebrf\";s:7:\"/themes\";s:13:\"twentyfifteen\";s:7:\"/themes\";s:15:\"twentyseventeen\";s:7:\"/themes\";s:13:\"twentysixteen\";s:7:\"/themes\";}', 'no'),
+(591, '_site_transient_update_plugins', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1514403352;s:8:\"response\";a:1:{s:19:\"akismet/akismet.php\";O:8:\"stdClass\":11:{s:2:\"id\";s:21:\"w.org/plugins/akismet\";s:4:\"slug\";s:7:\"akismet\";s:6:\"plugin\";s:19:\"akismet/akismet.php\";s:11:\"new_version\";s:5:\"4.0.2\";s:3:\"url\";s:38:\"https://wordpress.org/plugins/akismet/\";s:7:\"package\";s:56:\"https://downloads.wordpress.org/plugin/akismet.4.0.2.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:59:\"https://ps.w.org/akismet/assets/icon-128x128.png?rev=969272\";s:2:\"2x\";s:59:\"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272\";s:7:\"default\";s:59:\"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272\";}s:7:\"banners\";a:2:{s:2:\"1x\";s:61:\"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904\";s:7:\"default\";s:61:\"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:5:\"4.9.1\";s:13:\"compatibility\";O:8:\"stdClass\":0:{}}}s:12:\"translations\";a:0:{}s:9:\"no_update\";a:9:{s:30:\"advanced-custom-fields/acf.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:36:\"w.org/plugins/advanced-custom-fields\";s:4:\"slug\";s:22:\"advanced-custom-fields\";s:6:\"plugin\";s:30:\"advanced-custom-fields/acf.php\";s:11:\"new_version\";s:6:\"4.4.12\";s:3:\"url\";s:53:\"https://wordpress.org/plugins/advanced-custom-fields/\";s:7:\"package\";s:72:\"https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.12.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-128x128.png?rev=1082746\";s:2:\"2x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746\";s:7:\"default\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746\";}s:7:\"banners\";a:3:{s:2:\"2x\";s:78:\"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099\";s:2:\"1x\";s:77:\"https://ps.w.org/advanced-custom-fields/assets/banner-772x250.jpg?rev=1729102\";s:7:\"default\";s:78:\"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099\";}s:11:\"banners_rtl\";a:0:{}}s:36:\"contact-form-7/wp-contact-form-7.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:28:\"w.org/plugins/contact-form-7\";s:4:\"slug\";s:14:\"contact-form-7\";s:6:\"plugin\";s:36:\"contact-form-7/wp-contact-form-7.php\";s:11:\"new_version\";s:5:\"4.9.2\";s:3:\"url\";s:45:\"https://wordpress.org/plugins/contact-form-7/\";s:7:\"package\";s:63:\"https://downloads.wordpress.org/plugin/contact-form-7.4.9.2.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-128x128.png?rev=984007\";s:2:\"2x\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=984007\";s:7:\"default\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=984007\";}s:7:\"banners\";a:3:{s:2:\"2x\";s:69:\"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901\";s:2:\"1x\";s:68:\"https://ps.w.org/contact-form-7/assets/banner-772x250.png?rev=880427\";s:7:\"default\";s:69:\"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901\";}s:11:\"banners_rtl\";a:0:{}}s:22:\"cyr3lat/cyr-to-lat.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:21:\"w.org/plugins/cyr3lat\";s:4:\"slug\";s:7:\"cyr3lat\";s:6:\"plugin\";s:22:\"cyr3lat/cyr-to-lat.php\";s:11:\"new_version\";s:3:\"3.5\";s:3:\"url\";s:38:\"https://wordpress.org/plugins/cyr3lat/\";s:7:\"package\";s:54:\"https://downloads.wordpress.org/plugin/cyr3lat.3.5.zip\";s:5:\"icons\";a:0:{}s:7:\"banners\";a:0:{}s:11:\"banners_rtl\";a:0:{}}s:33:\"duplicate-post/duplicate-post.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:28:\"w.org/plugins/duplicate-post\";s:4:\"slug\";s:14:\"duplicate-post\";s:6:\"plugin\";s:33:\"duplicate-post/duplicate-post.php\";s:11:\"new_version\";s:5:\"3.2.1\";s:3:\"url\";s:45:\"https://wordpress.org/plugins/duplicate-post/\";s:7:\"package\";s:63:\"https://downloads.wordpress.org/plugin/duplicate-post.3.2.1.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:67:\"https://ps.w.org/duplicate-post/assets/icon-128x128.png?rev=1612753\";s:2:\"2x\";s:67:\"https://ps.w.org/duplicate-post/assets/icon-256x256.png?rev=1612753\";s:7:\"default\";s:67:\"https://ps.w.org/duplicate-post/assets/icon-256x256.png?rev=1612753\";}s:7:\"banners\";a:2:{s:2:\"1x\";s:69:\"https://ps.w.org/duplicate-post/assets/banner-772x250.png?rev=1612986\";s:7:\"default\";s:69:\"https://ps.w.org/duplicate-post/assets/banner-772x250.png?rev=1612986\";}s:11:\"banners_rtl\";a:0:{}}s:9:\"hello.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:25:\"w.org/plugins/hello-dolly\";s:4:\"slug\";s:11:\"hello-dolly\";s:6:\"plugin\";s:9:\"hello.php\";s:11:\"new_version\";s:3:\"1.6\";s:3:\"url\";s:42:\"https://wordpress.org/plugins/hello-dolly/\";s:7:\"package\";s:58:\"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:63:\"https://ps.w.org/hello-dolly/assets/icon-128x128.jpg?rev=969907\";s:2:\"2x\";s:63:\"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=969907\";s:7:\"default\";s:63:\"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=969907\";}s:7:\"banners\";a:2:{s:2:\"1x\";s:65:\"https://ps.w.org/hello-dolly/assets/banner-772x250.png?rev=478342\";s:7:\"default\";s:65:\"https://ps.w.org/hello-dolly/assets/banner-772x250.png?rev=478342\";}s:11:\"banners_rtl\";a:0:{}}s:58:\"recaptcha-in-wp-comments-form/recaptcha-in-wp-comments.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:43:\"w.org/plugins/recaptcha-in-wp-comments-form\";s:4:\"slug\";s:29:\"recaptcha-in-wp-comments-form\";s:6:\"plugin\";s:58:\"recaptcha-in-wp-comments-form/recaptcha-in-wp-comments.php\";s:11:\"new_version\";s:5:\"9.0.3\";s:3:\"url\";s:60:\"https://wordpress.org/plugins/recaptcha-in-wp-comments-form/\";s:7:\"package\";s:78:\"https://downloads.wordpress.org/plugin/recaptcha-in-wp-comments-form.9.0.3.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:82:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/icon-128x128.png?rev=1445586\";s:2:\"2x\";s:82:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/icon-256x256.png?rev=1445586\";s:7:\"default\";s:82:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/icon-256x256.png?rev=1445586\";}s:7:\"banners\";a:3:{s:2:\"2x\";s:85:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/banner-1544x500.png?rev=1445586\";s:2:\"1x\";s:84:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/banner-772x250.png?rev=1445586\";s:7:\"default\";s:85:\"https://ps.w.org/recaptcha-in-wp-comments-form/assets/banner-1544x500.png?rev=1445586\";}s:11:\"banners_rtl\";a:0:{}}s:37:\"tinymce-advanced/tinymce-advanced.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:30:\"w.org/plugins/tinymce-advanced\";s:4:\"slug\";s:16:\"tinymce-advanced\";s:6:\"plugin\";s:37:\"tinymce-advanced/tinymce-advanced.php\";s:11:\"new_version\";s:5:\"4.6.7\";s:3:\"url\";s:47:\"https://wordpress.org/plugins/tinymce-advanced/\";s:7:\"package\";s:65:\"https://downloads.wordpress.org/plugin/tinymce-advanced.4.6.7.zip\";s:5:\"icons\";a:3:{s:2:\"1x\";s:68:\"https://ps.w.org/tinymce-advanced/assets/icon-128x128.png?rev=971511\";s:2:\"2x\";s:68:\"https://ps.w.org/tinymce-advanced/assets/icon-256x256.png?rev=971511\";s:7:\"default\";s:68:\"https://ps.w.org/tinymce-advanced/assets/icon-256x256.png?rev=971511\";}s:7:\"banners\";a:2:{s:2:\"1x\";s:70:\"https://ps.w.org/tinymce-advanced/assets/banner-772x250.png?rev=894078\";s:7:\"default\";s:70:\"https://ps.w.org/tinymce-advanced/assets/banner-772x250.png?rev=894078\";}s:11:\"banners_rtl\";a:0:{}}s:14:\"types/wpcf.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:19:\"w.org/plugins/types\";s:4:\"slug\";s:5:\"types\";s:6:\"plugin\";s:14:\"types/wpcf.php\";s:11:\"new_version\";s:6:\"2.2.21\";s:3:\"url\";s:36:\"https://wordpress.org/plugins/types/\";s:7:\"package\";s:55:\"https://downloads.wordpress.org/plugin/types.2.2.21.zip\";s:5:\"icons\";a:4:{s:2:\"1x\";s:58:\"https://ps.w.org/types/assets/icon-128x128.png?rev=1625832\";s:2:\"2x\";s:58:\"https://ps.w.org/types/assets/icon-256x256.png?rev=1625832\";s:3:\"svg\";s:50:\"https://ps.w.org/types/assets/icon.svg?rev=1009056\";s:7:\"default\";s:50:\"https://ps.w.org/types/assets/icon.svg?rev=1009056\";}s:7:\"banners\";a:3:{s:2:\"2x\";s:61:\"https://ps.w.org/types/assets/banner-1544x500.png?rev=1681816\";s:2:\"1x\";s:60:\"https://ps.w.org/types/assets/banner-772x250.png?rev=1681816\";s:7:\"default\";s:61:\"https://ps.w.org/types/assets/banner-1544x500.png?rev=1681816\";}s:11:\"banners_rtl\";a:0:{}}s:33:\"wp-postratings/wp-postratings.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:28:\"w.org/plugins/wp-postratings\";s:4:\"slug\";s:14:\"wp-postratings\";s:6:\"plugin\";s:33:\"wp-postratings/wp-postratings.php\";s:11:\"new_version\";s:4:\"1.85\";s:3:\"url\";s:45:\"https://wordpress.org/plugins/wp-postratings/\";s:7:\"package\";s:62:\"https://downloads.wordpress.org/plugin/wp-postratings.1.85.zip\";s:5:\"icons\";a:2:{s:3:\"svg\";s:58:\"https://ps.w.org/wp-postratings/assets/icon.svg?rev=978014\";s:7:\"default\";s:58:\"https://ps.w.org/wp-postratings/assets/icon.svg?rev=978014\";}s:7:\"banners\";a:3:{s:2:\"2x\";s:70:\"https://ps.w.org/wp-postratings/assets/banner-1544x500.jpg?rev=1206761\";s:2:\"1x\";s:69:\"https://ps.w.org/wp-postratings/assets/banner-772x250.jpg?rev=1206761\";s:7:\"default\";s:70:\"https://ps.w.org/wp-postratings/assets/banner-1544x500.jpg?rev=1206761\";}s:11:\"banners_rtl\";a:0:{}}}}', 'no'),
+(592, 'waystopay_14_tax_company_text', 'Агрегатор финансовых продуктов “EBRF” уже больше года помогает десяткам тысяч людей по всей России выбирать оптимальные микрозаймы, кредиты и многое другое. Наша задача – избавить вас от необходимости изучать десятки сайтов банков и МФО в поисках нужной информации. Мы сделали это за вас!Чтобы сделать оптимальный выбор – изучите всю информацию, которая указана в карточке продукта. Обратите внимание на рейтинг К5М и прочитайте отзывы клиентов. Обязательно проверьте свои шансы на одобрение с помощью бесплатной и моментальной проверки кредитного рейтинга.\r\n\r\nПосле выбора, перейдите на сайт банка или МФО и заполните заявку. В ближайшее время с вами свяжутся менеджеры. После получения услуги, вы можете оставить свое мнение на странице организации.Агрегатор финансовых продуктов “EBRF” уже больше года помогает десяткам тысяч людей по всей России выбирать оптимальные микрозаймы, кредиты и многое другое. Наша задача – избавить вас от необходимости изучать десятки сайтов банков и МФО в поисках нужной информации. Мы сделали это за вас!Чтобы сделать оптимальный выбор – изучите всю информацию, которая указана в карточке продукта. Обратите внимание на рейтинг К5М и прочитайте отзывы клиентов. Обязательно проверьте свои шансы на одобрение с помощью бесплатной и моментальной проверки кредитного рейтинга. После выбора, перейдите на сайт банка или МФО и заполните заявку. В ближайшее время с вами свяжутся менеджеры. После получения услуги, вы можете оставить свое мнение на странице организации.', 'no'),
+(593, '_waystopay_14_tax_company_text', 'field_5a4405229cf2a', 'no'),
+(594, 'nav_menu_options', 'a:2:{i:0;b:0;s:8:\"auto_add\";a:0:{}}', 'yes');
 
 -- --------------------------------------------------------
 
@@ -348,13 +350,13 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (3, 1, '_wp_old_slug', '%d0%bf%d1%80%d0%b8%d0%b2%d0%b5%d1%82-%d0%bc%d0%b8%d1%80'),
 (4, 3, '_wp_old_slug', '%d0%bf%d1%80%d0%b8%d0%b2%d0%b5%d1%82-%d0%bc%d0%b8%d1%80'),
 (5, 6, '_edit_last', '1'),
-(6, 6, '_edit_lock', '1513538186:1'),
+(6, 6, '_edit_lock', '1514409167:1'),
 (7, 8, '_edit_last', '1'),
 (8, 8, 'rule', 'a:5:{s:5:\"param\";s:4:\"page\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:1:\"6\";s:8:\"order_no\";i:0;s:8:\"group_no\";i:0;}'),
 (9, 8, 'position', 'normal'),
 (10, 8, 'layout', 'no_box'),
 (11, 8, 'hide_on_screen', ''),
-(12, 8, '_edit_lock', '1513936096:1'),
+(12, 8, '_edit_lock', '1514409013:1'),
 (13, 11, '_edit_last', '1'),
 (14, 11, '_edit_lock', '1514277574:1'),
 (27, 15, '_edit_last', '1'),
@@ -401,7 +403,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (84, 28, '_locale', 'ru_RU'),
 (86, 28, '_config_errors', 'a:1:{s:23:\"mail.additional_headers\";a:1:{i:0;a:2:{s:4:\"code\";i:102;s:4:\"args\";a:3:{s:7:\"message\";s:125:\"Был использован некорректный синтаксис почтового адреса в поле %name%.\";s:6:\"params\";a:1:{s:4:\"name\";s:8:\"Reply-To\";}s:4:\"link\";s:68:\"https://contactform7.com/configuration-errors/invalid-mailbox-syntax\";}}}}'),
 (89, 18, 'views', '22'),
-(92, 15, 'views', '1'),
+(92, 15, 'views', '30'),
 (93, 3, 'views', '6'),
 (94, 30, '_edit_last', '1'),
 (95, 30, '_edit_lock', '1513932074:1'),
@@ -409,8 +411,8 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (97, 30, 'ratings_users', '0'),
 (98, 30, 'ratings_score', '0'),
 (99, 30, 'ratings_average', '0'),
-(100, 30, 'views', '44'),
-(101, 6, 'views', '5'),
+(100, 30, 'views', '45'),
+(101, 6, 'views', '6'),
 (103, 1, '_edit_last', '1'),
 (105, 1, '_wp_old_slug', 'privet-mir'),
 (107, 33, '_edit_last', '1'),
@@ -419,7 +421,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (110, 33, 'ratings_users', '0'),
 (111, 33, 'ratings_score', '0'),
 (112, 33, 'ratings_average', '0'),
-(113, 33, 'views', '10'),
+(113, 33, 'views', '26'),
 (117, 35, '_edit_last', '1'),
 (118, 35, '_edit_lock', '1513934320:1'),
 (119, 35, '_wp_page_template', 'templates/tpl_calc-page.php'),
@@ -437,7 +439,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (132, 38, '_calc_review', 'field_5a3ccc70a0029'),
 (133, 35, 'calc_review', 'EBRF — это деньги в долг в размере до 100 тысяч рублей в микрофинансовой организации (МФО) или компании (МФК), оформленные через интернет. Микрокредитование в России регулирует закон «О микрофинансовой деятельности». Компании, занимающиеся кратковременным кредитованием, имеют лицензию, зарегистрированную в реестре Центробанка. Чаще микрозаймы берут до следующей зарплаты, поэтому высокие проценты не пугают.'),
 (134, 35, '_calc_review', 'field_5a3ccc70a0029'),
-(135, 35, 'views', '3'),
+(135, 35, 'views', '4'),
 (136, 39, '_edit_last', '1'),
 (137, 39, '_edit_lock', '1514380290:1'),
 (138, 40, '_wp_attached_file', '2017/12/3-big.png'),
@@ -449,7 +451,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (147, 44, 'position', 'normal'),
 (148, 44, 'layout', 'no_box'),
 (149, 44, 'hide_on_screen', ''),
-(150, 44, '_edit_lock', '1514381958:1'),
+(150, 44, '_edit_lock', '1514407001:1'),
 (151, 44, 'field_5a3cec0b55315', 'a:15:{s:3:\"key\";s:19:\"field_5a3cec0b55315\";s:5:\"label\";s:15:\"Сумма до\";s:4:\"name\";s:15:\"company_summ_do\";s:4:\"type\";s:6:\"number\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";s:1:\"0\";s:13:\"default_value\";s:5:\"30000\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";s:3:\"min\";s:0:\"\";s:3:\"max\";s:0:\"\";s:4:\"step\";s:0:\"\";s:17:\"conditional_logic\";a:3:{s:6:\"status\";s:1:\"0\";s:5:\"rules\";a:1:{i:0;a:3:{s:5:\"field\";s:4:\"null\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:0:\"\";}}s:8:\"allorany\";s:3:\"all\";}s:8:\"order_no\";i:1;}'),
 (154, 44, 'field_5a3cedf982f77', 'a:15:{s:3:\"key\";s:19:\"field_5a3cedf982f77\";s:5:\"label\";s:13:\"Срок от\";s:4:\"name\";s:15:\"company_term_ot\";s:4:\"type\";s:6:\"number\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";s:1:\"0\";s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";s:3:\"min\";s:0:\"\";s:3:\"max\";s:0:\"\";s:4:\"step\";s:0:\"\";s:17:\"conditional_logic\";a:3:{s:6:\"status\";s:1:\"0\";s:5:\"rules\";a:1:{i:0;a:3:{s:5:\"field\";s:4:\"null\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:0:\"\";}}s:8:\"allorany\";s:3:\"all\";}s:8:\"order_no\";i:3;}'),
 (155, 44, 'field_5a3cee3b82f78', 'a:15:{s:3:\"key\";s:19:\"field_5a3cee3b82f78\";s:5:\"label\";s:13:\"Срок до\";s:4:\"name\";s:15:\"company_term_do\";s:4:\"type\";s:6:\"number\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";s:1:\"0\";s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";s:3:\"min\";s:0:\"\";s:3:\"max\";s:0:\"\";s:4:\"step\";s:0:\"\";s:17:\"conditional_logic\";a:3:{s:6:\"status\";s:1:\"0\";s:5:\"rules\";a:1:{i:0;a:3:{s:5:\"field\";s:4:\"null\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:0:\"\";}}s:8:\"allorany\";s:3:\"all\";}s:8:\"order_no\";i:4;}'),
@@ -461,7 +463,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (164, 39, '_company_term_ot', 'field_5a3cedf982f77'),
 (165, 39, 'company_term_do', '21'),
 (166, 39, '_company_term_do', 'field_5a3cee3b82f78'),
-(167, 44, 'field_5a3cefe0cd601', 'a:14:{s:3:\"key\";s:19:\"field_5a3cefe0cd601\";s:5:\"label\";s:33:\"Процентная ставка\";s:4:\"name\";s:25:\"company_interest_rate_num\";s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";s:1:\"0\";s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";s:10:\"formatting\";s:4:\"html\";s:9:\"maxlength\";s:0:\"\";s:17:\"conditional_logic\";a:3:{s:6:\"status\";s:1:\"0\";s:5:\"rules\";a:1:{i:0;a:3:{s:5:\"field\";s:19:\"field_5a3cf04dcd602\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:4:\"hour\";}}s:8:\"allorany\";s:3:\"all\";}s:8:\"order_no\";i:6;}'),
+(167, 44, 'field_5a3cefe0cd601', 'a:15:{s:3:\"key\";s:19:\"field_5a3cefe0cd601\";s:5:\"label\";s:33:\"Процентная ставка\";s:4:\"name\";s:25:\"company_interest_rate_num\";s:4:\"type\";s:6:\"number\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";s:1:\"0\";s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";s:3:\"min\";s:0:\"\";s:3:\"max\";s:0:\"\";s:4:\"step\";s:0:\"\";s:17:\"conditional_logic\";a:3:{s:6:\"status\";s:1:\"0\";s:5:\"rules\";a:1:{i:0;a:3:{s:5:\"field\";s:19:\"field_5a3cf04dcd602\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:4:\"hour\";}}s:8:\"allorany\";s:3:\"all\";}s:8:\"order_no\";i:6;}'),
 (168, 44, 'field_5a3cf04dcd602', 'a:12:{s:3:\"key\";s:19:\"field_5a3cf04dcd602\";s:5:\"label\";s:42:\"Процентная ставка срок\";s:4:\"name\";s:26:\"company_interest_rate_term\";s:4:\"type\";s:6:\"select\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";s:1:\"0\";s:7:\"choices\";a:5:{s:4:\"hour\";s:9:\"в час\";s:3:\"day\";s:11:\"в день\";s:4:\"week\";s:15:\"в неделю\";s:5:\"month\";s:13:\"в месяц\";s:4:\"year\";s:9:\"в год\";}s:13:\"default_value\";s:3:\"day\";s:10:\"allow_null\";s:1:\"0\";s:8:\"multiple\";s:1:\"0\";s:17:\"conditional_logic\";a:3:{s:6:\"status\";s:1:\"0\";s:5:\"rules\";a:1:{i:0;a:3:{s:5:\"field\";s:4:\"null\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:0:\"\";}}s:8:\"allorany\";s:3:\"all\";}s:8:\"order_no\";i:7;}'),
 (172, 39, 'company_interest_rate_num', '2.1'),
 (173, 39, '_company_interest_rate_num', 'field_5a3cefe0cd601'),
@@ -1116,11 +1118,11 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (838, 95, '_company_term_ot', 'field_5a3cedf982f77'),
 (839, 95, 'company_term_do', '30'),
 (840, 95, '_company_term_do', 'field_5a3cee3b82f78'),
-(841, 95, 'company_interest_rate_num', '2,1'),
+(841, 95, 'company_interest_rate_num', '2.9'),
 (842, 95, '_company_interest_rate_num', 'field_5a3cefe0cd601'),
 (843, 95, 'company_interest_rate_term', 'day'),
 (844, 95, '_company_interest_rate_term', 'field_5a3cf04dcd602'),
-(845, 95, 'company_age', '18.3'),
+(845, 95, 'company_age', '18'),
 (846, 95, '_company_age', 'field_5a3cf1ceb4934'),
 (847, 95, 'company_cashout', 'a:2:{i:0;s:2:\"14\";i:1;s:1:\"9\";}'),
 (848, 95, '_company_cashout', 'field_5a3cf2230fe2d'),
@@ -1189,7 +1191,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (911, 95, 'ratings_score', '1.43'),
 (912, 95, 'ratings_users', '7'),
 (913, 95, '_dp_original', '39'),
-(914, 95, '_edit_lock', '1514383047:1'),
+(914, 95, '_edit_lock', '1514407184:1'),
 (915, 95, '_edit_last', '1'),
 (916, 95, '_wp_old_slug', 'ekapusta'),
 (917, 96, '_thumbnail_id', '40'),
@@ -1289,7 +1291,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1011, 97, '_company_term_ot', 'field_5a3cedf982f77'),
 (1012, 97, 'company_term_do', '21'),
 (1013, 97, '_company_term_do', 'field_5a3cee3b82f78'),
-(1014, 97, 'company_interest_rate_num', '2.1'),
+(1014, 97, 'company_interest_rate_num', '2.2'),
 (1015, 97, '_company_interest_rate_num', 'field_5a3cefe0cd601'),
 (1016, 97, 'company_interest_rate_term', 'day'),
 (1017, 97, '_company_interest_rate_term', 'field_5a3cf04dcd602'),
@@ -1362,7 +1364,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1084, 97, 'ratings_score', '0'),
 (1085, 97, 'ratings_users', NULL),
 (1086, 97, '_dp_original', '39'),
-(1087, 97, '_edit_lock', '1514382025:1'),
+(1087, 97, '_edit_lock', '1514395461:1'),
 (1088, 97, '_edit_last', '1'),
 (1089, 97, '_wp_old_slug', 'ekapusta'),
 (1090, 97, '_wp_old_slug', 'ekapusta-4'),
@@ -1376,7 +1378,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1098, 98, '_company_term_ot', 'field_5a3cedf982f77'),
 (1099, 98, 'company_term_do', '21'),
 (1100, 98, '_company_term_do', 'field_5a3cee3b82f78'),
-(1101, 98, 'company_interest_rate_num', '2.1'),
+(1101, 98, 'company_interest_rate_num', '3'),
 (1102, 98, '_company_interest_rate_num', 'field_5a3cefe0cd601'),
 (1103, 98, 'company_interest_rate_term', 'day'),
 (1104, 98, '_company_interest_rate_term', 'field_5a3cf04dcd602'),
@@ -1449,7 +1451,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1171, 98, 'ratings_score', '0'),
 (1172, 98, 'ratings_users', NULL),
 (1173, 98, '_dp_original', '39'),
-(1174, 98, '_edit_lock', '1514378084:1'),
+(1174, 98, '_edit_lock', '1514395198:1'),
 (1175, 98, '_edit_last', '1'),
 (1176, 98, '_wp_old_slug', 'ekapusta'),
 (1177, 99, '_edit_last', '1'),
@@ -1569,7 +1571,6 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1320, 39, 'company_recommended', '1'),
 (1321, 39, '_company_recommended', 'field_5a439896e84ac'),
 (1322, 44, 'field_5a4399493dc8f', 'a:10:{s:3:\"key\";s:19:\"field_5a4399493dc8f\";s:5:\"label\";s:26:\"Круглосуточно\";s:4:\"name\";s:23:\"company_workmode_allday\";s:4:\"type\";s:10:\"true_false\";s:12:\"instructions\";s:269:\"Если поставлена галочка, то не поля \"График работы с\" и \"График работы до\" будут скрыты, а так же эта Компания попадает в фильр Опции -> Круглосуточно. \";s:8:\"required\";s:1:\"0\";s:7:\"message\";s:0:\"\";s:13:\"default_value\";s:1:\"0\";s:17:\"conditional_logic\";a:3:{s:6:\"status\";s:1:\"0\";s:5:\"rules\";a:1:{i:0;a:3:{s:5:\"field\";s:19:\"field_5a3cf04dcd602\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:4:\"hour\";}}s:8:\"allorany\";s:3:\"all\";}s:8:\"order_no\";i:16;}'),
-(1323, 44, 'rule', 'a:5:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:7:\"company\";s:8:\"order_no\";i:0;s:8:\"group_no\";i:0;}'),
 (1324, 39, 'company_workmode_allday', '1'),
 (1325, 39, '_company_workmode_allday', 'field_5a4399493dc8f'),
 (1326, 96, 'company_type_borrower', ''),
@@ -1603,7 +1604,251 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1354, 95, 'company_recommended', '1'),
 (1355, 95, '_company_recommended', 'field_5a439896e84ac'),
 (1356, 95, 'company_another', ''),
-(1357, 95, '_company_another', 'field_5a43965651c26');
+(1357, 95, '_company_another', 'field_5a43965651c26'),
+(1358, 44, 'rule', 'a:5:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:7:\"company\";s:8:\"order_no\";i:0;s:8:\"group_no\";i:0;}'),
+(1359, 98, 'company_workmode_allday', '0'),
+(1360, 98, '_company_workmode_allday', 'field_5a4399493dc8f'),
+(1361, 98, 'company_recommended', '1'),
+(1362, 98, '_company_recommended', 'field_5a439896e84ac'),
+(1363, 98, 'company_another', ''),
+(1364, 98, '_company_another', 'field_5a43965651c26'),
+(1365, 116, '_edit_last', '1'),
+(1366, 116, 'field_5a4405229cf2a', 'a:11:{s:3:\"key\";s:19:\"field_5a4405229cf2a\";s:5:\"label\";s:32:\"Текст на странице\";s:4:\"name\";s:16:\"tax_company_text\";s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";s:1:\"0\";s:13:\"default_value\";s:0:\"\";s:7:\"toolbar\";s:5:\"basic\";s:12:\"media_upload\";s:2:\"no\";s:17:\"conditional_logic\";a:3:{s:6:\"status\";s:1:\"0\";s:5:\"rules\";a:1:{i:0;a:3:{s:5:\"field\";s:4:\"null\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:0:\"\";}}s:8:\"allorany\";s:3:\"all\";}s:8:\"order_no\";i:0;}'),
+(1368, 116, 'position', 'normal'),
+(1369, 116, 'layout', 'no_box'),
+(1370, 116, 'hide_on_screen', ''),
+(1371, 116, '_edit_lock', '1514409004:1'),
+(1378, 116, 'rule', 'a:5:{s:5:\"param\";s:11:\"ef_taxonomy\";s:8:\"operator\";s:2:\"!=\";s:5:\"value\";s:8:\"category\";s:8:\"order_no\";i:0;s:8:\"group_no\";i:0;}'),
+(1379, 116, 'rule', 'a:5:{s:5:\"param\";s:11:\"ef_taxonomy\";s:8:\"operator\";s:2:\"!=\";s:5:\"value\";s:8:\"post_tag\";s:8:\"order_no\";i:1;s:8:\"group_no\";i:0;}'),
+(1380, 6, '_wp_page_template', 'default'),
+(1381, 6, 'ratings_users', '0'),
+(1382, 6, 'ratings_score', '0'),
+(1383, 6, 'ratings_average', '0'),
+(1384, 117, '_menu_item_type', 'custom'),
+(1385, 117, '_menu_item_menu_item_parent', '0'),
+(1386, 117, '_menu_item_object_id', '117'),
+(1387, 117, '_menu_item_object', 'custom'),
+(1388, 117, '_menu_item_target', ''),
+(1389, 117, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1390, 117, '_menu_item_xfn', ''),
+(1391, 117, '_menu_item_url', 'http://'),
+(1393, 118, '_menu_item_type', 'custom'),
+(1394, 118, '_menu_item_menu_item_parent', '0'),
+(1395, 118, '_menu_item_object_id', '118'),
+(1396, 118, '_menu_item_object', 'custom'),
+(1397, 118, '_menu_item_target', ''),
+(1398, 118, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1399, 118, '_menu_item_xfn', ''),
+(1400, 118, '_menu_item_url', 'http://'),
+(1402, 119, '_menu_item_type', 'custom'),
+(1403, 119, '_menu_item_menu_item_parent', '0'),
+(1404, 119, '_menu_item_object_id', '119'),
+(1405, 119, '_menu_item_object', 'custom'),
+(1406, 119, '_menu_item_target', ''),
+(1407, 119, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1408, 119, '_menu_item_xfn', ''),
+(1409, 119, '_menu_item_url', 'http://'),
+(1411, 120, '_menu_item_type', 'custom'),
+(1412, 120, '_menu_item_menu_item_parent', '0'),
+(1413, 120, '_menu_item_object_id', '120'),
+(1414, 120, '_menu_item_object', 'custom'),
+(1415, 120, '_menu_item_target', ''),
+(1416, 120, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1417, 120, '_menu_item_xfn', ''),
+(1418, 120, '_menu_item_url', 'http://'),
+(1420, 121, '_menu_item_type', 'custom'),
+(1421, 121, '_menu_item_menu_item_parent', '0'),
+(1422, 121, '_menu_item_object_id', '121'),
+(1423, 121, '_menu_item_object', 'custom'),
+(1424, 121, '_menu_item_target', ''),
+(1425, 121, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1426, 121, '_menu_item_xfn', ''),
+(1427, 121, '_menu_item_url', 'http://'),
+(1429, 122, '_menu_item_type', 'custom'),
+(1430, 122, '_menu_item_menu_item_parent', '119'),
+(1431, 122, '_menu_item_object_id', '122'),
+(1432, 122, '_menu_item_object', 'custom'),
+(1433, 122, '_menu_item_target', ''),
+(1434, 122, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1435, 122, '_menu_item_xfn', ''),
+(1436, 122, '_menu_item_url', 'http://'),
+(1438, 123, '_menu_item_type', 'custom'),
+(1439, 123, '_menu_item_menu_item_parent', '119'),
+(1440, 123, '_menu_item_object_id', '123'),
+(1441, 123, '_menu_item_object', 'custom'),
+(1442, 123, '_menu_item_target', ''),
+(1443, 123, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1444, 123, '_menu_item_xfn', ''),
+(1445, 123, '_menu_item_url', 'http://'),
+(1447, 124, '_menu_item_type', 'post_type'),
+(1448, 124, '_menu_item_menu_item_parent', '0'),
+(1449, 124, '_menu_item_object_id', '35'),
+(1450, 124, '_menu_item_object', 'page'),
+(1451, 124, '_menu_item_target', ''),
+(1452, 124, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1453, 124, '_menu_item_xfn', ''),
+(1454, 124, '_menu_item_url', ''),
+(1455, 124, '_menu_item_orphaned', '1514409979'),
+(1456, 125, '_menu_item_type', 'post_type'),
+(1457, 125, '_menu_item_menu_item_parent', '0'),
+(1458, 125, '_menu_item_object_id', '33'),
+(1459, 125, '_menu_item_object', 'page'),
+(1460, 125, '_menu_item_target', ''),
+(1461, 125, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1462, 125, '_menu_item_xfn', ''),
+(1463, 125, '_menu_item_url', ''),
+(1464, 125, '_menu_item_orphaned', '1514409979'),
+(1465, 126, '_menu_item_type', 'post_type'),
+(1466, 126, '_menu_item_menu_item_parent', '121'),
+(1467, 126, '_menu_item_object_id', '30'),
+(1468, 126, '_menu_item_object', 'page'),
+(1469, 126, '_menu_item_target', ''),
+(1470, 126, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1471, 126, '_menu_item_xfn', ''),
+(1472, 126, '_menu_item_url', ''),
+(1474, 127, '_menu_item_type', 'post_type'),
+(1475, 127, '_menu_item_menu_item_parent', '121'),
+(1476, 127, '_menu_item_object_id', '35'),
+(1477, 127, '_menu_item_object', 'page'),
+(1478, 127, '_menu_item_target', ''),
+(1479, 127, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1480, 127, '_menu_item_xfn', ''),
+(1481, 127, '_menu_item_url', ''),
+(1483, 128, '_menu_item_type', 'post_type'),
+(1484, 128, '_menu_item_menu_item_parent', '121'),
+(1485, 128, '_menu_item_object_id', '33'),
+(1486, 128, '_menu_item_object', 'page'),
+(1487, 128, '_menu_item_target', ''),
+(1488, 128, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1489, 128, '_menu_item_xfn', ''),
+(1490, 128, '_menu_item_url', ''),
+(1492, 129, '_menu_item_type', 'taxonomy'),
+(1493, 129, '_menu_item_menu_item_parent', '0'),
+(1494, 129, '_menu_item_object_id', '9'),
+(1495, 129, '_menu_item_object', 'waystopay'),
+(1496, 129, '_menu_item_target', ''),
+(1497, 129, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1498, 129, '_menu_item_xfn', ''),
+(1499, 129, '_menu_item_url', ''),
+(1501, 130, '_menu_item_type', 'taxonomy'),
+(1502, 130, '_menu_item_menu_item_parent', '0'),
+(1503, 130, '_menu_item_object_id', '11'),
+(1504, 130, '_menu_item_object', 'waystopay'),
+(1505, 130, '_menu_item_target', ''),
+(1506, 130, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1507, 130, '_menu_item_xfn', ''),
+(1508, 130, '_menu_item_url', ''),
+(1510, 131, '_menu_item_type', 'taxonomy'),
+(1511, 131, '_menu_item_menu_item_parent', '0'),
+(1512, 131, '_menu_item_object_id', '12'),
+(1513, 131, '_menu_item_object', 'waystopay'),
+(1514, 131, '_menu_item_target', ''),
+(1515, 131, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1516, 131, '_menu_item_xfn', ''),
+(1517, 131, '_menu_item_url', ''),
+(1519, 132, '_menu_item_type', 'taxonomy'),
+(1520, 132, '_menu_item_menu_item_parent', '0'),
+(1521, 132, '_menu_item_object_id', '14'),
+(1522, 132, '_menu_item_object', 'waystopay'),
+(1523, 132, '_menu_item_target', ''),
+(1524, 132, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1525, 132, '_menu_item_xfn', ''),
+(1526, 132, '_menu_item_url', ''),
+(1528, 133, '_menu_item_type', 'taxonomy'),
+(1529, 133, '_menu_item_menu_item_parent', '0'),
+(1530, 133, '_menu_item_object_id', '10'),
+(1531, 133, '_menu_item_object', 'waystopay'),
+(1532, 133, '_menu_item_target', ''),
+(1533, 133, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1534, 133, '_menu_item_xfn', ''),
+(1535, 133, '_menu_item_url', ''),
+(1537, 134, '_menu_item_type', 'taxonomy'),
+(1538, 134, '_menu_item_menu_item_parent', '0'),
+(1539, 134, '_menu_item_object_id', '13'),
+(1540, 134, '_menu_item_object', 'waystopay'),
+(1541, 134, '_menu_item_target', ''),
+(1542, 134, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1543, 134, '_menu_item_xfn', ''),
+(1544, 134, '_menu_item_url', ''),
+(1546, 135, '_menu_item_type', 'custom'),
+(1547, 135, '_menu_item_menu_item_parent', '0'),
+(1548, 135, '_menu_item_object_id', '135'),
+(1549, 135, '_menu_item_object', 'custom'),
+(1550, 135, '_menu_item_target', ''),
+(1551, 135, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1552, 135, '_menu_item_xfn', ''),
+(1553, 135, '_menu_item_url', '#'),
+(1554, 135, '_menu_item_orphaned', '1514413924'),
+(1555, 136, '_edit_last', '1'),
+(1556, 136, '_edit_lock', '1514413837:1'),
+(1557, 136, '_wp_page_template', 'default'),
+(1558, 136, 'ratings_users', '0'),
+(1559, 136, 'ratings_score', '0'),
+(1560, 136, 'ratings_average', '0'),
+(1561, 138, '_edit_last', '1'),
+(1562, 138, '_edit_lock', '1514413864:1'),
+(1563, 138, '_wp_page_template', 'default'),
+(1564, 138, 'ratings_users', '0'),
+(1565, 138, 'ratings_score', '0'),
+(1566, 138, 'ratings_average', '0'),
+(1567, 140, '_edit_last', '1'),
+(1568, 140, '_edit_lock', '1514413893:1'),
+(1569, 140, '_wp_page_template', 'default'),
+(1570, 140, 'ratings_users', '0'),
+(1571, 140, 'ratings_score', '0'),
+(1572, 140, 'ratings_average', '0'),
+(1573, 142, '_edit_last', '1'),
+(1574, 142, '_edit_lock', '1514413922:1'),
+(1575, 142, '_wp_page_template', 'default'),
+(1576, 142, 'ratings_users', '0'),
+(1577, 142, 'ratings_score', '0'),
+(1578, 142, 'ratings_average', '0'),
+(1579, 144, '_edit_last', '1'),
+(1580, 144, '_edit_lock', '1514413980:1'),
+(1581, 144, '_wp_page_template', 'default'),
+(1582, 144, 'ratings_users', '0'),
+(1583, 144, 'ratings_score', '0'),
+(1584, 144, 'ratings_average', '0'),
+(1585, 146, '_menu_item_type', 'post_type'),
+(1586, 146, '_menu_item_menu_item_parent', '0'),
+(1587, 146, '_menu_item_object_id', '144'),
+(1588, 146, '_menu_item_object', 'page'),
+(1589, 146, '_menu_item_target', ''),
+(1590, 146, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1591, 146, '_menu_item_xfn', ''),
+(1592, 146, '_menu_item_url', ''),
+(1594, 147, '_menu_item_type', 'post_type'),
+(1595, 147, '_menu_item_menu_item_parent', '0'),
+(1596, 147, '_menu_item_object_id', '142'),
+(1597, 147, '_menu_item_object', 'page'),
+(1598, 147, '_menu_item_target', ''),
+(1599, 147, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1600, 147, '_menu_item_xfn', ''),
+(1601, 147, '_menu_item_url', ''),
+(1603, 148, '_menu_item_type', 'post_type'),
+(1604, 148, '_menu_item_menu_item_parent', '0'),
+(1605, 148, '_menu_item_object_id', '140'),
+(1606, 148, '_menu_item_object', 'page'),
+(1607, 148, '_menu_item_target', ''),
+(1608, 148, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1609, 148, '_menu_item_xfn', ''),
+(1610, 148, '_menu_item_url', ''),
+(1612, 149, '_menu_item_type', 'post_type'),
+(1613, 149, '_menu_item_menu_item_parent', '0'),
+(1614, 149, '_menu_item_object_id', '138'),
+(1615, 149, '_menu_item_object', 'page'),
+(1616, 149, '_menu_item_target', ''),
+(1617, 149, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1618, 149, '_menu_item_xfn', ''),
+(1619, 149, '_menu_item_url', ''),
+(1621, 150, '_menu_item_type', 'post_type'),
+(1622, 150, '_menu_item_menu_item_parent', '0'),
+(1623, 150, '_menu_item_object_id', '136'),
+(1624, 150, '_menu_item_object', 'page'),
+(1625, 150, '_menu_item_target', ''),
+(1626, 150, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1627, 150, '_menu_item_xfn', ''),
+(1628, 150, '_menu_item_url', '');
 
 -- --------------------------------------------------------
 
@@ -1646,7 +1891,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (2, 1, '2017-12-15 10:32:35', '2017-12-15 07:32:35', 'Это пример страницы. От записей в блоге она отличается тем, что остаётся на одном месте и отображается в меню сайта (в большинстве тем). На странице &laquo;Детали&raquo; владельцы сайтов обычно рассказывают о себе потенциальным посетителям. Например, так:\n\n<blockquote>Привет! Днём я курьер, а вечером &#8212; подающий надежды актёр. Это мой блог. Я живу в Ростове-на-Дону, люблю своего пса Джека и пинаколаду. (И ещё попадать под дождь.)</blockquote>\n\n...или так:\n\n<blockquote>Компания &laquo;Штучки XYZ&raquo; была основана в 1971 году и с тех пор производит качественные штучки. Компания находится в Готэм-сити, имеет штат из более чем 2000 сотрудников и приносит много пользы жителям Готэма.</blockquote>\n\nПерейдите <a href=\"http://ebrf.ru/wp-admin/\">в консоль</a>, чтобы удалить эту страницу и создать новые. Успехов!', 'Пример страницы', '', 'publish', 'closed', 'open', '', 'sample-page', '', '', '2017-12-15 10:32:35', '2017-12-15 07:32:35', '', 0, 'http://ebrf.ru/?page_id=2', 0, 'page', '', 0),
 (3, 1, '2017-12-15 10:32:38', '2017-12-15 07:32:38', 'Добро пожаловать в WordPress. Это ваша первая запись. Отредактируйте или удалите её, затем пишите!', 'Привет, мир!', '', 'publish', 'open', 'open', '', 'privet-mir', '', '', '2017-12-15 10:32:38', '2017-12-15 07:32:38', '', 0, 'http://ebrf.ru/?p=1', 0, 'post', '', 1),
 (4, 1, '2017-12-15 10:32:38', '2017-12-15 07:32:38', 'Это пример страницы. От записей в блоге она отличается тем, что остаётся на одном месте и отображается в меню сайта (в большинстве тем). На странице &laquo;Детали&raquo; владельцы сайтов обычно рассказывают о себе потенциальным посетителям. Например, так:\n\n<blockquote>Привет! Днём я курьер, а вечером &#8212; подающий надежды актёр. Это мой блог. Я живу в Ростове-на-Дону, люблю своего пса Джека и пинаколаду. (И ещё попадать под дождь.)</blockquote>\n\n...или так:\n\n<blockquote>Компания &laquo;Штучки XYZ&raquo; была основана в 1971 году и с тех пор производит качественные штучки. Компания находится в Готэм-сити, имеет штат из более чем 2000 сотрудников и приносит много пользы жителям Готэма.</blockquote>\n\nПерейдите <a href=\"http://ebrf.ru/wp-admin/\">в консоль</a>, чтобы удалить эту страницу и создать новые. Успехов!', 'Пример страницы', '', 'publish', 'closed', 'open', '', 'sample-page', '', '', '2017-12-15 10:32:38', '2017-12-15 07:32:38', '', 0, 'http://ebrf.ru/?page_id=2', 0, 'page', '', 0),
-(6, 1, '2017-12-17 21:00:26', '2017-12-17 18:00:26', 'Агрегатор финансовых продуктов “EBRF” уже больше года помогает десяткам тысяч людей по всей России выбирать оптимальные микрозаймы, кредиты и многое другое. Наша задача – избавить вас от необходимости изучать десятки сайтов банков и МФО в поисках нужной информации. Мы сделали это за вас!Чтобы сделать оптимальный выбор – изучите всю информацию, которая указана в карточке продукта. Обратите внимание на рейтинг К5М и прочитайте отзывы клиентов. Обязательно проверьте свои шансы на одобрение с помощью бесплатной и моментальной проверки кредитного рейтинга.<!--more-->\r\n\r\nПосле выбора, перейдите на сайт банка или МФО и заполните заявку. В ближайшее время с вами свяжутся менеджеры. После получения услуги, вы можете оставить свое мнение на странице организации.Агрегатор финансовых продуктов “EBRF” уже больше года помогает десяткам тысяч людей по всей России выбирать оптимальные микрозаймы, кредиты и многое другое. Наша задача – избавить вас от необходимости изучать десятки сайтов банков и МФО в поисках нужной информации. Мы сделали это за вас!Чтобы сделать оптимальный выбор – изучите всю информацию, которая указана в карточке продукта. Обратите внимание на рейтинг К5М и прочитайте отзывы клиентов. Обязательно проверьте свои шансы на одобрение с помощью бесплатной и моментальной проверки кредитного рейтинга. После выбора, перейдите на сайт банка или МФО и заполните заявку. В ближайшее время с вами свяжутся менеджеры. После получения услуги, вы можете оставить свое мнение на странице организации.', 'Главная', '', 'publish', 'closed', 'closed', '', 'glavnaya', '', '', '2017-12-17 22:16:25', '2017-12-17 19:16:25', '', 0, 'http://ebrf.ru/?page_id=6', 0, 'page', '', 0),
+(6, 1, '2017-12-17 21:00:26', '2017-12-17 18:00:26', 'Агрегатор финансовых продуктов “EBRF” уже больше года помогает десяткам тысяч людей по всей России выбирать оптимальные микрозаймы, кредиты и многое другое. Наша задача – избавить вас от необходимости изучать десятки сайтов банков и МФО в поисках нужной информации. Мы сделали это за вас!Чтобы сделать оптимальный выбор – изучите всю информацию, которая указана в карточке продукта. Обратите внимание на рейтинг К5М и прочитайте отзывы клиентов. Обязательно проверьте свои шансы на одобрение с помощью бесплатной и моментальной проверки кредитного рейтинга.<!--more-->\r\n\r\nПосле выбора, перейдите на сайт банка или МФО и заполните заявку. В ближайшее время с вами свяжутся менеджеры. После получения услуги, вы можете оставить свое мнение на странице организации.Агрегатор финансовых продуктов “EBRF” уже больше года помогает десяткам тысяч людей по всей России выбирать оптимальные микрозаймы, кредиты и многое другое. Наша задача – избавить вас от необходимости изучать десятки сайтов банков и МФО в поисках нужной информации. Мы сделали это за вас!Чтобы сделать оптимальный выбор – изучите всю информацию, которая указана в карточке продукта. Обратите внимание на рейтинг К5М и прочитайте отзывы клиентов. Обязательно проверьте свои шансы на одобрение с помощью бесплатной и моментальной проверки кредитного рейтинга. После выбора, перейдите на сайт банка или МФО и заполните заявку. В ближайшее время с вами свяжутся менеджеры. После получения услуги, вы можете оставить свое мнение на странице организации.', 'Главная', '', 'publish', 'closed', 'closed', '', 'glavnaya', '', '', '2017-12-28 00:12:46', '2017-12-27 21:12:46', '', 0, 'http://ebrf.ru/?page_id=6', 0, 'page', '', 0),
 (7, 1, '2017-12-17 21:00:26', '2017-12-17 18:00:26', '', 'Главная', '', 'inherit', 'closed', 'closed', '', '6-revision-v1', '', '', '2017-12-17 21:00:26', '2017-12-17 18:00:26', '', 6, 'http://ebrf.ru/?p=7', 0, 'revision', '', 0),
 (8, 1, '2017-12-17 21:20:49', '2017-12-17 18:20:49', '', 'Главная', '', 'publish', 'closed', 'closed', '', 'acf_glavnaya', '', '', '2017-12-17 21:20:49', '2017-12-17 18:20:49', '', 0, 'http://ebrf.ru/?post_type=acf&#038;p=8', 0, 'acf', '', 0),
 (9, 1, '2017-12-17 21:57:02', '2017-12-17 18:57:02', '<p>Агрегатор финансовых продуктов “EBRF” уже больше года помогает десяткам тысяч людей по всей России выбирать оптимальные микрозаймы, кредиты и многое другое. Наша задача – избавить вас от необходимости изучать десятки сайтов банков и МФО в поисках нужной информации. Мы сделали это за вас!Чтобы сделать оптимальный выбор – изучите всю информацию, которая указана в карточке продукта. Обратите внимание на рейтинг К5М и прочитайте отзывы клиентов. Обязательно проверьте свои шансы на одобрение с помощью бесплатной и моментальной проверки кредитного рейтинга. </p>\r\n				<p>После выбора, перейдите на сайт банка или МФО и заполните заявку. В ближайшее время с вами свяжутся менеджеры. После получения услуги, вы можете оставить свое мнение на странице организации.Агрегатор финансовых продуктов “EBRF” уже больше года помогает десяткам тысяч людей по всей России выбирать оптимальные микрозаймы, кредиты и многое другое. Наша задача – избавить вас от необходимости изучать десятки сайтов банков и МФО в поисках нужной информации. Мы сделали это за вас!Чтобы сделать оптимальный выбор – изучите всю информацию, которая указана в карточке продукта. Обратите внимание на рейтинг К5М и прочитайте отзывы клиентов. Обязательно проверьте свои шансы на одобрение с помощью бесплатной и моментальной проверки кредитного рейтинга. После выбора, перейдите на сайт банка или МФО и заполните заявку. В ближайшее время с вами свяжутся менеджеры. После получения услуги, вы можете оставить свое мнение на странице организации.</p>', 'Главная', '', 'inherit', 'closed', 'closed', '', '6-revision-v1', '', '', '2017-12-17 21:57:02', '2017-12-17 18:57:02', '', 6, 'http://ebrf.ru/?p=9', 0, 'revision', '', 0),
@@ -1661,8 +1906,6 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (20, 1, '2017-12-20 15:43:03', '2017-12-20 12:43:03', 'Добро пожаловать в WordPress. Это ваша первая запись. Отредактируйте или удалите её, затем пишите!', 'Привет, мир!', '', 'inherit', 'closed', 'closed', '', '3-autosave-v1', '', '', '2017-12-20 15:43:03', '2017-12-20 12:43:03', '', 3, 'http://ebrf.ru/3-autosave-v1/', 0, 'revision', '', 0),
 (21, 1, '2017-12-20 15:47:21', '2017-12-20 12:47:21', '', 'fdsafd', '', 'trash', 'open', 'open', '', 'fdsafd__trashed', '', '', '2017-12-20 15:48:06', '2017-12-20 12:48:06', '', 0, 'http://ebrf.ru/?p=21', 0, 'post', '', 0),
 (22, 1, '2017-12-20 15:47:21', '2017-12-20 12:47:21', '', 'fdsafd', '', 'inherit', 'closed', 'closed', '', '21-revision-v1', '', '', '2017-12-20 15:47:21', '2017-12-20 12:47:21', '', 21, 'http://ebrf.ru/21-revision-v1/', 0, 'revision', '', 0),
-(23, 1, '2017-12-20 15:47:55', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'open', 'open', '', '', '', '', '2017-12-20 15:47:55', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?p=23', 0, 'post', '', 0),
-(24, 1, '2017-12-20 15:47:56', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'open', 'open', '', '', '', '', '2017-12-20 15:47:56', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?p=24', 0, 'post', '', 0),
 (27, 1, '2017-12-21 14:03:16', '2017-12-21 11:03:16', '<label> Your Name (required)\n    [text* your-name] </label>\n\n<label> Your Email (required)\n    [email* your-email] </label>\n\n<label> Subject\n    [text your-subject] </label>\n\n<label> Your Message\n    [textarea your-message] </label>\n\n[submit \"Send\"]\nebrf \"[your-subject]\"\n[your-name] <wordpress@ebrf.ru>\nFrom: [your-name] <[your-email]>\nSubject: [your-subject]\n\nMessage Body:\n[your-message]\n\n-- \nThis e-mail was sent from a contact form on ebrf (http://ebrf.ru)\ntest@test.ru\nReply-To: [your-email]\n\n0\n0\n\nebrf \"[your-subject]\"\nebrf <wordpress@ebrf.ru>\nMessage Body:\n[your-message]\n\n-- \nThis e-mail was sent from a contact form on ebrf (http://ebrf.ru)\n[your-email]\nReply-To: test@test.ru\n\n0\n0\nThank you for your message. It has been sent.\nThere was an error trying to send your message. Please try again later.\nOne or more fields have an error. Please check and try again.\nThere was an error trying to send your message. Please try again later.\nYou must accept the terms and conditions before sending your message.\nThe field is required.\nThe field is too long.\nThe field is too short.', 'Contact form 1', '', 'publish', 'closed', 'closed', '', 'contact-form-1', '', '', '2017-12-21 14:03:16', '2017-12-21 11:03:16', '', 0, 'http://ebrf.ru/?post_type=wpcf7_contact_form&p=27', 0, 'wpcf7_contact_form', '', 0),
 (28, 1, '2017-12-21 14:04:32', '2017-12-21 11:04:32', '<div class=\"double-form\"><div class=\"double-form__item\">[text text-35 placeholder \"Имя\"][tel tel-153 placeholder \"Телефон\"][email* email-42 placeholder=\"Email\"]</div><div class=\"double-form__item\">[text text-36 placeholder \"Сумма\"][tel tel-154 placeholder \"Срок кредитования\"]<button class=\"btn_block\">Получить займ</button></div></div>\n1\nebrf \"[your-subject]\"\n[your-name] <wordpress@ebrf.ru>\ntest@test.ru\nОт: [your-name] <[your-email]>\r\nТема: [your-subject]\r\n\r\nСообщение:\r\n[your-message]\r\n\r\n-- \r\nЭто сообщение отправлено с сайта ebrf (http://ebrf.ru)\nReply-To: [your-email]\n\n\n\n\nebrf \"[your-subject]\"\nebrf <wordpress@ebrf.ru>\n[your-email]\nСообщение:\r\n[your-message]\r\n\r\n-- \r\nЭто сообщение отправлено с сайта ebrf (http://ebrf.ru)\nReply-To: test@test.ru\n\n\n\nСпасибо за Ваше сообщение. Оно успешно отправлено.\nПри отправке сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз позже.\nОдно или несколько полей содержат ошибочные данные. Пожалуйста, проверьте их и попробуйте ещё раз.\nПри отправке сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз позже.\nВы должны принять условия и положения перед отправкой вашего сообщения.\nПоле обязательно для заполнения.\nПоле слишком длинное.\nПоле слишком короткое.\nФормат даты некорректен.\nВведённая дата слишком далеко в прошлом.\nВведённая дата слишком далеко в будущем.\nПри загрузке файла произошла неизвестная ошибка.\nВам не разрешено загружать файлы этого типа.\nФайл слишком большой.\nПри загрузке файла произошла ошибка.\nФормат числа некорректен.\nЧисло меньше минимально допустимого.\nЧисло больше максимально допустимого.\nНеверный ответ на проверочный вопрос.\nКод введен неверно.\nНеверно введён электронный адрес.\nВведён некорректный URL адрес.\nВведён некорректный телефонный номер.', 'Единая заявка во все банки', '', 'publish', 'closed', 'closed', '', 'edinaya-zayavka-vo-vse-banki', '', '', '2017-12-21 14:20:58', '2017-12-21 11:20:58', '', 0, 'http://ebrf.ru/?post_type=wpcf7_contact_form&#038;p=28', 0, 'wpcf7_contact_form', '', 0),
 (29, 1, '2017-12-21 14:47:50', '2017-12-21 11:47:50', 'Готовясь к поездке за рубеж, необходимо захватить с собой достаточное количество наличных, банковскую карту. Путешественники также часто оформляют займы онлайн, чтобы запастись деньгами для отдыха.<!--more--> Но что предпринять человеку, если он столкнулся с финансовыми проблемами во время пребывания за рубежом? Где найти средства туристу, если он сильно потратится, потеряет кошелек или станет жертвой воров?\r\n<h5>Оформляем микрозаймы онлайн на карту</h5>\r\nВы по той или иной причине остались за границей с пустыми карманами? Тогда воспользуйтесь услугами одной из многочисленных российских микрофинансовых организаций и оформите ссуду через Интернет. МФО рассматривают заявки клиентов удаленно за считаные минуты, а деньги перечисляют им на банковский «пластик» и электронные кошельки.\r\n\r\nВ МФО взять займ онлайн очень легко. Для этого необходимо посетить сайт такой организации и оформить там заявку, указав в ней:\r\nсвои паспортные и контактные данные;\r\nжелаемую сумму микрозайма;планируемый срок погашения задолженности.\r\n<h5>Блокировка банковской карты</h5>\r\nОформляя микрозаймы на карту, люди используют не только заемные, но и собственные средства, хранящиеся на банковском счету. Случается, что финансовые учреждения расценивают расходы человека за рубежом как подозрительные, поэтому блокируют «пластик». Чтобы этого не произошло, заранее уведомьте банк о том, что отправляетесь в путешествие, и назовите страны, которые намерены посетить. Это можно сделать, не посещая финансовую организацию, посредством системы интернет-банкинга.\r\n\r\nЕсли ваша карта все же будет заблокирована, свяжитесь с представителями банка или же используемой вами платежной системы (MasterCard, Visa). Для решения проблемы финансисты разблокируют «пластик» или выдадут вам в офисе банка-партнера за рубежом дополнительную карту с ограниченным сроком действия.\r\n\r\nВы потеряли карту во время путешествия? Тогда обязательно свяжитесь с представителями банка и попросите ее заблокировать. До блокировки «пластика» по возможности переведите все находившиеся там средства на другую карту, воспользовавшись онлайн-банкингом.\r\n<h5>Помощь родственников и дипломатов</h5>\r\nУ вас украли кошелек с деньгами, банковским «пластиком» и документами? Тогда вы не сможете оформить микрокредит на карту. В данной ситуации человеку необходимо обратиться в консульство или посольство. Там его личность подтвердят с помощью копий документов, присланных с родины.\r\n\r\nЕсли у гражданина остался при себе паспорт или международные водительские права, он может связаться с близкими и попросить их переслать деньги через Western Union, MoneyGram и т.д. В свою очередь, если у родственников не окажется наличных, им можно посоветовать оформить микрокредит онлайн в проверенной МФО.', 'Займы онлайн и другие способы решения проблем с деньгами за рубежом 2', '', 'inherit', 'closed', 'closed', '', '18-revision-v1', '', '', '2017-12-21 14:47:50', '2017-12-21 11:47:50', '', 18, 'http://ebrf.ru/18-revision-v1/', 0, 'revision', '', 0),
@@ -1679,7 +1922,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (40, 1, '2017-12-22 13:48:58', '2017-12-22 10:48:58', '', '3-big', '', 'inherit', 'open', 'closed', '', '3-big', '', '', '2017-12-22 13:48:58', '2017-12-22 10:48:58', '', 39, 'http://ebrf.ru/wp-content/uploads/2017/12/3-big.png', 0, 'attachment', 'image/png', 0),
 (42, 1, '2017-12-22 14:03:55', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2017-12-22 14:03:55', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?post_type=acf&p=42', 0, 'acf', '', 0),
 (43, 1, '2017-12-22 14:07:49', '2017-12-22 11:07:49', '', 'еКапуста', 'Взять займ в еКапусте. Как оформить заявку. Обзор личного кабинета. Условия сайта ekapusta.ru. Адрес, телефон и новости. Оставить свой отзыв.', 'inherit', 'closed', 'closed', '', '39-autosave-v1', '', '', '2017-12-22 14:07:49', '2017-12-22 11:07:49', '', 39, 'http://ebrf.ru/39-autosave-v1/', 0, 'revision', '', 0),
-(44, 1, '2017-12-22 14:27:00', '2017-12-22 11:27:00', '', 'Компания запись', '', 'publish', 'closed', 'closed', '', 'acf_kompaniya-zapis', '', '', '2017-12-27 16:03:45', '2017-12-27 13:03:45', '', 0, 'http://ebrf.ru/?post_type=acf&#038;p=44', 0, 'acf', '', 0),
+(44, 1, '2017-12-22 14:27:00', '2017-12-22 11:27:00', '', 'Компания запись', '', 'publish', 'closed', 'closed', '', 'acf_kompaniya-zapis', '', '', '2017-12-27 20:03:47', '2017-12-27 17:03:47', '', 0, 'http://ebrf.ru/?post_type=acf&#038;p=44', 0, 'acf', '', 0),
 (45, 1, '2017-12-24 20:31:38', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'open', 'open', '', '', '', '', '2017-12-24 20:31:38', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?p=45', 0, 'post', '', 0),
 (46, 1, '2017-12-25 14:21:07', '2017-12-25 11:21:07', '', 'Отзывы запись', '', 'publish', 'closed', 'closed', '', 'acf_otzyvy-zapis', '', '', '2017-12-25 19:03:25', '2017-12-25 16:03:25', '', 0, 'http://ebrf.ru/?post_type=acf&#038;p=46', 0, 'acf', '', 0),
 (47, 1, '2017-12-25 14:51:21', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2017-12-25 14:51:21', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?post_type=review&p=47', 0, 'review', '', 0),
@@ -1712,9 +1955,9 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (74, 1, '2017-12-25 18:25:38', '0000-00-00 00:00:00', 'asdf asdf ', 'еКапуста test16', '', 'pending', 'closed', 'closed', '', '', '', '', '2017-12-25 18:25:38', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?post_type=review&p=74', 0, 'review', '', 0),
 (75, 1, '2017-12-25 18:26:12', '0000-00-00 00:00:00', 'asdfasdf ', 'еКапуста test17', '', 'pending', 'closed', 'closed', '', '', '', '', '2017-12-25 18:26:12', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?post_type=review&p=75', 0, 'review', '', 0),
 (76, 1, '2017-12-25 18:28:05', '0000-00-00 00:00:00', 'asdfasdf ', 'еКапуста test17', '', 'pending', 'closed', 'closed', '', '', '', '', '2017-12-25 18:28:05', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?post_type=review&p=76', 0, 'review', '', 0),
-(77, 1, '2017-12-25 19:49:33', '2017-12-25 16:49:33', 'as dfasdf asdf', 'еКапуста asdfasdf asd', '', 'publish', 'closed', 'closed', '', 'ekapusta-asdfasdf-asd', '', '', '2017-12-25 19:49:33', '2017-12-25 16:49:33', '', 0, 'http://ebrf.ru/?post_type=review&#038;p=77', 0, 'review', '', 0);
+(77, 1, '2017-12-25 19:49:33', '2017-12-25 16:49:33', 'as dfasdf asdf', 'еКапуста asdfasdf asd', '', 'publish', 'closed', 'closed', '', 'ekapusta-asdfasdf-asd', '', '', '2017-12-25 19:49:33', '2017-12-25 16:49:33', '', 0, 'http://ebrf.ru/?post_type=review&#038;p=77', 0, 'review', '', 0),
+(78, 1, '2017-12-25 19:05:08', '2017-12-25 16:05:08', 'dsaf ad fa s', 'еКапуста test18', '', 'publish', 'closed', 'closed', '', 'ekapusta-test18-2', '', '', '2017-12-25 19:05:08', '2017-12-25 16:05:08', '', 0, 'http://ebrf.ru/?post_type=review&#038;p=78', 0, 'review', '', 0);
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
-(78, 1, '2017-12-25 19:05:08', '2017-12-25 16:05:08', 'dsaf ad fa s', 'еКапуста test18', '', 'publish', 'closed', 'closed', '', 'ekapusta-test18-2', '', '', '2017-12-25 19:05:08', '2017-12-25 16:05:08', '', 0, 'http://ebrf.ru/?post_type=review&#038;p=78', 0, 'review', '', 0),
 (79, 1, '2017-12-25 19:04:47', '2017-12-25 16:04:47', 'dsaf ad fa s', 'еКапуста test18', '', 'publish', 'closed', 'closed', '', 'ekapusta-test18', '', '', '2017-12-25 19:04:47', '2017-12-25 16:04:47', '', 0, 'http://ebrf.ru/?post_type=review&#038;p=79', 0, 'review', '', 0),
 (80, 1, '2017-12-25 19:04:30', '2017-12-25 16:04:30', 'fdsg dsdsfg dfsgdf', 'еКапуста test19', '', 'publish', 'closed', 'closed', '', 'ekapusta-test19-2', '', '', '2017-12-25 19:04:30', '2017-12-25 16:04:30', '', 0, 'http://ebrf.ru/?post_type=review&#038;p=80', 0, 'review', '', 0),
 (81, 1, '2017-12-25 19:03:57', '2017-12-25 16:03:57', 'fdsg dsdsfg dfsgdf', 'еКапуста test19', '', 'publish', 'closed', 'closed', '', 'ekapusta-test19', '', '', '2017-12-25 19:03:57', '2017-12-25 16:03:57', '', 0, 'http://ebrf.ru/?post_type=review&#038;p=81', 0, 'review', '', 0),
@@ -1731,10 +1974,10 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (92, 1, '2017-12-25 19:48:56', '2017-12-25 16:48:56', 'asdfasdfdsafffffffffff', 'еКапуста admin', '', 'publish', 'closed', 'closed', '', 'ekapusta-admin-3', '', '', '2017-12-25 19:48:56', '2017-12-25 16:48:56', '', 0, 'http://ebrf.ru/?post_type=review&#038;p=92', 0, 'review', '', 0),
 (93, 1, '2017-12-25 19:49:03', '0000-00-00 00:00:00', 'asdfasdfdsafffffffffff', 'еКапуста admin', '', 'pending', 'closed', 'closed', '', '', '', '', '2017-12-25 19:49:03', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?post_type=review&p=93', 0, 'review', '', 0),
 (94, 1, '2017-12-26 09:17:44', '2017-12-26 06:17:44', 'еКапуста – российская микрокредитная компания. Выдает займы с 2012 года. Агентством RAEX (Эксперт) компании присвоен рейтинг надежности на уровне A. МФО входит в СРО «Мир».\r\n\r\nЗайм можно оформить из любого города России через интернет. Сервис автоматически анализирует заявки и принимает решение о выдаче займа. МФО переводит деньги в любое время тем способом, который вы выбрали.\r\n\r\nеКапуста ведет деятельность на основании свидетельства о внесении в реестр микрофинансовых организаций №2120754001243, выданного Банком России 22 марта 2012 года. МФК зарегистрирована в Новосибирске. Центральный офис находится по адресу – улица Русская, дом 39.\r\n<h2 class=\"left\">Преимущества</h2>\r\n<ul>\r\n 	<li>Оформить займ можно в любое время суток – подать онлайн-заявку, получить автоматическое решение и перечислить деньги на свой счет</li>\r\n 	<li>Деньги зачисляются на карту Виза/Мастеркард, счет электронного кошелька Qiwi/Яндекс.Деньги, банковский счет или переводом через Contact/Золотая Корона</li>\r\n 	<li>Максимальная сумма займа – до 30 000 руб</li>\r\n 	<li>Погасить займ можно переводом с банковской карты, электронного кошелька или через пункты оплаты</li>\r\n 	<li>Можно продлить займ, погасив начисленные проценты</li>\r\n</ul>\r\n<h2 class=\"left\">Как оформить заявку:</h2>\r\n<ul>\r\n 	<li>Задайте бегунками сумму и срок займа. Ознакомьтесь с расчетом возврата и нажмите на кнопку «Получить займ»</li>\r\n 	<li>Заполните паспортные и контактные данные. Укажите сведения о прописке и месте проживания. Нажмите на кнопку «Продолжить»</li>\r\n 	<li>Выберите тип занятости и укажите ежемесячный доход. Заполните сведения о семейном положении. Загрузите свою фотографию и скан паспорта. Нажмите «Продолжить»</li>\r\n 	<li>Дополнительно заполните данные о социальных сетях и кредитной истории</li>\r\n</ul>', 'Moneyman', 'Взять займ в еКапусте. Как оформить заявку. Обзор личного кабинета. Условия сайта ekapusta.ru. Адрес, телефон и новости. Оставить свой отзыв.', 'publish', 'closed', 'closed', '', 'ekapusta-2', '', '', '2017-12-27 15:49:34', '2017-12-27 12:49:34', '', 0, 'http://ebrf.ru/?post_type=company&#038;p=94', 0, 'company', '', 0),
-(95, 1, '2017-12-26 09:18:46', '2017-12-26 06:18:46', 'еКапуста – российская микрокредитная компания. Выдает займы с 2012 года. Агентством RAEX (Эксперт) компании присвоен рейтинг надежности на уровне A. МФО входит в СРО «Мир».\r\n\r\nЗайм можно оформить из любого города России через интернет. Сервис автоматически анализирует заявки и принимает решение о выдаче займа. МФО переводит деньги в любое время тем способом, который вы выбрали.\r\n\r\nеКапуста ведет деятельность на основании свидетельства о внесении в реестр микрофинансовых организаций №2120754001243, выданного Банком России 22 марта 2012 года. МФК зарегистрирована в Новосибирске. Центральный офис находится по адресу – улица Русская, дом 39.\r\n<h2 class=\"left\">Преимущества</h2>\r\n<ul>\r\n 	<li>Оформить займ можно в любое время суток – подать онлайн-заявку, получить автоматическое решение и перечислить деньги на свой счет</li>\r\n 	<li>Деньги зачисляются на карту Виза/Мастеркард, счет электронного кошелька Qiwi/Яндекс.Деньги, банковский счет или переводом через Contact/Золотая Корона</li>\r\n 	<li>Максимальная сумма займа – до 30 000 руб</li>\r\n 	<li>Погасить займ можно переводом с банковской карты, электронного кошелька или через пункты оплаты</li>\r\n 	<li>Можно продлить займ, погасив начисленные проценты</li>\r\n</ul>\r\n<h2 class=\"left\">Как оформить заявку:</h2>\r\n<ul>\r\n 	<li>Задайте бегунками сумму и срок займа. Ознакомьтесь с расчетом возврата и нажмите на кнопку «Получить займ»</li>\r\n 	<li>Заполните паспортные и контактные данные. Укажите сведения о прописке и месте проживания. Нажмите на кнопку «Продолжить»</li>\r\n 	<li>Выберите тип занятости и укажите ежемесячный доход. Заполните сведения о семейном положении. Загрузите свою фотографию и скан паспорта. Нажмите «Продолжить»</li>\r\n 	<li>Дополнительно заполните данные о социальных сетях и кредитной истории</li>\r\n</ul>', 'Лига денег', 'Взять займ в еКапусте. Как оформить заявку. Обзор личного кабинета. Условия сайта ekapusta.ru. Адрес, телефон и новости. Оставить свой отзыв.', 'publish', 'closed', 'closed', '', 'ekapusta-3', '', '', '2017-12-27 16:57:25', '2017-12-27 13:57:25', '', 0, 'http://ebrf.ru/?post_type=company&#038;p=95', 0, 'company', '', 0),
+(95, 1, '2017-12-26 09:18:46', '2017-12-26 06:18:46', 'еКапуста – российская микрокредитная компания. Выдает займы с 2012 года. Агентством RAEX (Эксперт) компании присвоен рейтинг надежности на уровне A. МФО входит в СРО «Мир».\r\n\r\nЗайм можно оформить из любого города России через интернет. Сервис автоматически анализирует заявки и принимает решение о выдаче займа. МФО переводит деньги в любое время тем способом, который вы выбрали.\r\n\r\nеКапуста ведет деятельность на основании свидетельства о внесении в реестр микрофинансовых организаций №2120754001243, выданного Банком России 22 марта 2012 года. МФК зарегистрирована в Новосибирске. Центральный офис находится по адресу – улица Русская, дом 39.\r\n<h2 class=\"left\">Преимущества</h2>\r\n<ul>\r\n 	<li>Оформить займ можно в любое время суток – подать онлайн-заявку, получить автоматическое решение и перечислить деньги на свой счет</li>\r\n 	<li>Деньги зачисляются на карту Виза/Мастеркард, счет электронного кошелька Qiwi/Яндекс.Деньги, банковский счет или переводом через Contact/Золотая Корона</li>\r\n 	<li>Максимальная сумма займа – до 30 000 руб</li>\r\n 	<li>Погасить займ можно переводом с банковской карты, электронного кошелька или через пункты оплаты</li>\r\n 	<li>Можно продлить займ, погасив начисленные проценты</li>\r\n</ul>\r\n<h2 class=\"left\">Как оформить заявку:</h2>\r\n<ul>\r\n 	<li>Задайте бегунками сумму и срок займа. Ознакомьтесь с расчетом возврата и нажмите на кнопку «Получить займ»</li>\r\n 	<li>Заполните паспортные и контактные данные. Укажите сведения о прописке и месте проживания. Нажмите на кнопку «Продолжить»</li>\r\n 	<li>Выберите тип занятости и укажите ежемесячный доход. Заполните сведения о семейном положении. Загрузите свою фотографию и скан паспорта. Нажмите «Продолжить»</li>\r\n 	<li>Дополнительно заполните данные о социальных сетях и кредитной истории</li>\r\n</ul>', 'Лига денег', 'Взять займ в еКапусте. Как оформить заявку. Обзор личного кабинета. Условия сайта ekapusta.ru. Адрес, телефон и новости. Оставить свой отзыв.', 'publish', 'closed', 'closed', '', 'ekapusta-3', '', '', '2017-12-27 20:27:23', '2017-12-27 17:27:23', '', 0, 'http://ebrf.ru/?post_type=company&#038;p=95', 0, 'company', '', 0),
 (96, 1, '2017-12-26 09:19:31', '2017-12-26 06:19:31', 'еКапуста – российская микрокредитная компания. Выдает займы с 2012 года. Агентством RAEX (Эксперт) компании присвоен рейтинг надежности на уровне A. МФО входит в СРО «Мир».\r\n\r\nЗайм можно оформить из любого города России через интернет. Сервис автоматически анализирует заявки и принимает решение о выдаче займа. МФО переводит деньги в любое время тем способом, который вы выбрали.\r\n\r\nеКапуста ведет деятельность на основании свидетельства о внесении в реестр микрофинансовых организаций №2120754001243, выданного Банком России 22 марта 2012 года. МФК зарегистрирована в Новосибирске. Центральный офис находится по адресу – улица Русская, дом 39.\r\n<h2 class=\"left\">Преимущества</h2>\r\n<ul>\r\n 	<li>Оформить займ можно в любое время суток – подать онлайн-заявку, получить автоматическое решение и перечислить деньги на свой счет</li>\r\n 	<li>Деньги зачисляются на карту Виза/Мастеркард, счет электронного кошелька Qiwi/Яндекс.Деньги, банковский счет или переводом через Contact/Золотая Корона</li>\r\n 	<li>Максимальная сумма займа – до 30 000 руб</li>\r\n 	<li>Погасить займ можно переводом с банковской карты, электронного кошелька или через пункты оплаты</li>\r\n 	<li>Можно продлить займ, погасив начисленные проценты</li>\r\n</ul>\r\n<h2 class=\"left\">Как оформить заявку:</h2>\r\n<ul>\r\n 	<li>Задайте бегунками сумму и срок займа. Ознакомьтесь с расчетом возврата и нажмите на кнопку «Получить займ»</li>\r\n 	<li>Заполните паспортные и контактные данные. Укажите сведения о прописке и месте проживания. Нажмите на кнопку «Продолжить»</li>\r\n 	<li>Выберите тип занятости и укажите ежемесячный доход. Заполните сведения о семейном положении. Загрузите свою фотографию и скан паспорта. Нажмите «Продолжить»</li>\r\n 	<li>Дополнительно заполните данные о социальных сетях и кредитной истории</li>\r\n</ul>', 'oMONEY', 'Взять займ в еКапусте. Как оформить заявку. Обзор личного кабинета. Условия сайта ekapusta.ru. Адрес, телефон и новости. Оставить свой отзыв.', 'publish', 'closed', 'closed', '', 'omoney', '', '', '2017-12-27 16:19:12', '2017-12-27 13:19:12', '', 0, 'http://ebrf.ru/?post_type=company&#038;p=96', 0, 'company', '', 0),
-(97, 1, '2017-12-26 09:20:49', '2017-12-26 06:20:49', 'еКапуста – российская микрокредитная компания. Выдает займы с 2012 года. Агентством RAEX (Эксперт) компании присвоен рейтинг надежности на уровне A. МФО входит в СРО «Мир».\r\n\r\nЗайм можно оформить из любого города России через интернет. Сервис автоматически анализирует заявки и принимает решение о выдаче займа. МФО переводит деньги в любое время тем способом, который вы выбрали.\r\n\r\nеКапуста ведет деятельность на основании свидетельства о внесении в реестр микрофинансовых организаций №2120754001243, выданного Банком России 22 марта 2012 года. МФК зарегистрирована в Новосибирске. Центральный офис находится по адресу – улица Русская, дом 39.\r\n<h2 class=\"left\">Преимущества</h2>\r\n<ul>\r\n 	<li>Оформить займ можно в любое время суток – подать онлайн-заявку, получить автоматическое решение и перечислить деньги на свой счет</li>\r\n 	<li>Деньги зачисляются на карту Виза/Мастеркард, счет электронного кошелька Qiwi/Яндекс.Деньги, банковский счет или переводом через Contact/Золотая Корона</li>\r\n 	<li>Максимальная сумма займа – до 30 000 руб</li>\r\n 	<li>Погасить займ можно переводом с банковской карты, электронного кошелька или через пункты оплаты</li>\r\n 	<li>Можно продлить займ, погасив начисленные проценты</li>\r\n</ul>\r\n<h2 class=\"left\">Как оформить заявку:</h2>\r\n<ul>\r\n 	<li>Задайте бегунками сумму и срок займа. Ознакомьтесь с расчетом возврата и нажмите на кнопку «Получить займ»</li>\r\n 	<li>Заполните паспортные и контактные данные. Укажите сведения о прописке и месте проживания. Нажмите на кнопку «Продолжить»</li>\r\n 	<li>Выберите тип занятости и укажите ежемесячный доход. Заполните сведения о семейном положении. Загрузите свою фотографию и скан паспорта. Нажмите «Продолжить»</li>\r\n 	<li>Дополнительно заполните данные о социальных сетях и кредитной истории</li>\r\n</ul>', 'МЕТРОКРЕДИТ', 'Взять займ в еКапусте. Как оформить заявку. Обзор личного кабинета. Условия сайта ekapusta.ru. Адрес, телефон и новости. Оставить свой отзыв.', 'publish', 'closed', 'closed', '', 'metrokredit', '', '', '2017-12-27 16:29:39', '2017-12-27 13:29:39', '', 0, 'http://ebrf.ru/?post_type=company&#038;p=97', 0, 'company', '', 0),
-(98, 1, '2017-12-26 09:22:55', '2017-12-26 06:22:55', 'еКапуста – российская микрокредитная компания. Выдает займы с 2012 года. Агентством RAEX (Эксперт) компании присвоен рейтинг надежности на уровне A. МФО входит в СРО «Мир».\r\n\r\nЗайм можно оформить из любого города России через интернет. Сервис автоматически анализирует заявки и принимает решение о выдаче займа. МФО переводит деньги в любое время тем способом, который вы выбрали.\r\n\r\nеКапуста ведет деятельность на основании свидетельства о внесении в реестр микрофинансовых организаций №2120754001243, выданного Банком России 22 марта 2012 года. МФК зарегистрирована в Новосибирске. Центральный офис находится по адресу – улица Русская, дом 39.\r\n<h2 class=\"left\">Преимущества</h2>\r\n<ul>\r\n 	<li>Оформить займ можно в любое время суток – подать онлайн-заявку, получить автоматическое решение и перечислить деньги на свой счет</li>\r\n 	<li>Деньги зачисляются на карту Виза/Мастеркард, счет электронного кошелька Qiwi/Яндекс.Деньги, банковский счет или переводом через Contact/Золотая Корона</li>\r\n 	<li>Максимальная сумма займа – до 30 000 руб</li>\r\n 	<li>Погасить займ можно переводом с банковской карты, электронного кошелька или через пункты оплаты</li>\r\n 	<li>Можно продлить займ, погасив начисленные проценты</li>\r\n</ul>\r\n<h2 class=\"left\">Как оформить заявку:</h2>\r\n<ul>\r\n 	<li>Задайте бегунками сумму и срок займа. Ознакомьтесь с расчетом возврата и нажмите на кнопку «Получить займ»</li>\r\n 	<li>Заполните паспортные и контактные данные. Укажите сведения о прописке и месте проживания. Нажмите на кнопку «Продолжить»</li>\r\n 	<li>Выберите тип занятости и укажите ежемесячный доход. Заполните сведения о семейном положении. Загрузите свою фотографию и скан паспорта. Нажмите «Продолжить»</li>\r\n 	<li>Дополнительно заполните данные о социальных сетях и кредитной истории</li>\r\n</ul>', 'ЗАНИМАЛО', 'Взять займ в еКапусте. Как оформить заявку. Обзор личного кабинета. Условия сайта ekapusta.ru. Адрес, телефон и новости. Оставить свой отзыв.', 'publish', 'closed', 'closed', '', 'zanimalo', '', '', '2017-12-27 15:37:01', '2017-12-27 12:37:01', '', 0, 'http://ebrf.ru/?post_type=company&#038;p=98', 0, 'company', '', 0),
+(97, 1, '2017-12-26 09:20:49', '2017-12-26 06:20:49', 'еКапуста – российская микрокредитная компания. Выдает займы с 2012 года. Агентством RAEX (Эксперт) компании присвоен рейтинг надежности на уровне A. МФО входит в СРО «Мир».\r\n\r\nЗайм можно оформить из любого города России через интернет. Сервис автоматически анализирует заявки и принимает решение о выдаче займа. МФО переводит деньги в любое время тем способом, который вы выбрали.\r\n\r\nеКапуста ведет деятельность на основании свидетельства о внесении в реестр микрофинансовых организаций №2120754001243, выданного Банком России 22 марта 2012 года. МФК зарегистрирована в Новосибирске. Центральный офис находится по адресу – улица Русская, дом 39.\r\n<h2 class=\"left\">Преимущества</h2>\r\n<ul>\r\n 	<li>Оформить займ можно в любое время суток – подать онлайн-заявку, получить автоматическое решение и перечислить деньги на свой счет</li>\r\n 	<li>Деньги зачисляются на карту Виза/Мастеркард, счет электронного кошелька Qiwi/Яндекс.Деньги, банковский счет или переводом через Contact/Золотая Корона</li>\r\n 	<li>Максимальная сумма займа – до 30 000 руб</li>\r\n 	<li>Погасить займ можно переводом с банковской карты, электронного кошелька или через пункты оплаты</li>\r\n 	<li>Можно продлить займ, погасив начисленные проценты</li>\r\n</ul>\r\n<h2 class=\"left\">Как оформить заявку:</h2>\r\n<ul>\r\n 	<li>Задайте бегунками сумму и срок займа. Ознакомьтесь с расчетом возврата и нажмите на кнопку «Получить займ»</li>\r\n 	<li>Заполните паспортные и контактные данные. Укажите сведения о прописке и месте проживания. Нажмите на кнопку «Продолжить»</li>\r\n 	<li>Выберите тип занятости и укажите ежемесячный доход. Заполните сведения о семейном положении. Загрузите свою фотографию и скан паспорта. Нажмите «Продолжить»</li>\r\n 	<li>Дополнительно заполните данные о социальных сетях и кредитной истории</li>\r\n</ul>', 'МЕТРОКРЕДИТ', 'Взять займ в еКапусте. Как оформить заявку. Обзор личного кабинета. Условия сайта ekapusta.ru. Адрес, телефон и новости. Оставить свой отзыв.', 'publish', 'closed', 'closed', '', 'metrokredit', '', '', '2017-12-27 20:26:31', '2017-12-27 17:26:31', '', 0, 'http://ebrf.ru/?post_type=company&#038;p=97', 0, 'company', '', 0),
+(98, 1, '2017-12-26 09:22:55', '2017-12-26 06:22:55', 'еКапуста – российская микрокредитная компания. Выдает займы с 2012 года. Агентством RAEX (Эксперт) компании присвоен рейтинг надежности на уровне A. МФО входит в СРО «Мир».\r\n\r\nЗайм можно оформить из любого города России через интернет. Сервис автоматически анализирует заявки и принимает решение о выдаче займа. МФО переводит деньги в любое время тем способом, который вы выбрали.\r\n\r\nеКапуста ведет деятельность на основании свидетельства о внесении в реестр микрофинансовых организаций №2120754001243, выданного Банком России 22 марта 2012 года. МФК зарегистрирована в Новосибирске. Центральный офис находится по адресу – улица Русская, дом 39.\r\n<h2 class=\"left\">Преимущества</h2>\r\n<ul>\r\n 	<li>Оформить займ можно в любое время суток – подать онлайн-заявку, получить автоматическое решение и перечислить деньги на свой счет</li>\r\n 	<li>Деньги зачисляются на карту Виза/Мастеркард, счет электронного кошелька Qiwi/Яндекс.Деньги, банковский счет или переводом через Contact/Золотая Корона</li>\r\n 	<li>Максимальная сумма займа – до 30 000 руб</li>\r\n 	<li>Погасить займ можно переводом с банковской карты, электронного кошелька или через пункты оплаты</li>\r\n 	<li>Можно продлить займ, погасив начисленные проценты</li>\r\n</ul>\r\n<h2 class=\"left\">Как оформить заявку:</h2>\r\n<ul>\r\n 	<li>Задайте бегунками сумму и срок займа. Ознакомьтесь с расчетом возврата и нажмите на кнопку «Получить займ»</li>\r\n 	<li>Заполните паспортные и контактные данные. Укажите сведения о прописке и месте проживания. Нажмите на кнопку «Продолжить»</li>\r\n 	<li>Выберите тип занятости и укажите ежемесячный доход. Заполните сведения о семейном положении. Загрузите свою фотографию и скан паспорта. Нажмите «Продолжить»</li>\r\n 	<li>Дополнительно заполните данные о социальных сетях и кредитной истории</li>\r\n</ul>', 'ЗАНИМАЛО', 'Взять займ в еКапусте. Как оформить заявку. Обзор личного кабинета. Условия сайта ekapusta.ru. Адрес, телефон и новости. Оставить свой отзыв.', 'publish', 'closed', 'closed', '', 'zanimalo', '', '', '2017-12-27 20:22:17', '2017-12-27 17:22:17', '', 0, 'http://ebrf.ru/?post_type=company&#038;p=98', 0, 'company', '', 0),
 (99, 1, '2017-12-26 09:34:28', '2017-12-26 06:34:28', 'На этой странице собраны все популярные микрофинансовые организации, которые позволяют оформить микрозайм онлайн. Вы можете обратиться в любую из них, если вам срочно понадобилась небольшая сумма денег. При выборе учитывайте минимальную и максимальную сумму займа, сроки, процентную ставку, требования к заемщикам и другие условия.\r\n\r\nПолучить деньги можно на банковскую карту, электронный кошелек Киви или Яндекс.Денег, лицевой счет в банке или наличными через систему переводов. Большинство организаций предлагают один или несколько способов выдачи заемных средств. У некоторых МФО есть офисы для обслуживания клиентов в крупных городах, куда вы также можете обратиться.\r\n\r\nМы отбираем для нашего сайта только проверенные МФО. Здесь вы найдете подробные описания каждого предложения, честные рейтинги и реальные отзывы клиентов.', 'Список российских микрофинансовых организаций', '', 'publish', 'closed', 'closed', '', 'spisok-rossijskih-mikrofinansovyh-organizatsij', '', '', '2017-12-26 09:40:19', '2017-12-26 06:40:19', '', 0, 'http://ebrf.ru/?page_id=99', 0, 'page', '', 0),
 (100, 1, '2017-12-26 09:34:28', '2017-12-26 06:34:28', 'На этой странице собраны все популярные микрофинансовые организации, которые позволяют оформить микрозайм онлайн. Вы можете обратиться в любую из них, если вам срочно понадобилась небольшая сумма денег. При выборе учитывайте минимальную и максимальную сумму займа, сроки, процентную ставку, требования к заемщикам и другие условия.\r\n\r\nПолучить деньги можно на банковскую карту, электронный кошелек Киви или Яндекс.Денег, лицевой счет в банке или наличными через систему переводов. Большинство организаций предлагают один или несколько способов выдачи заемных средств. У некоторых МФО есть офисы для обслуживания клиентов в крупных городах, куда вы также можете обратиться.\r\n\r\nМы отбираем для нашего сайта только проверенные МФО. Здесь вы найдете подробные описания каждого предложения, честные рейтинги и реальные отзывы клиентов.', 'Список российских микрофмнансовых организаций', '', 'inherit', 'closed', 'closed', '', '99-revision-v1', '', '', '2017-12-26 09:34:28', '2017-12-26 06:34:28', '', 99, 'http://ebrf.ru/99-revision-v1/', 0, 'revision', '', 0),
 (101, 1, '2017-12-26 09:36:43', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2017-12-26 09:36:43', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?post_type=acf&p=101', 0, 'acf', '', 0),
@@ -1749,7 +1992,42 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (112, 1, '2017-12-26 12:55:59', '2017-12-26 09:55:59', '', '4', '', 'inherit', 'open', 'closed', '', '4', '', '', '2017-12-26 12:55:59', '2017-12-26 09:55:59', '', 98, 'http://ebrf.ru/wp-content/uploads/2017/12/4.jpg', 0, 'attachment', 'image/jpeg', 0),
 (113, 1, '2017-12-26 14:51:03', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2017-12-26 14:51:03', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?post_type=acf&p=113', 0, 'acf', '', 0),
 (114, 1, '2017-12-26 14:54:19', '2017-12-26 11:54:19', '', 'Способы выплат/оплат таксономия', '', 'publish', 'closed', 'closed', '', 'acf_sposoby-vyplat-oplat-taksonomiya', '', '', '2017-12-26 14:54:19', '2017-12-26 11:54:19', '', 0, 'http://ebrf.ru/?post_type=acf&#038;p=114', 0, 'acf', '', 0),
-(115, 1, '2017-12-27 16:22:16', '2017-12-27 13:22:16', 'еКапуста – российская микрокредитная компания. Выдает займы с 2012 года. Агентством RAEX (Эксперт) компании присвоен рейтинг надежности на уровне A. МФО входит в СРО «Мир».\n\nЗайм можно оформить из любого города России через интернет. Сервис автоматически анализирует заявки и принимает решение о выдаче займа. МФО переводит деньги в любое время тем способом, который вы выбрали.\n\nеКапуста ведет деятельность на основании свидетельства о внесении в реестр микрофинансовых организаций №2120754001243, выданного Банком России 22 марта 2012 года. МФК зарегистрирована в Новосибирске. Центральный офис находится по адресу – улица Русская, дом 39.\n<h2 class=\"left\">Преимущества</h2>\n<ul>\n 	<li>Оформить займ можно в любое время суток – подать онлайн-заявку, получить автоматическое решение и перечислить деньги на свой счет</li>\n 	<li>Деньги зачисляются на карту Виза/Мастеркард, счет электронного кошелька Qiwi/Яндекс.Деньги, банковский счет или переводом через Contact/Золотая Корона</li>\n 	<li>Максимальная сумма займа – до 30 000 руб</li>\n 	<li>Погасить займ можно переводом с банковской карты, электронного кошелька или через пункты оплаты</li>\n 	<li>Можно продлить займ, погасив начисленные проценты</li>\n</ul>\n<h2 class=\"left\">Как оформить заявку:</h2>\n<ul>\n 	<li>Задайте бегунками сумму и срок займа. Ознакомьтесь с расчетом возврата и нажмите на кнопку «Получить займ»</li>\n 	<li>Заполните паспортные и контактные данные. Укажите сведения о прописке и месте проживания. Нажмите на кнопку «Продолжить»</li>\n 	<li>Выберите тип занятости и укажите ежемесячный доход. Заполните сведения о семейном положении. Загрузите свою фотографию и скан паспорта. Нажмите «Продолжить»</li>\n 	<li>Дополнительно заполните данные о социальных сетях и кредитной истории</li>\n</ul>', 'МЕТРОКРЕДИТ', 'Взять займ в еКапусте. Как оформить заявку. Обзор личного кабинета. Условия сайта ekapusta.ru. Адрес, телефон и новости. Оставить свой отзыв.', 'inherit', 'closed', 'closed', '', '97-autosave-v1', '', '', '2017-12-27 16:22:16', '2017-12-27 13:22:16', '', 97, 'http://ebrf.ru/97-autosave-v1/', 0, 'revision', '', 0);
+(115, 1, '2017-12-27 16:22:16', '2017-12-27 13:22:16', 'еКапуста – российская микрокредитная компания. Выдает займы с 2012 года. Агентством RAEX (Эксперт) компании присвоен рейтинг надежности на уровне A. МФО входит в СРО «Мир».\n\nЗайм можно оформить из любого города России через интернет. Сервис автоматически анализирует заявки и принимает решение о выдаче займа. МФО переводит деньги в любое время тем способом, который вы выбрали.\n\nеКапуста ведет деятельность на основании свидетельства о внесении в реестр микрофинансовых организаций №2120754001243, выданного Банком России 22 марта 2012 года. МФК зарегистрирована в Новосибирске. Центральный офис находится по адресу – улица Русская, дом 39.\n<h2 class=\"left\">Преимущества</h2>\n<ul>\n 	<li>Оформить займ можно в любое время суток – подать онлайн-заявку, получить автоматическое решение и перечислить деньги на свой счет</li>\n 	<li>Деньги зачисляются на карту Виза/Мастеркард, счет электронного кошелька Qiwi/Яндекс.Деньги, банковский счет или переводом через Contact/Золотая Корона</li>\n 	<li>Максимальная сумма займа – до 30 000 руб</li>\n 	<li>Погасить займ можно переводом с банковской карты, электронного кошелька или через пункты оплаты</li>\n 	<li>Можно продлить займ, погасив начисленные проценты</li>\n</ul>\n<h2 class=\"left\">Как оформить заявку:</h2>\n<ul>\n 	<li>Задайте бегунками сумму и срок займа. Ознакомьтесь с расчетом возврата и нажмите на кнопку «Получить займ»</li>\n 	<li>Заполните паспортные и контактные данные. Укажите сведения о прописке и месте проживания. Нажмите на кнопку «Продолжить»</li>\n 	<li>Выберите тип занятости и укажите ежемесячный доход. Заполните сведения о семейном положении. Загрузите свою фотографию и скан паспорта. Нажмите «Продолжить»</li>\n 	<li>Дополнительно заполните данные о социальных сетях и кредитной истории</li>\n</ul>', 'МЕТРОКРЕДИТ', 'Взять займ в еКапусте. Как оформить заявку. Обзор личного кабинета. Условия сайта ekapusta.ru. Адрес, телефон и новости. Оставить свой отзыв.', 'inherit', 'closed', 'closed', '', '97-autosave-v1', '', '', '2017-12-27 16:22:16', '2017-12-27 13:22:16', '', 97, 'http://ebrf.ru/97-autosave-v1/', 0, 'revision', '', 0),
+(116, 1, '2017-12-27 23:41:00', '2017-12-27 20:41:00', '', 'Таксономии компании', '', 'publish', 'closed', 'closed', '', 'acf_taksonomii-kompanii', '', '', '2017-12-27 23:44:29', '2017-12-27 20:44:29', '', 0, 'http://ebrf.ru/?post_type=acf&#038;p=116', 0, 'acf', '', 0),
+(117, 1, '2017-12-28 00:22:47', '2017-12-27 21:22:47', '', 'Микрозаймы', '', 'publish', 'closed', 'closed', '', 'mikrozajmy', '', '', '2017-12-28 00:29:09', '2017-12-27 21:29:09', '', 0, 'http://ebrf.ru/?p=117', 1, 'nav_menu_item', '', 0),
+(118, 1, '2017-12-28 00:23:16', '2017-12-27 21:23:16', '', 'Оформить кредит', '', 'publish', 'closed', 'closed', '', 'oformit-kredit', '', '', '2017-12-28 00:29:09', '2017-12-27 21:29:09', '', 0, 'http://ebrf.ru/?p=118', 2, 'nav_menu_item', '', 0),
+(119, 1, '2017-12-28 00:23:53', '2017-12-27 21:23:53', '', 'Банковские кредиты', '', 'publish', 'closed', 'closed', '', 'bankovskie-kredity', '', '', '2017-12-28 00:29:09', '2017-12-27 21:29:09', '', 0, 'http://ebrf.ru/?p=119', 3, 'nav_menu_item', '', 0),
+(120, 1, '2017-12-28 00:24:21', '2017-12-27 21:24:21', '', 'Займы под залог', '', 'publish', 'closed', 'closed', '', 'zajmy-pod-zalog', '', '', '2017-12-28 00:29:09', '2017-12-27 21:29:09', '', 0, 'http://ebrf.ru/?p=120', 6, 'nav_menu_item', '', 0),
+(121, 1, '2017-12-28 00:24:53', '2017-12-27 21:24:53', '', 'Полезное', '', 'publish', 'closed', 'closed', '', 'poleznoe', '', '', '2017-12-28 00:29:09', '2017-12-27 21:29:09', '', 0, 'http://ebrf.ru/?p=121', 7, 'nav_menu_item', '', 0),
+(122, 1, '2017-12-28 00:25:44', '2017-12-27 21:25:44', '', 'Кредитные карты', '', 'publish', 'closed', 'closed', '', 'kreditnye-karty', '', '', '2017-12-28 00:29:09', '2017-12-27 21:29:09', '', 0, 'http://ebrf.ru/?p=122', 4, 'nav_menu_item', '', 0),
+(123, 1, '2017-12-28 00:26:03', '2017-12-27 21:26:03', '', 'Дебетовые карты', '', 'publish', 'closed', 'closed', '', 'debetovye-karty', '', '', '2017-12-28 00:29:09', '2017-12-27 21:29:09', '', 0, 'http://ebrf.ru/?p=123', 5, 'nav_menu_item', '', 0),
+(124, 1, '2017-12-28 00:26:19', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'closed', 'closed', '', '', '', '', '2017-12-28 00:26:19', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?p=124', 1, 'nav_menu_item', '', 0),
+(125, 1, '2017-12-28 00:26:19', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'closed', 'closed', '', '', '', '', '2017-12-28 00:26:19', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?p=125', 1, 'nav_menu_item', '', 0),
+(126, 1, '2017-12-28 00:29:09', '2017-12-27 21:29:09', '', 'Статьи', '', 'publish', 'closed', 'closed', '', 'stati', '', '', '2017-12-28 00:29:09', '2017-12-27 21:29:09', '', 0, 'http://ebrf.ru/?p=126', 9, 'nav_menu_item', '', 0),
+(127, 1, '2017-12-28 00:29:09', '2017-12-27 21:29:09', ' ', '', '', 'publish', 'closed', 'closed', '', '127', '', '', '2017-12-28 00:29:09', '2017-12-27 21:29:09', '', 0, 'http://ebrf.ru/?p=127', 8, 'nav_menu_item', '', 0),
+(128, 1, '2017-12-28 00:29:09', '2017-12-27 21:29:09', ' ', '', '', 'publish', 'closed', 'closed', '', '128', '', '', '2017-12-28 00:29:09', '2017-12-27 21:29:09', '', 0, 'http://ebrf.ru/?p=128', 10, 'nav_menu_item', '', 0),
+(129, 1, '2017-12-28 01:16:50', '2017-12-27 22:16:50', '', 'Карта', '', 'publish', 'closed', 'closed', '', 'karta', '', '', '2017-12-28 01:16:50', '2017-12-27 22:16:50', '', 0, 'http://ebrf.ru/?p=129', 3, 'nav_menu_item', '', 0),
+(130, 1, '2017-12-28 01:16:50', '2017-12-27 22:16:50', ' ', '', '', 'publish', 'closed', 'closed', '', '130', '', '', '2017-12-28 01:16:50', '2017-12-27 22:16:50', '', 0, 'http://ebrf.ru/?p=130', 5, 'nav_menu_item', '', 0),
+(131, 1, '2017-12-28 01:16:50', '2017-12-27 22:16:50', '', 'QIWI кошелек', '', 'publish', 'closed', 'closed', '', 'qiwi-koshelek', '', '', '2017-12-28 01:16:50', '2017-12-27 22:16:50', '', 0, 'http://ebrf.ru/?p=131', 2, 'nav_menu_item', '', 0),
+(132, 1, '2017-12-28 01:16:50', '2017-12-27 22:16:50', ' ', '', '', 'publish', 'closed', 'closed', '', '132', '', '', '2017-12-28 01:16:50', '2017-12-27 22:16:50', '', 0, 'http://ebrf.ru/?p=132', 6, 'nav_menu_item', '', 0),
+(133, 1, '2017-12-28 01:16:50', '2017-12-27 22:16:50', ' ', '', '', 'publish', 'closed', 'closed', '', '133', '', '', '2017-12-28 01:16:50', '2017-12-27 22:16:50', '', 0, 'http://ebrf.ru/?p=133', 4, 'nav_menu_item', '', 0),
+(134, 1, '2017-12-28 01:16:50', '2017-12-27 22:16:50', ' ', '', '', 'publish', 'closed', 'closed', '', '134', '', '', '2017-12-28 01:16:50', '2017-12-27 22:16:50', '', 0, 'http://ebrf.ru/?p=134', 1, 'nav_menu_item', '', 0),
+(135, 1, '2017-12-28 01:32:04', '0000-00-00 00:00:00', '', 'О нас', '', 'draft', 'closed', 'closed', '', '', '', '', '2017-12-28 01:32:04', '0000-00-00 00:00:00', '', 0, 'http://ebrf.ru/?p=135', 1, 'nav_menu_item', '', 0),
+(136, 1, '2017-12-28 01:32:55', '2017-12-27 22:32:55', 'Текст о нас', 'О нас', '', 'publish', 'closed', 'closed', '', 'o-nas', '', '', '2017-12-28 01:32:55', '2017-12-27 22:32:55', '', 0, 'http://ebrf.ru/?page_id=136', 0, 'page', '', 0),
+(137, 1, '2017-12-28 01:32:55', '2017-12-27 22:32:55', 'Текст о нас', 'О нас', '', 'inherit', 'closed', 'closed', '', '136-revision-v1', '', '', '2017-12-28 01:32:55', '2017-12-27 22:32:55', '', 136, 'http://ebrf.ru/136-revision-v1/', 0, 'revision', '', 0),
+(138, 1, '2017-12-28 01:33:20', '2017-12-27 22:33:20', 'Текст Соглашение об ответственности', 'Соглашение об ответственности', '', 'publish', 'closed', 'closed', '', 'soglashenie-ob-otvetstvennosti', '', '', '2017-12-28 01:33:20', '2017-12-27 22:33:20', '', 0, 'http://ebrf.ru/?page_id=138', 0, 'page', '', 0),
+(139, 1, '2017-12-28 01:33:20', '2017-12-27 22:33:20', 'Текст Соглашение об ответственности', 'Соглашение об ответственности', '', 'inherit', 'closed', 'closed', '', '138-revision-v1', '', '', '2017-12-28 01:33:20', '2017-12-27 22:33:20', '', 138, 'http://ebrf.ru/138-revision-v1/', 0, 'revision', '', 0),
+(140, 1, '2017-12-28 01:33:46', '2017-12-27 22:33:46', 'Текст Вопросы и ответы', 'Вопросы и ответы', '', 'publish', 'closed', 'closed', '', 'voprosy-i-otvety', '', '', '2017-12-28 01:33:46', '2017-12-27 22:33:46', '', 0, 'http://ebrf.ru/?page_id=140', 0, 'page', '', 0),
+(141, 1, '2017-12-28 01:33:46', '2017-12-27 22:33:46', 'Текст Вопросы и ответы', 'Вопросы и ответы', '', 'inherit', 'closed', 'closed', '', '140-revision-v1', '', '', '2017-12-28 01:33:46', '2017-12-27 22:33:46', '', 140, 'http://ebrf.ru/140-revision-v1/', 0, 'revision', '', 0),
+(142, 1, '2017-12-28 01:34:20', '2017-12-27 22:34:20', 'Текст Обратная связь', 'Обратная связь', '', 'publish', 'closed', 'closed', '', 'obratnaya-svyaz', '', '', '2017-12-28 01:34:20', '2017-12-27 22:34:20', '', 0, 'http://ebrf.ru/?page_id=142', 0, 'page', '', 0),
+(143, 1, '2017-12-28 01:34:20', '2017-12-27 22:34:20', 'Текст Обратная связь', 'Обратная связь', '', 'inherit', 'closed', 'closed', '', '142-revision-v1', '', '', '2017-12-28 01:34:20', '2017-12-27 22:34:20', '', 142, 'http://ebrf.ru/142-revision-v1/', 0, 'revision', '', 0),
+(144, 1, '2017-12-28 01:34:51', '2017-12-27 22:34:51', 'Текст Займы по городам', 'Займы по городам', '', 'publish', 'closed', 'closed', '', 'zajmy-po-gorodam', '', '', '2017-12-28 01:35:19', '2017-12-27 22:35:19', '', 0, 'http://ebrf.ru/?page_id=144', 0, 'page', '', 0),
+(145, 1, '2017-12-28 01:34:51', '2017-12-27 22:34:51', 'Текст Займы по городам', 'Займы по городам', '', 'inherit', 'closed', 'closed', '', '144-revision-v1', '', '', '2017-12-28 01:34:51', '2017-12-27 22:34:51', '', 144, 'http://ebrf.ru/144-revision-v1/', 0, 'revision', '', 0),
+(146, 1, '2017-12-28 01:36:17', '2017-12-27 22:36:17', ' ', '', '', 'publish', 'closed', 'closed', '', '146', '', '', '2017-12-28 01:36:22', '2017-12-27 22:36:22', '', 0, 'http://ebrf.ru/?p=146', 5, 'nav_menu_item', '', 0),
+(147, 1, '2017-12-28 01:36:17', '2017-12-27 22:36:17', ' ', '', '', 'publish', 'closed', 'closed', '', '147', '', '', '2017-12-28 01:36:22', '2017-12-27 22:36:22', '', 0, 'http://ebrf.ru/?p=147', 4, 'nav_menu_item', '', 0),
+(148, 1, '2017-12-28 01:36:17', '2017-12-27 22:36:17', ' ', '', '', 'publish', 'closed', 'closed', '', '148', '', '', '2017-12-28 01:36:22', '2017-12-27 22:36:22', '', 0, 'http://ebrf.ru/?p=148', 3, 'nav_menu_item', '', 0),
+(149, 1, '2017-12-28 01:36:17', '2017-12-27 22:36:17', ' ', '', '', 'publish', 'closed', 'closed', '', '149', '', '', '2017-12-28 01:36:22', '2017-12-27 22:36:22', '', 0, 'http://ebrf.ru/?p=149', 2, 'nav_menu_item', '', 0),
+(150, 1, '2017-12-28 01:36:17', '2017-12-27 22:36:17', ' ', '', '', 'publish', 'closed', 'closed', '', '150', '', '', '2017-12-28 01:36:22', '2017-12-27 22:36:22', '', 0, 'http://ebrf.ru/?p=150', 1, 'nav_menu_item', '', 0);
 
 -- --------------------------------------------------------
 
@@ -1878,7 +2156,9 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 (69, 'Надежные', 'nadezhnye', 0),
 (70, 'По телефону', 'po-telefonu', 0),
 (71, 'По городам', 'po-gorodam', 0),
-(72, 'Без отказов', 'bez-otkazov', 0);
+(72, 'Без отказов', 'bez-otkazov', 0),
+(73, 'Надменю', 'nadmenyu', 0),
+(74, 'Футер меню', 'futer-menyu', 0);
 
 -- --------------------------------------------------------
 
@@ -1936,7 +2216,28 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 (98, 36, 0),
 (98, 54, 0),
 (98, 56, 0),
-(98, 58, 0);
+(98, 58, 0),
+(117, 4, 0),
+(118, 4, 0),
+(119, 4, 0),
+(120, 4, 0),
+(121, 4, 0),
+(122, 4, 0),
+(123, 4, 0),
+(126, 4, 0),
+(127, 4, 0),
+(128, 4, 0),
+(129, 73, 0),
+(130, 73, 0),
+(131, 73, 0),
+(132, 73, 0),
+(133, 73, 0),
+(134, 73, 0),
+(146, 74, 0),
+(147, 74, 0),
+(148, 74, 0),
+(149, 74, 0),
+(150, 74, 0);
 
 -- --------------------------------------------------------
 
@@ -1961,7 +2262,7 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (1, 1, 'category', '', 0, 0),
 (2, 2, 'category', '', 0, 1),
 (3, 3, 'category', '', 0, 2),
-(4, 4, 'nav_menu', '', 0, 0),
+(4, 4, 'nav_menu', '', 0, 10),
 (9, 9, 'waystopay', '', 0, 2),
 (10, 10, 'waystopay', '', 0, 1),
 (11, 11, 'waystopay', '', 0, 2),
@@ -2025,7 +2326,9 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (69, 69, 'another', '', 0, 0),
 (70, 70, 'another', '', 0, 0),
 (71, 71, 'another', '', 0, 0),
-(72, 72, 'another', '', 0, 1);
+(72, 72, 'another', '', 0, 1),
+(73, 73, 'nav_menu', '', 0, 6),
+(74, 74, 'nav_menu', '', 0, 5);
 
 -- --------------------------------------------------------
 
@@ -2071,7 +2374,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (13, 1, 'wp_user_level', '10'),
 (14, 1, 'dismissed_wp_pointers', ''),
 (15, 1, 'show_welcome_panel', '1'),
-(16, 1, 'session_tokens', 'a:2:{s:64:\"4d2ce1d3afde932fd53640c1fa75ed641cc34aa3a2a084adbf3bfdf82788a2b9\";a:4:{s:10:\"expiration\";i:1514309495;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36\";s:5:\"login\";i:1514136695;}s:64:\"a614ff838d727233c72404d5faf8d05c62ccbf6d9e7e33c69d00983364ca9837\";a:4:{s:10:\"expiration\";i:1514440619;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:109:\"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36\";s:5:\"login\";i:1514267819;}}'),
+(16, 1, 'session_tokens', 'a:2:{s:64:\"a614ff838d727233c72404d5faf8d05c62ccbf6d9e7e33c69d00983364ca9837\";a:4:{s:10:\"expiration\";i:1514440619;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:109:\"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36\";s:5:\"login\";i:1514267819;}s:64:\"3ada19f6420578b42f539d0da80f28cd9f3038d5da7e47fcf64b085e5f029e54\";a:4:{s:10:\"expiration\";i:1514566814;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36\";s:5:\"login\";i:1514394014;}}'),
 (17, 1, 'wp_dashboard_quick_press_last_post_id', '45'),
 (18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:9:\"127.0.0.0\";}'),
 (19, 1, 'wp_user-settings', 'editor=tinymce&libraryContent=browse'),
@@ -2093,7 +2396,8 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (35, 1, 'managenav-menuscolumnshidden', 'a:5:{i:0;s:11:\"link-target\";i:1;s:11:\"css-classes\";i:2;s:3:\"xfn\";i:3;s:11:\"description\";i:4;s:15:\"title-attribute\";}'),
 (36, 1, 'metaboxhidden_nav-menus', 'a:3:{i:0;s:21:\"add-post-type-company\";i:1;s:20:\"add-post-type-review\";i:2;s:12:\"add-post_tag\";}'),
 (37, 1, 'manageedit-categorycolumnshidden', 'a:0:{}'),
-(38, 1, 'metaboxhidden_toolset_page_wpcf-edit-tax', 'a:0:{}');
+(38, 1, 'metaboxhidden_toolset_page_wpcf-edit-tax', 'a:0:{}'),
+(39, 1, 'nav_menu_recently_edited', '74');
 
 -- --------------------------------------------------------
 
@@ -2248,61 +2552,73 @@ ALTER TABLE `wp_users`
 --
 ALTER TABLE `wp_commentmeta`
   MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_comments`
 --
 ALTER TABLE `wp_comments`
   MODIFY `comment_ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_links`
 --
 ALTER TABLE `wp_links`
   MODIFY `link_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=586;
+  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=595;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1358;
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1630;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_posts`
 --
 ALTER TABLE `wp_posts`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_ratings`
 --
 ALTER TABLE `wp_ratings`
   MODIFY `rating_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_termmeta`
 --
 ALTER TABLE `wp_termmeta`
   MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_terms`
 --
 ALTER TABLE `wp_terms`
-  MODIFY `term_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `term_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_term_taxonomy`
 --
 ALTER TABLE `wp_term_taxonomy`
-  MODIFY `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_usermeta`
 --
 ALTER TABLE `wp_usermeta`
-  MODIFY `umeta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `umeta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_users`
 --
 ALTER TABLE `wp_users`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

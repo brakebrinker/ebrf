@@ -1,6 +1,16 @@
 ﻿//закрытие выпадающей мишуры по клику вне элемента
 jQuery(document).ready(function($) {
 var elem;
+var urll = document.location.href;
+
+//добавление к меню
+var count = 0;
+$('.menu-item-has-children').each(function() {
+	count++;
+	$( this ).children('a').addClass('dropdown').attr("href","#dd-menu" + count);
+	$( this ).children('ul').attr("id","dd-menu" + count);
+});
+
 $(document).mouseup(function(e){
 	if (elem != undefined && !elem.is(e.target) && elem.has(e.target).length === 0) {
 			//функции закрытия всякой херни
@@ -155,5 +165,40 @@ function nullStarsRate() {
 
 //скрыть сообщение
 $('.msg-time-hide').delay(10000).fadeOut('slow');
+
+//отправка запроса сортировки
+$('.sort').on('click', 'input', function(){
+	var url = document.location.href;
+	var prmName = 'sort';
+	var val = $(this).val();
+	var res = '';
+
+	if(url.indexOf('?') + 1) {
+		var d = url.split("?");
+		var base = d[0];
+		var p = d[1].split("&");
+		for(var i = 0; i < p.length; i++) {
+			var keyval = p[i].split("=");
+			if(keyval[0] != prmName) {
+				res += p[i] + '&';
+			}
+		}
+		res += prmName + '=' + val;
+		document.location.href = base + '?' + res;
+	} else {
+		$(".sort-form").submit();
+	}
+});
+
+//отметка включенных элементов фильтра
+
+if (urll.indexOf('sr_summ') + 1) { $('.sort input[value="sr_summ"]').prop('checked', true); }
+if (urll.indexOf('sr_percent') + 1) { $('.sort input[value="sr_percent"]').prop('checked', true); }
+if (urll.indexOf('sr_timeterm') + 1) { $('.sort input[value="sr_timeterm"]').prop('checked', true); }
+
+if (urll.indexOf('recommended=true') + 1) { $('.checkbox input[name="recommended"]').prop('checked', true); }
+if (urll.indexOf('bad_ki=true') + 1) { $('.checkbox input[name="bad_ki"]').prop('checked', true); }
+if (urll.indexOf('allday=true') + 1) { $('.checkbox input[name="allday"]').prop('checked', true); }
+if (urll.indexOf('prolongation=true') + 1) { $('.checkbox input[name="prolongation"]').prop('checked', true); }
 
 });

@@ -165,6 +165,39 @@ function sort_comment_fields( $fields ){
 }
 add_filter('comment_form_fields', 'sort_comment_fields' );
 
+// регистрируем меню
+register_nav_menus(array(
+    'top'    => 'Верхнее меню',    //Название месторасположения меню в шаблоне
+    'top_sub'    => 'Верхнее надменю',    //Название месторасположения меню в шаблоне
+    'bottom' => 'Нижнее меню',
+));
+
+add_filter('wp_nav_menu_objects', 'css_for_nav_parrent');
+function css_for_nav_parrent( $items ){
+    foreach( $items as $item ){
+        if( __nav_hasSub( $item->ID, $items ) )
+            $item->classes[] = 'menu-parent-item'; // все элементы поля "classes" меню, будут совмещены и выведены в атрибут class HTML тега <li>
+    }
+
+    return $items;
+}
+function __nav_hasSub( $item_id, $items ){
+    foreach( $items as $item ){
+        if( $item->menu_item_parent && $item->menu_item_parent == $item_id )
+            return true;
+    }
+
+    return false;
+}
+
+add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
+function your_custom_menu_item ( $items, $args ) {
+    if ($args->theme_location === 'top_sub') {
+        $items = '<h5 class="top-menu__title">Получить займ на:</h5>' . $items;
+    }
+    return $items;
+}
+
 // Область виджетов внутри статьи
 register_sidebar(array(
     'name' => __('Виджеты внутри записи Статьи'),
@@ -233,9 +266,9 @@ register_sidebar(array(
 
 // Область виджетов страница Каталог
 register_sidebar(array(
-    'name' => __('Виджеты на странице Каталог'),
+    'name' => __('Виджеты на страницах Каталог и Главная'),
     'id' => 'catalog-widget-area',
-    'description' => __('Виджеты на странице Каталог справа'),
+    'description' => __('Виджеты на страницах Каталог и Главная вверху'),
     'before_widget' => '<div class="post-nav">',
     'after_widget' => '</div>',
     'before_title' => '<h4 class="post-nav__title">',
@@ -287,7 +320,11 @@ global $user_ID, $post;
 
 //фильтр в каталоге
 function go_filter() {
+    $sortkey = '';
+    $sortvalue = 'meta_value_num';
+
     $args = array(); // подготовим массив 
+    $argSort = array();
     $args['meta_query'] = array('relation' => 'AND'); // отношение между условиями, у нас это "И то И это", можно ИЛИ(OR)
     global $wp_query; // нужно заглобалить текущую выборку постов
 
@@ -337,11 +374,12 @@ function go_filter() {
         $args['meta_query'][] = array( // пешем условия в meta_query
             'key' => 'company_interest_rate_num', // название произвольного поля
             'value' => (float) $_GET['s_percent'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            // 'type' => 'numeric',
             'compare' => '<='
         );
     }
 
-    if (!empty($_GET['recommended'] == true)) {
+    if ($_GET['recommended'] === 'true') {
         $args['meta_query'][] = array( // пешем условия в meta_query
             'key' => 'company_recommended', // название произвольного поля
             'value' => true, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
@@ -349,7 +387,7 @@ function go_filter() {
         );
     }
 
-    if (!empty($_GET['bad_ki'] == true)) {
+    if ($_GET['bad_ki'] === 'true') {
         $args['meta_query'][] = array( // пешем условия в meta_query
             'key' => 'company_credit_history', // название произвольного поля
             'value' => 1, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
@@ -357,7 +395,7 @@ function go_filter() {
         );
     }
 
-    if (!empty($_GET['allday'] == true)) {
+    if ($_GET['allday'] === 'true') {
         $args['meta_query'][] = array( // пешем условия в meta_query
             'key' => 'company_workmode_allday', // название произвольного поля
             'value' => true, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
@@ -365,7 +403,7 @@ function go_filter() {
         );
     }
 
-    if (!empty($_GET['prolongation'] == true)) {
+    if ($_GET['prolongation'] === 'true') {
         $args['meta_query'][] = array( // пешем условия в meta_query
             'key' => 'company_renewal', // название произвольного поля
             'value' => 1, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
@@ -373,5 +411,25 @@ function go_filter() {
         );
     }
 
-    query_posts(array_merge($args,$wp_query->query)); // сшиваем текущие условия выборки стандартного цикла wp с новым массивом переданным из формы и фильтруем
+    if (!empty($_GET['sort'])) {
+        if ($_GET['sort'] === 'sr_percent') {
+            $sortkey = 'company_interest_rate_num';
+        }
+
+        if ($_GET['sort'] === 'sr_timeterm') {
+            $sortkey = 'company_term_do';
+        }
+
+        if ($_GET['sort'] === 'sr_summ') {
+            $sortkey = 'company_summ_do';
+        }
+    }
+
+    $argSort = array(
+    'meta_key' => $sortkey,
+    'orderby'  => $sortvalue,
+    'order'    => 'DESC'
+    );
+
+    query_posts(array_merge($args,$argSort,$wp_query->query)); // сшиваем текущие условия выборки стандартного цикла wp с новым массивом переданным из формы и фильтруем
 }

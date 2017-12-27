@@ -15,14 +15,6 @@ $args = array(
 			'terms' => $term_id
 		)
 	)
-	//'paged' => $paged,
-	// 'meta_query' => array(
-	// 	array(
-	// 		'key'     => 'company_cashout',
-	// 		'value'   => 12,
-	// 		'compare' => 'LIKE'
-	// 	)
-	// )
 );
 query_posts($args);
 ?>
@@ -33,12 +25,12 @@ query_posts($args);
 		<?php endif; ?>
 	</div>
 	<?php if ( have_posts() ) : ?>
-	<form action="#" class="search-form">
+	<form action="" class="search-form" method="get">
 		<div class="wrapper">
 			<h4 class="search-form__title">Поиск</h4>
-			<input type="text" placeholder="Сумма">
-			<input type="text" placeholder="Срок">
-			<input type="text" placeholder="Процент">
+			<input type="text" placeholder="Сумма" name="s_summ">
+			<input type="text" placeholder="Срок" name="s_timeterm">
+			<input type="text" placeholder="Процент" name="s_percent">
 			<button class="btn_big">Найти</button>
 		</div>
 	</form>
@@ -46,18 +38,18 @@ query_posts($args);
 		<div class="catalog aside-wrapper">
 			<?php get_template_part( 'aside' ); ?>
 			<div class="catalog__content">
-				<form class="sort-form">
+				<form class="sort-form" method="get">
 					<span>Сортировать</span>
 					<label class="sort">
-						<input type="radio" name="sort" value="summ">
+						<input type="radio" name="sort" value="sr_summ">
 						<span class="sort__item">По сумме <i class="fa-angle-down"></i></span>
 					</label>
 					<label class="sort">
-						<input type="radio" name="sort" value="term">
+						<input type="radio" name="sort" value="sr_timeterm">
 						<span class="sort__item">По сроку <i class="fa-angle-down"></i></span>
 					</label>
 					<label class="sort">
-						<input type="radio" name="sort" value="percent">
+						<input type="radio" name="sort" value="sr_percent">
 						<span class="sort__item">По % <i class="fa-angle-down"></i></span>
 					</label>
 				</form>
@@ -116,11 +108,10 @@ query_posts($args);
 						<a href="#" class="company__btn btn">Получить займ</a>
 						<?php if( $cashouts = get_field('company_cashout', get_the_ID()) ): ?>
 						<div class="company__receiving">
-							<pre><?php print_r($cashouts); ?></pre>
 							<span>Способ получения</span>
 							<?php foreach( $cashouts as $cashout ): ?>
 							<?php if ($cashoutIcon = get_field('waystopay', 'waystopay_' . $cashout)) { 
-							echo $cashout;?>
+							?>
 							<img class="receiving__img" src="<?php echo $cashoutIcon; ?>" alt="">
 							<?php } else {
 								echo '<span>' . $cashout->name . '</span>';
@@ -134,8 +125,7 @@ query_posts($args);
 				wp_reset_query();
 				?>
 				<?php get_template_part( 'templates/union', 'order' ); ?>
-				<p>Агрегатор финансовых продуктов “EBRF” уже больше года помогает десяткам тысяч людей по всей России выбирать оптимальные микрозаймы, кредиты и многое другое. Наша задача – избавить вас от необходимости изучать десятки сайтов банков и МФО в поисках нужной информации. Мы сделали это за вас!Чтобы сделать оптимальный выбор – изучите всю информацию, которая указана в карточке продукта. Обратите внимание на рейтинг К5М и прочитайте отзывы клиентов. Обязательно проверьте свои шансы на одобрение с помощью бесплатной и моментальной проверки кредитного рейтинга. </p>
-				<p>После выбора, перейдите на сайт банка или МФО и заполните заявку. В ближайшее время с вами свяжутся менеджеры. После получения услуги, вы можете оставить свое мнение на странице организации.Агрегатор финансовых продуктов “EBRF” уже больше года помогает десяткам тысяч людей по всей России выбирать оптимальные микрозаймы, кредиты и многое другое. Наша задача – избавить вас от необходимости изучать десятки сайтов банков и МФО в поисках нужной информации. Мы сделали это за вас!Чтобы сделать оптимальный выбор – изучите всю информацию, которая указана в карточке продукта. Обратите внимание на рейтинг К5М и прочитайте отзывы клиентов. Обязательно проверьте свои шансы на одобрение с помощью бесплатной и моментальной проверки кредитного рейтинга. После выбора, перейдите на сайт банка или МФО и заполните заявку. В ближайшее время с вами свяжутся менеджеры. После получения услуги, вы можете оставить свое мнение на странице организации.</p>
+				<?php echo get_field('tax_company_text'); ?>
 			</div>
 		</div>
 	</div>

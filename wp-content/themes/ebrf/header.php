@@ -16,41 +16,54 @@
 		<div class="header__topline">
 			<div class="wrapper">
 				<a href="#mobile-menu" class="menu-btn icon-menu"></a>
-				<a href="index.php" class="logo">EBRF.RU</a>
-				<ul class="top-menu" id="top-menu">
-					<h5 class="top-menu__title">Получить займ на:</h5>
-					<li><a href="#">Яндекс.Деньги</a></li>
-					<li><a href="#">Qiwi кошелек </a></li>
-					<li><a href="#">Карту</a></li>
-					<li><a href="#">Счет</a></li>
-					<li><a href="#">Сбербанк</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
+				<a href="<?php echo get_home_url(); ?>" class="logo">EBRF.RU</a>
+				<?php 
+				$argSubMenu = array(
+					'theme_location'  => 'top_sub',
+					'menu'            => '', 
+					'container'       => false, 
+					'container_class' => 'wrapper', 
+					'container_id'    => '',
+					'menu_class'      => 'top-menu', 
+					'menu_id'         => 'top-menu',
+					'echo'            => true,
+					'fallback_cb'     => 'wp_page_menu',
+					'before'          => '',
+					'after'           => '',
+					'link_before'     => '',
+					'link_after'      => '',
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					'depth'           => 0,
+					'walker'          => '',
+				);
+				wp_nav_menu( $argSubMenu );
+				?>
 				<a href="#filter" class="filter-btn icon-filter"></a>
 			</div>
 		</div>
 		<div class="header__bottomline" id="mobile-menu">
-			<div class="wrapper">
-				<ul class="main-menu" id="main-menu">
-					<li><a href="#">Микрозаймы</a></li>
-					<li><a href="#">Оформить кредит</a></li>
-					<li>
-						<a href="#dd-menu1" class="dropdown">Банковские кредиты</a>
-						<ul class="dropdown-block main-menu__dropdown-block collapsed" id="dd-menu1">
-							<li><a href="#">Кредитные карты</a></li>
-							<li><a href="#">Дебитовые карты</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Займы под залог</a></li>
-					<li>
-						<a href="#dd-menu2" class="dropdown">Полезное</a>
-						<ul class="dropdown-block main-menu__dropdown-block collapsed" id="dd-menu2">
-							<li><a href="#">Калькулятор</a></li>
-							<li><a href="#">Статьи</a></li>
-							<li><a href="#">Единственная заявка</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
+			<?php 
+			$argsMenu = array(
+				'theme_location'  => 'top',
+				'menu'            => '', 
+				'container'       => 'div', 
+				'container_class' => 'wrapper', 
+				'container_id'    => '',
+				'menu_class'      => 'main-menu', 
+				'menu_id'         => 'main-menu',
+				'echo'            => 0,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'depth'           => 0,
+				'walker'          => '',
+			);
+			$menu = wp_nav_menu( $argsMenu );
+			$menu = str_replace('class="sub-menu', 'class="dropdown-block main-menu__dropdown-block collapsed', $menu );
+			echo $menu;
+			?>
 		</div>
 	</header>

@@ -1,17 +1,8 @@
 <?php 
-//$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 $args = array(
 	'post_type' => 'company',
 	'posts_per_page' => -1,
 	'post_status' => 'publish',
-	//'paged' => $paged,
-	// 'meta_query' => array(
-	// 	array(
-	// 		'key'     => 'company_cashout',
-	// 		'value'   => 12,
-	// 		'compare' => 'LIKE'
-	// 	)
-	// )
 );
 query_posts($args);
 ?>
@@ -35,18 +26,18 @@ query_posts($args);
 		<div class="catalog aside-wrapper">
 			<?php get_template_part( 'aside' ); ?>
 			<div class="catalog__content">
-				<form class="sort-form">
+				<form class="sort-form" method="get">
 					<span>Сортировать</span>
 					<label class="sort">
-						<input type="radio" name="sort" value="summ">
+						<input type="radio" name="sort" value="sr_summ">
 						<span class="sort__item">По сумме <i class="fa-angle-down"></i></span>
 					</label>
 					<label class="sort">
-						<input type="radio" name="sort" value="term">
+						<input type="radio" name="sort" value="sr_timeterm">
 						<span class="sort__item">По сроку <i class="fa-angle-down"></i></span>
 					</label>
 					<label class="sort">
-						<input type="radio" name="sort" value="percent">
+						<input type="radio" name="sort" value="sr_percent">
 						<span class="sort__item">По % <i class="fa-angle-down"></i></span>
 					</label>
 				</form>
@@ -105,11 +96,10 @@ query_posts($args);
 						<a href="#" class="company__btn btn">Получить займ</a>
 						<?php if( $cashouts = get_field('company_cashout', get_the_ID()) ): ?>
 						<div class="company__receiving">
-							<pre><?php print_r($cashouts); ?></pre>
 							<span>Способ получения</span>
 							<?php foreach( $cashouts as $cashout ): ?>
 							<?php if ($cashoutIcon = get_field('waystopay', 'waystopay_' . $cashout)) { 
-							echo $cashout;?>
+							?>
 							<img class="receiving__img" src="<?php echo $cashoutIcon; ?>" alt="">
 							<?php } else {
 								echo '<span>' . $cashout->name . '</span>';
