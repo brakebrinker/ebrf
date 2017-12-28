@@ -6,11 +6,13 @@ Template Name: Шаблон Единая заявка
 <?php get_header(); ?>
 <main>
 	<div class="wrapper">
-		<div class="breadcrumbs">
-			<a href="index.php">Главная</a>
-			<i class="icon-arrow-right"></i>
-			<span>Единая заявка</span>
-		</div>
+		<?php
+		if ( function_exists('yoast_breadcrumb') ) {
+		yoast_breadcrumb('
+		<div class="breadcrumbs" id="breadcrumbs">','</div>
+		');
+		}
+		?>
 		<div class="aside-wrapper">
 			<aside class="aside_right">
 				<?php if (!dynamic_sidebar("order-widget-area") ) : ?> 

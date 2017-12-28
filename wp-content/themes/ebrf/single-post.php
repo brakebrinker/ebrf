@@ -10,13 +10,13 @@ $statiAlsoPosts = get_posts( $argsAtr );
 <?php get_header(); ?>
 	<main>
 		<div class="wrapper">
-			<div class="breadcrumbs">
-				<a href="index.php">Главная</a>
-				<i class="icon-arrow-right"></i>
-				<a href="blog.php">Статьи</a>
-				<i class="icon-arrow-right"></i>
-				<span>Статья</span>
-			</div>
+			<?php
+			if ( function_exists('yoast_breadcrumb') ) {
+			yoast_breadcrumb('
+			<div class="breadcrumbs" id="breadcrumbs">','</div>
+			');
+			}
+			?>
 			<div class="aside-wrapper">
 				<aside class="aside_right">
 					<?php if (!dynamic_sidebar("postin-widget-area") ) : ?> 

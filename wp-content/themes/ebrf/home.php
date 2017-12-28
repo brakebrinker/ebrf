@@ -1,16 +1,13 @@
-<?php 
-/*
-Template Name: Шаблон Блог
-*/
-?>
 <?php get_header(); ?>
 	<main>
 		<div class="wrapper">
-			<div class="breadcrumbs">
-				<a href="index.php">Главная</a>
-				<i class="icon-arrow-right"></i>
-				<span>Статьи</span>
-			</div>
+			<?php
+			if ( function_exists('yoast_breadcrumb') ) {
+			yoast_breadcrumb('
+			<div class="breadcrumbs" id="breadcrumbs">','</div>
+			');
+			}
+			?>
 			<div class="aside-wrapper">
 				<aside class="aside_right">
 					<div class="post-nav">

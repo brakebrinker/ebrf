@@ -6,11 +6,13 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 <?php get_header(); ?>
 <main>
 	<div class="wrapper">
-		<div class="breadcrumbs">
-			<a href="index.php">Главная</a>
-			<i class="icon-arrow-right"></i>
-			<span>Компания 1</span>
-		</div>
+		<?php
+		if ( function_exists('yoast_breadcrumb') ) {
+		yoast_breadcrumb('
+		<div class="breadcrumbs" id="breadcrumbs">','</div>
+		');
+		}
+		?>
 		<?php
 		$method = $_SERVER['REQUEST_METHOD'];
 
@@ -80,32 +82,7 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 		?>
 		<div class="aside-wrapper">
 			<aside class="aside_right">
-				<div class="clauses">
-					<div class="clause">
-						<i class="clause__icon icon-early"></i>
-						<span class="clause__text">Досрочное погашение</span>
-					</div>
-					<div class="clause">
-						<i class="clause__icon icon-bag"></i>
-						<span class="clause__text">Неофициальное трудоустройство</span>
-					</div>
-					<div class="clause">
-						<i class="clause__icon icon-question"></i>
-						<span class="clause__text">Плохая кредитная история</span>
-					</div>
-					<div class="clause">
-						<i class="clause__icon icon-card"></i>
-						<span class="clause__text">Нет кредитной истории</span>
-					</div>
-					<div class="clause">
-						<i class="clause__icon icon-docs"></i>
-						<span class="clause__text">Необходимые документы</span>
-					</div>
-					<div class="clause">
-						<i class="clause__icon icon-percent"></i>
-						<span class="clause__text">Процентная ставка</span>
-					</div>
-				</div>
+				<?php get_template_part( 'templates/info', 'points' ); ?>
 				<?php if (!dynamic_sidebar("company-widget-area") ) : ?> 
 				<div class="dummy"></div>
 				<?php endif; ?>
@@ -221,22 +198,22 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 								}
 								?>
 
-								<?php if( have_rows('company_cashout') ): ?>
+								<?php if( $cashouts = get_field('company_cashout', get_the_ID()) ): ?>
 								<dt><i class="cmp-list__icon icon-envelope"></i> <span>Способ выплаты:</span></dt>
 								<dd>
-								<?php while( have_rows('company_cashout') ): the_row();
-								$cashoutTitle = get_sub_field('title');
-									echo '<span class="cash-in-out-title">' . $cashoutTitle . '</span>'; 
-								endwhile; ?>
+								<?php foreach( $cashouts as $cashout ): 
+								$thisterm = get_term( $cashout, 'waystopay' );
+									echo '<span class="cash-in-out-title">' . $thisterm->name . '</span>'; 
+								endforeach; ?>
 								</dd>
 								<?php endif; ?>
 
-								<?php if( have_rows('company_cashin') ): ?>
+								<?php if( $cashins = get_field('company_cashin', get_the_ID()) ): ?>
 								<dt><i class="cmp-list__icon icon-money"></i> <span>Способ оплаты:</span></dt>
-								<dd><?php while( have_rows('company_cashin') ): the_row();
-								$cashinTitle = get_sub_field('title');
-									echo '<span class="cash-in-out-title">' . $cashinTitle . '</span>'; 
-								endwhile; ?>
+								<dd><?php foreach( $cashins as $cashin ): 
+								$thisterm = get_term( $cashin, 'waystopay' );
+									echo '<span class="cash-in-out-title">' . $thisterm->name . '</span>'; 
+								endforeach; ?>
 								</dd>
 								<?php endif; ?>
 
@@ -248,7 +225,10 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 							<div class="cmp-list__item">
 								<?php if ($docs = get_field('company_docs', get_the_ID())) { ?>
 								<dt><i class="cmp-list__icon icon-docs"></i> <span>Документы:</span></dt>
-								<dd><?php echo $docs; ?></dd>
+								<dd><?php foreach( $docs as $doc ): 
+								$thisterm = get_term( $doc, 'document' );
+									echo '<span class="cash-in-out-title">' . $thisterm->name . '</span>'; 
+								endforeach; ?></dd>
 								<?php } ?>
 
 								<?php if ($order_speed = get_field('company_order_speed', get_the_ID())) { ?>
@@ -263,14 +243,19 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 
 								<?php $workmode_from = get_field('company_workmode_from', get_the_ID());
 									$workmode_to = get_field('company_workmode_to', get_the_ID()); 
-								if ($workmode_from || $workmode_to) {
+									$workmode_all = get_field('company_workmode_allday', get_the_ID());
+								if ($workmode_from || $workmode_to || $workmode_all) {
 								?>
 								<dt><i class="cmp-list__icon icon-clock"></i> <span>График работы:</span></dt>
 								<?php 
-									echo '<dd>';
-									if ($workmode_from) echo 'С ' . $workmode_from;
-									if ($workmode_to) echo ' до ' . $workmode_to;
-									echo '</dd>';
+									if ($workmode_all) {
+										echo '<dd>Круглосуточно</dd>';
+									} else {
+										echo '<dd>';
+										if ($workmode_from) echo 'С ' . $workmode_from;
+										if ($workmode_to) echo ' до ' . $workmode_to;
+										echo '</dd>';
+									}
 								}
 								?>
 

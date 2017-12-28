@@ -16,7 +16,7 @@ $args = array(
 		)
 	)
 );
-query_posts($args);
+// query_posts($args);
 ?>
 <?php get_header(); ?>
 <main>
@@ -114,7 +114,8 @@ query_posts($args);
 							?>
 							<img class="receiving__img" src="<?php echo $cashoutIcon; ?>" alt="">
 							<?php } else {
-								echo '<span>' . $cashout->name . '</span>';
+								$thisterm = get_term( $cashout, 'waystopay' );
+								echo '<span>' . $thisterm->name . '</span>';
 							} ?>
 							<?php endforeach; ?>
 						</div>
@@ -125,7 +126,7 @@ query_posts($args);
 				wp_reset_query();
 				?>
 				<?php get_template_part( 'templates/union', 'order' ); ?>
-				<?php echo get_field('tax_company_text'); ?>
+				<?php echo get_field('tax_company_text',$taxonomy . '_' . $term_id); ?>
 			</div>
 		</div>
 	</div>

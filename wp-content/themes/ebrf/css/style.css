@@ -638,7 +638,7 @@ aside{
 	padding:16px 0 4px;
 	font-size:12px;	
 }
-.breadcrumbs span{
+.breadcrumb_last{
 	color:#377dff;
 }
 .breadcrumbs .icon-arrow-right{

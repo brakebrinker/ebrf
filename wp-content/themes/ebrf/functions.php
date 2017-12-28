@@ -275,6 +275,29 @@ register_sidebar(array(
     'after_title' => '</h4>',
 ));
 
+// Область виджетов страница Каталог внизу
+register_sidebar(array(
+    'name' => __('Виджеты на странице Каталог'),
+    'id' => 'catalog-bottom-widget-area',
+    'description' => __('Виджеты на странице Каталог Seo текст внизу'),
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '',
+    'after_title' => '',
+));
+
+
+// Область виджетов статичная страница
+register_sidebar(array(
+    'name' => __('Виджеты на статичной странице и записи'),
+    'id' => 'static-widget-area',
+    'description' => __('Виджеты на на статичной странице и записи справа'),
+    'before_widget' => '<div class="post-nav">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="post-nav__title">',
+    'after_title' => '</h4>',
+));
+
 /* Подсчет количества посещений страниц
 ---------------------------------------------------------- */
 add_action('wp_head', 'kama_postviews');

@@ -6,39 +6,16 @@ Template Name: Шаблон Список компаний
 <?php get_header(); ?>
 <main>
 	<div class="wrapper">
-		<div class="breadcrumbs">
-			<a href="index.php">Главная</a>
-			<i class="icon-arrow-right"></i>
-			<span>Микрофинансовые организации</span>
-		</div>
+		<?php
+		if ( function_exists('yoast_breadcrumb') ) {
+		yoast_breadcrumb('
+		<div class="breadcrumbs" id="breadcrumbs">','</div>
+		');
+		}
+		?>
 		<div class="aside-wrapper">
 			<aside class="aside_right">
-				<div class="clauses">
-					<div class="clause">
-						<i class="clause__icon icon-early"></i>
-						<span class="clause__text">Досрочное погашение</span>
-					</div>
-					<div class="clause">
-						<i class="clause__icon icon-bag"></i>
-						<span class="clause__text">Неофициальное трудоустройство</span>
-					</div>
-					<div class="clause">
-						<i class="clause__icon icon-question"></i>
-						<span class="clause__text">Плохая кредитная история</span>
-					</div>
-					<div class="clause">
-						<i class="clause__icon icon-card"></i>
-						<span class="clause__text">Нет кредитной истории</span>
-					</div>
-					<div class="clause">
-						<i class="clause__icon icon-docs"></i>
-						<span class="clause__text">Необходимые документы</span>
-					</div>
-					<div class="clause">
-						<i class="clause__icon icon-percent"></i>
-						<span class="clause__text">Процентная ставка</span>
-					</div>
-				</div>
+				<?php get_template_part( 'templates/info', 'points' ); ?>
 				<?php if (!dynamic_sidebar("company-list-widget-area") ) : ?> 
 				<div class="dummy"></div>
 				<?php endif; ?>
