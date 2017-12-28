@@ -8,8 +8,8 @@ function enqueue_styles() {
     wp_enqueue_style( 'fonts');
     wp_register_style('adaptive', get_template_directory_uri() . '/css/adaptive.css');
     wp_enqueue_style( 'adaptive');
-    wp_register_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
-    wp_enqueue_style( 'font-awesome');
+    wp_register_style('font-awe', get_template_directory_uri() . '/css/font-awesome.css');
+    wp_enqueue_style( 'font-awe');
     // wp_register_style('font-style', 'https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700&amp;subset=cyrillic-ext');
     // wp_enqueue_style( 'font-style');
     // wp_register_style('font-style-pt', 'https://fonts.googleapis.com/css?family=PT+Serif:400,700&amp;subset=cyrillic-ext');

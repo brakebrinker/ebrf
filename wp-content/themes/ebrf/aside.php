@@ -1,4 +1,8 @@
 <?php 
+$queried_object = get_queried_object();
+$taxonomy = $queried_object->taxonomy;
+$term_id = $queried_object->term_id;
+
 $argsCashout = array(
 	'taxonomy' => 'waystopay',
 	'hide_empty' => false,

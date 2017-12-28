@@ -73,7 +73,11 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 				$userRate = $userRate + expand_ratings_template('%RATINGS_USERS%', get_the_ID()); 
 			}
 		}
-		$avgRate = round($summRate / $userRate, 2);
+		if ($avgRate) {
+			$avgRate = round($summRate / $userRate, 2);
+		} else {
+			$avgRate = 0;
+		}
 		wp_reset_postdata();
 
 		update_post_meta(get_the_ID(), 'ratings_average', $avgRate);
@@ -100,6 +104,7 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 						<span>Обновлено <?php echo $dModified = get_the_modified_date(); ?></span>
 						<div class="cmp__rating">							
 							<?php if(function_exists('the_ratings')) { echo expand_ratings_template('%RATINGS_IMAGES% <span class="rev-link">%RATINGS_USERS% отзывов</span><span class="rating-number"> (%RATINGS_AVERAGE% из %RATINGS_MAX%)</span>', get_the_ID()); } ?>
+							
 						</div>
 						<div class="cmp__links">
 							<?php the_excerpt(); ?>
