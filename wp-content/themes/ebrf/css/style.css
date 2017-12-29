@@ -499,6 +499,7 @@ aside{
 }
 .company__rating-amount{
 	font-weight:900;
+	text-decoration: underline;
 }
 .company__text{
 	padding:28px 25px 30px 27px;
@@ -1077,4 +1078,9 @@ footer{
 span.wpcf7-not-valid-tip {
     font-size: 12px;
     line-height: 1.1;
+}
+
+.recaptcha_error {
+    margin: 15px 0;
+    color: #de1d07;
 }

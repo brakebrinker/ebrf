@@ -2,6 +2,14 @@
 /* Define these, So that WP functions work inside this file */
 define('WP_USE_THEMES', false);
 require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
+require_once "recaptchalib.php";
+
+//секретный ключ
+$secret = "6Lc4OysUAAAAAHBpMBV1V98hXsZOaUWJIiLcXlGN";
+//ответ
+$response = null;
+//проверка секретного ключа
+$reCaptcha = new ReCaptcha($secret);
 ?>
 <?php get_header(); ?>
 <main>
@@ -14,48 +22,61 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 		}
 		?>
 		<?php
-		$method = $_SERVER['REQUEST_METHOD'];
+		if (!empty($_POST)) {
+ 
+			if ($_POST["g-recaptcha-response"]) {
+				$response = $reCaptcha->verifyResponse(
+					$_SERVER["REMOTE_ADDR"],
+					$_POST["g-recaptcha-response"]
+				);
+			}
+			if ($response != null && $response->success) {
+				$method = $_SERVER['REQUEST_METHOD'];
 
-		if ( $method === 'POST' ) {
+				if ( $method === 'POST' ) {
 
-		    $post_type = 'review';
+					$post_type = 'review';
 
-		     $post_title = $_POST['review-title'] . ' ' . $_POST['review-username'];
-		     $post_content = $_POST['review-text'];
-		     $post_name = $_POST['review-username'];
-		     $post_positive = $_POST['review-positive'];
-		     $post_negative = $_POST['review-negative'];
-		     $post_rate = $_POST['review-rate'] == 0 ? '5' : $_POST['review-rate'];
-		     $post_source = $_POST['review-url'];
-		     $post_company_id = (int) $_POST['review-company-id'];
+					$post_title = $_POST['review-title'] . ' ' . $_POST['review-username'];
+					$post_content = $_POST['review-text'];
+					$post_name = $_POST['review-username'];
+					$post_positive = $_POST['review-positive'];
+					$post_negative = $_POST['review-negative'];
+					$post_rate = $_POST['review-rate'] == 0 ? '5' : $_POST['review-rate'];
+					$post_source = $_POST['review-url'];
+					$post_company_id = (int) $_POST['review-company-id'];
 
-		     $new_post = array(
-		     'ID' => '',
-		     'post_author' => $user->ID,
-		     'post_type' => $post_type,
-		     'post_content' => $post_content,
-		     'post_title' => wp_strip_all_tags($post_title),
-		     'post_status' => 'pending'
-		     );
+					$new_post = array(
+						'ID' => '',
+						'post_author' => $user->ID,
+						'post_type' => $post_type,
+						'post_content' => $post_content,
+						'post_title' => wp_strip_all_tags($post_title),
+						'post_status' => 'pending'
+					);
 
-		     $post_id = wp_insert_post($new_post);
+					$post_id = wp_insert_post($new_post);
 
-		     if( is_wp_error($post_id) ){ ?>
+					if( is_wp_error($post_id) ){ ?>
 		<div class="msg-error msg-time-hide">Ошибка добавления отзыва</div>
-		     <?php } else {
-		          update_field('review_author_name', $post_name, $post_id);
-		          update_field('review_plus', $post_positive, $post_id);
-		          update_field('review_minus', $post_negative, $post_id);
-		          update_field('review_company_id', $post_company_id, $post_id);
-		          update_post_meta($post_id, 'ratings_average', $post_rate);
-		          update_post_meta($post_id, 'ratings_score', $post_rate);
-		          update_post_meta($post_id, 'ratings_users', 1); 
-		          ?>
+		<?php } else {
+						update_field('review_author_name', $post_name, $post_id);
+						update_field('review_plus', $post_positive, $post_id);
+						update_field('review_minus', $post_negative, $post_id);
+						update_field('review_company_id', $post_company_id, $post_id);
+						update_post_meta($post_id, 'ratings_average', $post_rate);
+						update_post_meta($post_id, 'ratings_score', $post_rate);
+						update_post_meta($post_id, 'ratings_users', 1); 
+		?>
 		<div class="msg-success msg-time-hide">Ваш отзыв отправлен на модерацию.</div>
-		     <?php 
-		     }
-		     // wp_redirect($post_source);
-		     // exit;
+		<?php 
+					}
+					// wp_redirect($post_source);
+					// exit;
+				}
+			} else {
+				echo '<div class="msg-error msg-time-hide">Ваш отзыв не отправлен! Вы точно человек?</div>';
+			}
 		}
 		?>
 		<?php
@@ -67,13 +88,16 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 		);
 
 		$reviews = get_posts( $argsReview );
+		$summRate = 0;
+		$userRate = 0;
+		
 		foreach ($reviews as $post) {  setup_postdata($post);
 			if(function_exists('the_ratings')) { 
 				$summRate = $summRate + expand_ratings_template('%RATINGS_AVERAGE%', get_the_ID()); 
 				$userRate = $userRate + expand_ratings_template('%RATINGS_USERS%', get_the_ID()); 
 			}
 		}
-		if ($avgRate) {
+		if ($summRate != 0 && $userRate != 0) {
 			$avgRate = round($summRate / $userRate, 2);
 		} else {
 			$avgRate = 0;
@@ -103,8 +127,7 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 						<h1 class="cmp__title"><?php the_title(); ?></h1>
 						<span>Обновлено <?php echo $dModified = get_the_modified_date(); ?></span>
 						<div class="cmp__rating">							
-							<?php if(function_exists('the_ratings')) { echo expand_ratings_template('%RATINGS_IMAGES% <span class="rev-link">%RATINGS_USERS% отзывов</span><span class="rating-number"> (%RATINGS_AVERAGE% из %RATINGS_MAX%)</span>', get_the_ID()); } ?>
-							
+							<?php if(function_exists('the_ratings')) { echo expand_ratings_template('%RATINGS_IMAGES% <a href="#reviews-block" class="rev-link">%RATINGS_USERS% отзывов</a><span class="rating-number"> (%RATINGS_AVERAGE% из %RATINGS_MAX%)</span>', get_the_ID()); } ?>
 						</div>
 						<div class="cmp__links">
 							<?php the_excerpt(); ?>
@@ -129,15 +152,6 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 						</div>
 						<div class="cmp-block__head-item">
 							<a href="#reviews-block" class="rev-link"><?php if(function_exists('the_ratings')) { echo expand_ratings_template('%RATINGS_USERS% отзывов', get_the_ID()); } ?></a>
-						</div>
-						<div class="cmp-block__head-item">
-							<h6>Одобрение</h6>
-							<div class="progress">
-								<div class="progress__item"></div>
-							</div>								
-						</div>
-						<div class="cmp-block__head-item">
-							<span>К5М = 9.9/10</span>
 						</div>
 						<div class="cmp-block__head-item">
 							<a href="#" class="btn btn_block">Оформить</a>
@@ -335,6 +349,15 @@ require( $_SERVER['DOCUMENT_ROOT'] .'/wp-blog-header.php');
 						<textarea name="review-positive" class="positive" rows="6" placeholder="Плюсы"></textarea>
 						<textarea name="review-negative" class="negative" rows="6" placeholder="Минусы"></textarea>
 					</div>
+					<div class="g-recaptcha" data-sitekey="6Lc4OysUAAAAAHfCfYAcNwjH5iLvObqffg5TKsOE"></div>
+					<?php
+					if (!empty($_POST)) {
+						if ($response != null && $response->success) {
+						} else { 
+							echo '<div class="recaptcha_error">Ваш отзыв не отправлен. Вы точно человек?</div>';
+						}
+					}
+					?>
 					<button type="submit" class="btn_big">Отправить отзыв</button>
 				</form>
 			</div>

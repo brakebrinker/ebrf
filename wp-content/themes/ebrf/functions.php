@@ -26,6 +26,8 @@ function enqueue_scripts () {
     wp_enqueue_script('es5-shims');
     wp_register_script('share2', '//yastatic.net/share2/share.js');
     wp_enqueue_script('share2');
+    wp_register_script('recaptcha', '//www.google.com/recaptcha/api.js?hl=ru', array(), false, true);
+    wp_enqueue_script('recaptcha');
     wp_register_script('prefixfree',  get_template_directory_uri() . '/js/prefixfree.min.js', array('jquery'), false, true);
     wp_enqueue_script('prefixfree');
     wp_register_script('one',  get_template_directory_uri() . '/js/1.js', array('jquery'), false, true);
@@ -141,17 +143,17 @@ add_action( 'customize_register', 'mytheme_customize_register' );
 add_theme_support( 'post-thumbnails' ); // для всех типов постов
 
 // удаление полей комментариев
-function remove_comment_fields($fields) {
+/*function remove_comment_fields($fields) {
 unset($fields['url']);
 unset($fields['email']);
 return $fields;
 }
-add_filter('comment_form_default_fields', 'remove_comment_fields');
+add_filter('comment_form_default_fields', 'remove_comment_fields');*/
 
 //изменение порядка полей комментариев
 function sort_comment_fields( $fields ){
     $new_fields = array();
-    $myorder = array('author','email','url','comment'); // порядок полей
+    $myorder = array('author','comment','email','url'); // порядок полей
  
     foreach( $myorder as $key ){
         $new_fields[ $key ] = $fields[ $key ];
@@ -393,7 +395,6 @@ function go_filter() {
     }
 
     if (!empty($_GET['s_percent'])) { // если передан массив с фильтром по комнатам
-        echo (float) $_GET['s_percent'];
         $args['meta_query'][] = array( // пешем условия в meta_query
             'key' => 'company_interest_rate_num', // название произвольного поля
             'value' => (float) $_GET['s_percent'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
@@ -456,3 +457,29 @@ function go_filter() {
 
     query_posts(array_merge($args,$argSort,$wp_query->query)); // сшиваем текущие условия выборки стандартного цикла wp с новым массивом переданным из формы и фильтруем
 }
+
+
+add_action( 'wp_enqueue_scripts', 'myajax_data', 1 );
+function myajax_data(){
+    wp_localize_script('twentyfifteen-script', 'changeLink', array(
+        'ajaxurl' => admin_url('admin-ajax.php')
+    ));
+}
+
+//add_action('admin_print_scripts', 'my_action_javascript'); // такое подключение будет работать не всегда
+
+add_action('wp_ajax_link', 'my_change_link');
+add_action('wp_ajax_nopriv_link', 'my_change_link');
+function my_change_link() {
+    if (empty($_GET['name'])) {
+        $name = 'пользователь';
+    } else {
+        $name = esc_attr($_GET['name']);
+    }
+
+    echo "Hi, $name!";
+    wp_die();
+}
+
+
+

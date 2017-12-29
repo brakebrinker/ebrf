@@ -14,11 +14,11 @@ if ( ! defined('WPCACHEHOME') )
 	define( 'WPCACHEHOME', WP_CONTENT_DIR . "/plugins/wp-super-cache/" );
 
 $cache_compression = 0; // Super cache compression
-$cache_enabled = true;
-$super_cache_enabled = true;
+$cache_enabled = false;
+$super_cache_enabled = false;
 $cache_max_time = 3600;
 //$use_flock = true; // Set it true or false if you know what to use
-$cache_path = 'D:\projects\www\ebrf\wp-content/cache/';
+$cache_path = 'D:\projects\www\ebrf/wp-content/cache/';
 $file_prefix = 'wp-cache-';
 $ossdlcdn = 0;
 
@@ -28,7 +28,7 @@ $cache_acceptable_files = array( 'wp-comments-popup.php', 'wp-links-opml.php', '
 $cache_rejected_uri = array('wp-.*\\.php', 'index\\.php');
 $cache_rejected_user_agent = array ( 0 => 'bot', 1 => 'ia_archive', 2 => 'slurp', 3 => 'crawl', 4 => 'spider', 5 => 'Yandex' );
 
-$cache_rebuild_files = 1;
+$cache_rebuild_files = 0;
 
 // Disable the file locking system.
 // If you are experiencing problems with clearing or creating cache files
@@ -87,7 +87,7 @@ $wp_cache_cron_check = 0;
 $wp_cache_mfunc_enabled = 0;
 $wp_cache_make_known_anon = 0;
 $wp_cache_refresh_single_only = 0;
-$wp_cache_mod_rewrite = 1;
+$wp_cache_mod_rewrite = 0;
 $wp_supercache_304 = 1;
 $wp_cache_front_page_checks = 0;
 $wp_cache_disable_utf8 = 0;
