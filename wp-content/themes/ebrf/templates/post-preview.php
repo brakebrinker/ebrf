@@ -1,15 +1,14 @@
 <div class="post-loop">
-	<a href="<?php the_permalink(); ?>" class="block-link"></a>
-	
 	<?php if ( has_post_thumbnail()) { ?>
+	<a href="<?php the_permalink(); ?>" rel="no-follow">
 	<?php the_post_thumbnail(array(270, 150), array('alt' => get_the_title(),
 		'class' => "post-loop__img"
-	)); ?>
+	)); ?></a>
 	<?php } else { ?>
-		<img src="<?php bloginfo('template_url'); ?>/img/post/no_photo.png" alt="" class="post-loop__img">
+		<a href="<?php the_permalink(); ?>" rel="no-follow"><img src="<?php bloginfo('template_url'); ?>/img/post/no_photo.png" alt="" class="post-loop__img"></a>
 	<?php } ?>
 	<div class="post-loop__content">
-		<h5 class="post-loop__title"><?php the_title(); ?></h5>
+		<a href="<?php the_permalink(); ?>"><h5 class="post-loop__title"><?php the_title(); ?></h5></a>
 		<div class="post-loop__text"><?php the_content(); ?></div>
 		<div class="post-loop__tools">
 			<div class="post-loop__char">

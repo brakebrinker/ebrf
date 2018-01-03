@@ -201,23 +201,4 @@ if (urll.indexOf('bad_ki=true') + 1) { $('.checkbox input[name="bad_ki"]').prop(
 if (urll.indexOf('allday=true') + 1) { $('.checkbox input[name="allday"]').prop('checked', true); }
 if (urll.indexOf('prolongation=true') + 1) { $('.checkbox input[name="prolongation"]').prop('checked', true); }
 
-// подмена ссылки на партнерскую
-$('.company-link').on('click', function(e) {
-	e.preventDefault;
-	//$(this).attr("href","")
-})
-
-function changePartnerLink(elem) {
-
-}
-
-    var data = {
-        action: 'link',
-        whatever: 1234
-    };
-
-    jQuery.post( ajaxurl, data, function(response) {
-        alert('Получено с сервера: ' + response);
-});
-
 });

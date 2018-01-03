@@ -25,34 +25,13 @@ $args = array(
 		<?php endif; ?>
 	</div>
 	<?php if ( have_posts() ) : ?>
-	<form action="" class="search-form" method="get">
-		<div class="wrapper">
-			<h4 class="search-form__title">Поиск</h4>
-			<input type="text" placeholder="Сумма" name="s_summ">
-			<input type="text" placeholder="Срок" name="s_timeterm">
-			<input type="text" placeholder="Процент" name="s_percent">
-			<button class="btn_big">Найти</button>
-		</div>
-	</form>
+	<?php get_template_part( 'templates/company', 'search' ); ?>
 	<div class="wrapper">
+		<h1 class="archive-title"><?php single_cat_title(); ?></h1>
 		<div class="catalog aside-wrapper">
 			<?php get_template_part( 'aside' ); ?>
 			<div class="catalog__content">
-				<form class="sort-form" method="get">
-					<span>Сортировать</span>
-					<label class="sort">
-						<input type="radio" name="sort" value="sr_summ">
-						<span class="sort__item">По сумме <i class="fa-angle-down"></i></span>
-					</label>
-					<label class="sort">
-						<input type="radio" name="sort" value="sr_timeterm">
-						<span class="sort__item">По сроку <i class="fa-angle-down"></i></span>
-					</label>
-					<label class="sort">
-						<input type="radio" name="sort" value="sr_percent">
-						<span class="sort__item">По % <i class="fa-angle-down"></i></span>
-					</label>
-				</form>
+				<?php get_template_part( 'templates/company', 'sort' ); ?>
 				<?php if ($_GET && !empty($_GET)) { // если было передано что-то из формы
 					go_filter(); // запускаем функцию фильтрации
 				} ?>

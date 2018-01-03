@@ -48,7 +48,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<a href="<?php the_permalink(); ?>" class="company-link company__btn btn">Получить займ</a>
+		<a href="<?php the_permalink(); ?>" data-id="<?php echo get_the_ID(); ?>" class="company-link company__btn btn" target="_blank">Получить займ</a>
 		<?php $json = json_encode(get_field('company_partner_link', get_the_ID())); 
 		$json;
 		?>

@@ -390,8 +390,12 @@ aside{
 .page-content{
 	flex:1 1 auto;	
 }
+.archive-title {
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
 .catalog{	
-	padding-top:40px;
+	padding-top:0px;
 	padding-bottom:40px;
 }
 .aside_right{

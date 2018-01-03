@@ -458,27 +458,31 @@ function go_filter() {
     query_posts(array_merge($args,$argSort,$wp_query->query)); // сшиваем текущие условия выборки стандартного цикла wp с новым массивом переданным из формы и фильтруем
 }
 
-
-add_action( 'wp_enqueue_scripts', 'myajax_data', 1 );
-function myajax_data(){
-    wp_localize_script('twentyfifteen-script', 'changeLink', array(
-        'ajaxurl' => admin_url('admin-ajax.php')
-    ));
-}
-
 //add_action('admin_print_scripts', 'my_action_javascript'); // такое подключение будет работать не всегда
 
 add_action('wp_ajax_link', 'my_change_link');
 add_action('wp_ajax_nopriv_link', 'my_change_link');
 function my_change_link() {
-    if (empty($_GET['name'])) {
-        $name = 'пользователь';
-    } else {
-        $name = esc_attr($_GET['name']);
+
+    $id = ! empty($_POST['id']) ? esc_attr($_POST['id']) : false;
+    $link = get_field('company_partner_link', $id);
+
+    if (!link) {
+        die('Ссылка не найдена');
     }
 
-    echo "Hi, $name!";
+    echo $link;
+
     wp_die();
+}
+
+add_action( 'wp_enqueue_scripts', 'myajax_data', 1 );
+function myajax_data() {
+    wp_register_script('chnlink',  get_template_directory_uri() . '/js/chnlink.js', array('jquery'), false, true);
+    wp_enqueue_script('chnlink');
+    wp_localize_script('chnlink', 'changeLink', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+    ));
 }
 
 
