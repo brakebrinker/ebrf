@@ -163,31 +163,38 @@ $reCaptcha = new ReCaptcha($secret);
 							<span>Обновлено <?php echo $dModified; ?></span>
 						</div>
 						<ul class="cmp__clause-list check-list">
-							<?php if ($summDo = get_field('company_summ_do', get_the_ID()))
-								echo '<li>' . $summDo . '</li>';
+							<?php if ($cash_back = get_field('company_cash_back', get_the_ID()))
+								echo '<li>' . $cash_back . ' % </li>';
 
-								if ($termDo = get_field('company_term_do', get_the_ID()))
-								echo '<li>' . $termDo . ' дней</li>';
+								if ($percent_in_rest = get_field('company_percent_in_rest', get_the_ID()))
+								echo '<li>' . $percent_in_rest . '</li>';
 								
-								if ($rateNum = get_field('company_interest_rate_num', get_the_ID())) {
-									$rateTerm = get_field_object('company_interest_rate_term', get_the_ID());
-									$ratevalue = $rateTerm['value'];
-									$ratelabel = $rateTerm['choices'][ $ratevalue ];
-								echo '<li>' . $rateNum . '% ' . $ratelabel . '</li>';
-								}
+                                if ($bonuces = get_field('company_bonuces', get_the_ID())) 
+                                echo '<li>' . $bonuces . '</li>';
 							?>
 						</ul>
 						<dl class="cmp-list">
 							<div class="cmp-list__item">
-								<?php $summOt = get_field('company_summ_ot', get_the_ID());
-								if ($summOt || $summDo) {
-								?>
-								<dt><i class="cmp-list__icon icon-summ"></i> <span>Сумма:</span></dt>
 								<?php 
-									echo '<dd>';
-									if ($summOt) echo 'от ' . $summOt;
-									if ($summDo) echo ' - ' . $summDo . ' руб.';
-									echo '</dd>';
+								if ($cash_back) {
+								?>
+								<dt><i class="cmp-list__icon icon-summ"></i> <span>Кэшбэк:</span></dt>
+								<?php 
+									echo '<dd>' . $cash_back . '% ' . '</dd>';
+								}
+                                ?>
+                                
+                                <?php if ($percent_in_rest) { ?>
+								<dt><i class="cmp-list__icon icon-calendar"></i> <span>Проценты на остаток:</span></dt>
+								<?php 
+									echo '<dd>' . $percent_in_rest . '</dd>';
+								}
+                                ?>
+                                
+                                <?php if ($bonuces) { ?>
+								<dt><i class="cmp-list__icon icon-percent"></i> <span>Бонусы:</span></dt>
+								<?php 
+									echo '<dd>' . $bonuces . '</dd>';
 								}
 								?>
 

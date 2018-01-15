@@ -837,6 +837,17 @@ a.pagination__item.active,
 .rev-link, .rating-number {
 	vertical-align: text-bottom;
 }
+.review__text-posnegat {
+    display: flex;
+    justify-content: flex-start;
+}
+.review__text-posnegat div {
+    min-width: 150px;
+    padding-left: 10px;
+}
+.review__text-posnegat div:first-child {
+	margin-right: 20px;
+}
 .msg-success {
     background: #ddefe0;
     padding: 10px 20px;

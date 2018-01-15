@@ -161,54 +161,87 @@ $reCaptcha = new ReCaptcha($secret);
 						<div class="cmp-block__top">
 							<h3 class="cmp-block__title"><?php the_title(); ?></h3>
 							<span>Обновлено <?php echo $dModified; ?></span>
-						</div>
-						<ul class="cmp__clause-list check-list">
-							<?php if ($summDo = get_field('company_summ_do', get_the_ID()))
-								echo '<li>' . $summDo . '</li>';
+                        </div>
+                        <ul class="cmp__clause-list check-list">
+							<?php if ($maxlim = get_field('company_card_maxlim', get_the_ID()))
+								echo '<li>' . $maxlim . '</li>';
 
-								if ($termDo = get_field('company_term_do', get_the_ID()))
-								echo '<li>' . $termDo . ' дней</li>';
+								if ($nopercent = get_field('company_no_percent_termin', get_the_ID()))
+								echo '<li>' . $nopercent . ' дней</li>';
 								
-								if ($rateNum = get_field('company_interest_rate_num', get_the_ID())) {
+								if ($rateNumFrom = get_field('company_interest_rate_num_from', get_the_ID())) {
 									$rateTerm = get_field_object('company_interest_rate_term', get_the_ID());
 									$ratevalue = $rateTerm['value'];
 									$ratelabel = $rateTerm['choices'][ $ratevalue ];
-								echo '<li>' . $rateNum . '% ' . $ratelabel . '</li>';
+								echo '<li>от ' . $rateNumFrom . '% ' . $ratelabel . '</li>';
 								}
 							?>
 						</ul>
 						<dl class="cmp-list">
 							<div class="cmp-list__item">
-								<?php $summOt = get_field('company_summ_ot', get_the_ID());
-								if ($summOt || $summDo) {
+								<?php
+								if ($maxlim) {
 								?>
-								<dt><i class="cmp-list__icon icon-summ"></i> <span>Сумма:</span></dt>
+								<dt><i class="cmp-list__icon icon-summ"></i> <span>Максимальный лимит:</span></dt>
 								<?php 
-									echo '<dd>';
-									if ($summOt) echo 'от ' . $summOt;
-									if ($summDo) echo ' - ' . $summDo . ' руб.';
-									echo '</dd>';
+									echo '<dd>'.$maxlim.' руб.</dd>';
 								}
 								?>
 
-								<?php $termOt = get_field('company_term_ot', get_the_ID());
-								if ($termOt || $termDo) {
+								<?php $rateNumTo = get_field('company_interest_rate_num_to', get_the_ID());
+								if ($rateNumFrom || $rateNumTo) {
 								?>
-								<dt><i class="cmp-list__icon icon-calendar"></i> <span>Срок:</span></dt>
-								<?php 
-									echo '<dd>';
-									if ($termOt) echo 'от ' . $termOt;
-									if ($termDo) echo ' до ' . $termDo . ' дней';
-									echo '</dd>';
-								}
-								?>
-
-								<?php if ($rateNum) { ?>
 								<dt><i class="cmp-list__icon icon-percent"></i> <span>Процентная ставка (%):</span></dt>
 								<?php 
-									echo '<dd>' . $rateNum . '% ' . $ratelabel . '</dd>';
+									echo '<dd>';
+									if ($rateNumFrom) echo 'от ' . $rateNumFrom . ' %';
+									if ($rateNumTo) echo ' до ' . $rateNumTo . ' %';
+									echo  ' ' . $ratelabel . '</dd>';
 								}
 								?>
+
+								<?php if ($nopercent) { ?>
+								<dt><i class="cmp-list__icon icon-list"></i> <span>Беспроцентный период:</span></dt>
+								<?php 
+									echo '<dd>' . $nopercent . ' дней</dd>';
+								}
+                                ?>
+                                
+                                <?php 
+                                    $openCard = get_field('company_open_card', get_the_ID());
+                                    if ($openCard == 0) {
+                                        $openCard = 0;
+                                    } 
+                                if ($openCard >= 0) {
+                                ?>
+								<dt><i class="cmp-list__icon icon-hand"></i> <span>Открытие:</span></dt>
+								<dd><?php echo $openCard .' руб.</dd>'; ?></dd>
+                                <?php } ?>
+                                
+                                <?php if ($maintenanceCard = get_field('company_maintenance_card', get_the_ID())) { ?>
+								<dt><i class="cmp-list__icon icon-hand"></i> <span>Обслуживание:</span></dt>
+								<dd><?php echo $maintenanceCard .' руб.</dd>'; ?></dd>
+                                <?php } ?>
+                                
+                                <?php 
+                                $ageFrom = get_field('company_age_from', get_the_ID());
+                                $ageTo = get_field('company_age_to', get_the_ID());
+                                
+                                if ($ageFrom || $ageTo) { ?>
+								<dt><i class="cmp-list__icon icon-man"></i> <span> Возраст:</span></dt>
+								<?php 
+									echo '<dd>';
+									if ($ageFrom) echo 'от ' . $ageFrom;
+									if ($ageTo) echo ' - ' . $ageTo . ' лет.';
+									echo '</dd>';
+                                }
+                                ?>
+
+
+
+
+
+
 
 								<?php if ($age = get_field('company_age', get_the_ID())) { ?>
 								<dt><i class="cmp-list__icon icon-man"></i> <span> Возраст:</span></dt>
@@ -242,57 +275,38 @@ $reCaptcha = new ReCaptcha($secret);
 								<?php } ?>
 							</div>
 							<div class="cmp-list__item">
-								<?php if ($docs = get_field('company_docs', get_the_ID())) { ?>
+                                <?php if ($term_speed = get_field('company_term_start', get_the_ID())) { ?>
+								<dt><i class="cmp-list__icon icon-magnify"></i> <span>Срок выпуска:</span></dt>
+								<dd><?php echo $term_speed; ?></dd>
+                                <?php } ?>
+
+                                <?php if ($license = get_field('company_license', get_the_ID())) { ?>
+								<dt><i class="cmp-list__icon icon-docs"></i> <span>Лицензия:</span></dt>
+								<dd><?php echo $license; ?></dd>
+                                <?php } ?>
+
+                                <?php if ($docs = get_field('company_docs', get_the_ID())) { ?>
 								<dt><i class="cmp-list__icon icon-docs"></i> <span>Документы:</span></dt>
 								<dd><?php foreach( $docs as $doc ): 
 								$thisterm = get_term( $doc, 'document' );
 									echo '<span class="cash-in-out-title">' . $thisterm->name . '</span>'; 
 								endforeach; ?></dd>
-								<?php } ?>
+                                <?php } ?>
+                                
+                                <?php if ($register = get_field('company_registry', get_the_ID())) { ?>
+								<dt><i class="cmp-list__icon icon-docs"></i> <span>Регистрация:</span></dt>
+								<dd><?php echo $register; ?></dd>
+                                <?php } ?>
+                                
+                                <?php if ($additional = get_field('company_additionally', get_the_ID())) { ?>
+								<dt><i class="cmp-list__icon icon-docs"></i> <span>Дополнительно:</span></dt>
+								<dd><?php echo $additional; ?></dd>
+                                <?php } ?>
 
-								<?php if ($order_speed = get_field('company_order_speed', get_the_ID())) { ?>
-								<dt><i class="cmp-list__icon icon-magnify"></i> <span>Скорость рассмотрения заявки:</span></dt>
-								<dd><?php echo $order_speed; ?></dd>
-								<?php } ?>
-
-								<?php if ($cashout_speed = get_field('company_cashout_speed', get_the_ID())) { ?>
-								<dt><i class="cmp-list__icon icon-hand"></i> <span>Скорость выплаты:</span></dt>
-								<dd><?php echo $cashout_speed; ?></dd>
-								<?php } ?>
-
-								<?php $workmode_from = get_field('company_workmode_from', get_the_ID());
-									$workmode_to = get_field('company_workmode_to', get_the_ID()); 
-									$workmode_all = get_field('company_workmode_allday', get_the_ID());
-								if ($workmode_from || $workmode_to || $workmode_all) {
-								?>
-								<dt><i class="cmp-list__icon icon-clock"></i> <span>График работы:</span></dt>
-								<?php 
-									if ($workmode_all) {
-										echo '<dd>Круглосуточно</dd>';
-									} else {
-										echo '<dd>';
-										if ($workmode_from) echo 'С ' . $workmode_from;
-										if ($workmode_to) echo ' до ' . $workmode_to;
-										echo '</dd>';
-									}
-								}
-								?>
-
-								<?php if ($credit_history = get_field_object('company_credit_history', get_the_ID())) { 
-									$credit_value = $credit_history['value'];
-									$credit_label = $credit_history['choices'][ $credit_value ];
-								?>
-								<dt><i class="cmp-list__icon icon-question"></i> <span>Плохая кредитная история:</span></dt>
-								<dd><?php echo $credit_label; ?></dd>
-								<?php } ?>
-
-								<?php if ($renewal = get_field_object('company_renewal', get_the_ID())) { 
-									$renewal_value = $renewal['value'];
-									$renewal_label = $renewal['choices'][ $renewal_value ];
-								?>
-								<dt><i class="cmp-list__icon icon-hands"></i> <span>Продление:</span></dt>
-								<dd><?php echo $renewal_label; ?></dd>
-								<?php } ?>
+                                <?php if ($cashback = get_field('company_cashback', get_the_ID())) { ?>
+								<dt><i class="cmp-list__icon icon-hand"></i> <span>Кэшбэк:</span></dt>
+								<dd><?php echo $cashback; ?></dd>
+                                <?php } ?>
 							</div>
 						</dl>
 						<?php if( have_rows('company_benefits') ): ?>
@@ -320,7 +334,7 @@ $reCaptcha = new ReCaptcha($secret);
 					</div>
 					<div class="review__text">
 						<?php the_content(); ?>
-						<div class="review__text-posnegat">
+                        <div class="review__text-posnegat">
 							<div class="review__text-positives positive"><?php echo get_field('review_plus', get_the_ID()); ?></div>
 							<div class="review__text-negatives negative"><?php echo get_field('review_minus', get_the_ID()); ?></div>
 						</div>

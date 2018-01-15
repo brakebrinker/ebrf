@@ -320,7 +320,7 @@ $reCaptcha = new ReCaptcha($secret);
 					</div>
 					<div class="review__text">
 						<?php the_content(); ?>
-						<div class="review__text-posnegat">
+                        <div class="review__text-posnegat">
 							<div class="review__text-positives positive"><?php echo get_field('review_plus', get_the_ID()); ?></div>
 							<div class="review__text-negatives negative"><?php echo get_field('review_minus', get_the_ID()); ?></div>
 						</div>
