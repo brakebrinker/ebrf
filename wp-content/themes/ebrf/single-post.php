@@ -26,8 +26,10 @@ $statiAlsoPosts = get_posts( $argsAtr );
 				<div class="page-content">
 					<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php if ( has_post_thumbnail()) { ?>
-						<?php the_post_thumbnail(array(270, 220), array('alt' => get_the_title(),
+					<?php 
+					$title_post =  get_the_title();
+					if ( has_post_thumbnail()) { ?>
+						<?php the_post_thumbnail(array(270, 220), array('alt' => $title_post,
 						'class' => "post-img"
 						)); ?>
 					<?php } ?>

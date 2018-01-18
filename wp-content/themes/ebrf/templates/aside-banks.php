@@ -1,4 +1,8 @@
 <?php 
+$queried_object = get_queried_object();
+$taxonomy = $queried_object->taxonomy;
+$term_id = $queried_object->term_id;
+
 $argsAge = array(
 	'taxonomy' => 'age',
 	'hide_empty' => false,
@@ -179,7 +183,7 @@ $speedsAll = get_terms( $argsSpeeds );
 	</div>
 	<?php } ?>
 
-	<form action="" class="filter" method="get">
+	<form class="filter" method="get">
 		<div class="filter__item">
 			<h4 class="filter__title dropdown open" data-target="#field10">Опции</h4>
 			<fieldset class="filter__field" id="field10">

@@ -18,7 +18,7 @@ if ($_GET['post_type']) {
 	<?php get_template_part( 'templates/debet-cards', 'search' ); ?>
 	<div class="wrapper">
 		<div class="catalog aside-wrapper">
-			<?php get_template_part( 'templates/aside-credit', 'cards' ); ?>
+			<?php get_template_part( 'templates/aside-debet', 'cards' ); ?>
 			<?php if ( have_posts() ) : ?>
 				<?php if ($term_id == '') : ?>
 				<div class="catalog__content">
@@ -57,7 +57,7 @@ if ($_GET['post_type']) {
 					wp_reset_query();
 					?>
 					<?php get_template_part( 'templates/union', 'order' ); ?>
-					<?php echo get_field('mfo_down_text', 6); ?>
+					<?php echo get_field('debet-cards_down_text', 6); ?>
 				</div>
 				<?php else: ?>
 				<div class="catalog__content">

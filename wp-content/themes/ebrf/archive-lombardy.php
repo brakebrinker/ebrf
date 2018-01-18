@@ -57,7 +57,7 @@ if ($_GET['post_type']) {
 					wp_reset_query();
 					?>
 					<?php get_template_part( 'templates/union', 'order' ); ?>
-					<?php echo get_field('mfo_down_text', 6); ?>
+					<?php echo get_field('lombardy_down_text', 6); ?>
 				</div>
 				<?php else: ?>
 				<div class="catalog__content">

@@ -1,4 +1,8 @@
 <?php 
+$queried_object = get_queried_object();
+$taxonomy = $queried_object->taxonomy;
+$term_id = $queried_object->term_id;
+
 $argsCashout = array(
 	'taxonomy' => 'waystopay',
 	'hide_empty' => false,
@@ -134,7 +138,7 @@ $anotherAll = get_terms( $argsAnother );
 	</div>
 	<?php } ?>
 
-	<form action="" class="filter" method="get">
+	<form class="filter" method="get">
 		<div class="filter__item">
 			<h4 class="filter__title dropdown open" data-target="#field8">Опции</h4>
 			<fieldset class="filter__field" id="field8">

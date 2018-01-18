@@ -42,10 +42,6 @@ if ($_GET['post_type']) {
 						get_template_part( 'templates/company', 'preview' );
 					}
 					if (  $wp_query->max_num_pages > 1 ) : ?>
-						
-					<?php endif;
-
-					if (  $wp_query->max_num_pages > 1 ) : ?>
 					<script>
 					var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
 					var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
@@ -103,10 +99,6 @@ if ($_GET['post_type']) {
 							the_post();
 							get_template_part( 'templates/company', 'preview' );
 						}
-						if (  $wp_query->max_num_pages > 1 ) : ?>
-							
-						<?php endif;
-
 						if (  $wp_query->max_num_pages > 1 ) : ?>
 						<script>
 						var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';

@@ -331,7 +331,7 @@ $reCaptcha = new ReCaptcha($secret);
 				}
 				?>
 				<h2>Оставить отзыв</h2>
-				<form action="" class="review-form" method="post">
+				<form class="review-form" method="post">
 					<div class="review-form__rating">
 						<span>Рейтинг: </span>
 						<div class="rating">

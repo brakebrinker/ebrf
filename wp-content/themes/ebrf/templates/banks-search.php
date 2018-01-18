@@ -1,4 +1,4 @@
-<form action="" class="search-form" method="get">
+<form class="search-form" method="get">
 	<div class="wrapper">
 		<h4 class="search-form__title">Поиск</h4>
 		<input type="hidden" name="post_type" value="<?php echo $post_type?>">

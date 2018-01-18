@@ -1,6 +1,6 @@
-<?php if( have_rows('company_list_info_points', 99) ): ?>
+<?php if( have_rows('company_list_info_points', 6) ): ?>
 <div class="clauses">
-	<?php while( have_rows('company_list_info_points', 99) ): the_row(); 
+	<?php while( have_rows('company_list_info_points', 6) ): the_row(); 
 		$link = get_sub_field('link');
 		$title = get_sub_field('title');
 		$icon = get_sub_field('icon');

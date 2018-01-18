@@ -1,4 +1,8 @@
 <?php 
+$queried_object = get_queried_object();
+$taxonomy = $queried_object->taxonomy;
+$term_id = $queried_object->term_id;
+
 $argsAge = array(
 	'taxonomy' => 'age',
 	'hide_empty' => false,
@@ -15,12 +19,12 @@ $argsDocument = array(
 );
 
 $argsTypeCards = array(
-	'taxonomy' => 'type-credit-cards',
+	'taxonomy' => 'type-cards',
 	'hide_empty' => false,
 );
 
 $argsForWho = array(
-	'taxonomy' => 'for-who-credit-cards',
+	'taxonomy' => 'for-who',
 	'hide_empty' => false,
 );
 
@@ -35,12 +39,12 @@ $argsGraceLimitCreditCards = array(
 );
 
 $argsDeliveryCreditCards = array(
-	'taxonomy' => 'delivery-credit-cards',
+	'taxonomy' => 'delivery',
 	'hide_empty' => false,
 );
 
 $argsGetSpeedCreditCards = array(
-	'taxonomy' => 'get-speed-credit-cards',
+	'taxonomy' => 'get-speeds',
 	'hide_empty' => false,
 );
 
@@ -88,7 +92,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 		<fieldset class="filter__field" id="field3" style="display: none;">
 			<?php foreach( $typeCardsAll as $typeCardsa ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($typeCardsa->term_id, 'type-credit-cards') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($typeCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $typeCardsa->name; ?></a>
+				<a href="<?php echo get_term_link($typeCardsa->term_id, 'type-cards') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($typeCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $typeCardsa->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -101,7 +105,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 		<fieldset class="filter__field" id="field4" style="display: none;">
 			<?php foreach( $forWhoAll as $forWhoa ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($forWhoa->term_id, 'for-who-credit-cards') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($forWhoa->term_id == $term_id) echo 'current'; ?>"><?php echo $forWhoa->name; ?></a>
+				<a href="<?php echo get_term_link($forWhoa->term_id, 'for-who') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($forWhoa->term_id == $term_id) echo 'current'; ?>"><?php echo $forWhoa->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -123,7 +127,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
     
 	<?php if ($graceLimitCreditCardsAll) { ?>
 	<div class="filter__item">
-		<h4 class="filter__title dropdown" data-target="#field6">Льготный перид</h4>
+		<h4 class="filter__title dropdown" data-target="#field6">Льготный период</h4>
 		<fieldset class="filter__field" id="field6" style="display: none;">
 			<?php foreach( $graceLimitCreditCardsAll as $graceLimitCreditCardsa ) { ?>
 			<div class="text-checkbox">
@@ -140,7 +144,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 		<fieldset class="filter__field" id="field7" style="display: none;">
 			<?php foreach( $deliveryCreditCardsAll as $deliveryCreditCardsa ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($deliveryCreditCardsa->term_id, 'delivery-credit-cards') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($deliveryCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $deliveryCreditCardsa->name; ?></a>
+				<a href="<?php echo get_term_link($deliveryCreditCardsa->term_id, 'delivery') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($deliveryCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $deliveryCreditCardsa->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -153,7 +157,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 		<fieldset class="filter__field" id="field8" style="display: none;">
 			<?php foreach( $getSpeedCreditCardsAll as $getSpeedCreditCardsa ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($getSpeedCreditCardsa->term_id, 'get-speed-credit-cards') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($getSpeedCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $getSpeedCreditCardsa->name; ?></a>
+				<a href="<?php echo get_term_link($getSpeedCreditCardsa->term_id, 'get-speeds') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($getSpeedCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $getSpeedCreditCardsa->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -173,7 +177,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 	</div>
 	<?php } ?>
 
-	<form action="" class="filter" method="get">
+	<form class="filter" method="get">
 		<div class="filter__item">
 			<h4 class="filter__title dropdown open" data-target="#field10">Опции</h4>
 			<fieldset class="filter__field" id="field10">

@@ -285,20 +285,9 @@ $reCaptcha = new ReCaptcha($secret);
 								}
 								?>
 
-								<?php if ($credit_history = get_field_object('company_credit_history', get_the_ID())) { 
-									$credit_value = $credit_history['value'];
-									$credit_label = $credit_history['choices'][ $credit_value ];
-								?>
-								<dt><i class="cmp-list__icon icon-question"></i> <span>Плохая кредитная история:</span></dt>
-								<dd><?php echo $credit_label; ?></dd>
-								<?php } ?>
-
-								<?php if ($renewal = get_field_object('company_renewal', get_the_ID())) { 
-									$renewal_value = $renewal['value'];
-									$renewal_label = $renewal['choices'][ $renewal_value ];
-								?>
-								<dt><i class="cmp-list__icon icon-hands"></i> <span>Продление:</span></dt>
-								<dd><?php echo $renewal_label; ?></dd>
+								<?php if ($register = get_field('company_registry', get_the_ID())) { ?>
+								<dt><i class="cmp-list__icon icon-question"></i> <span>Регистрация:</span></dt>
+								<dd><?php echo $register; ?></dd>
 								<?php } ?>
 							</div>
 						</dl>
@@ -338,7 +327,7 @@ $reCaptcha = new ReCaptcha($secret);
 				}
 				?>
 				<h2>Оставить отзыв</h2>
-				<form action="" class="review-form" method="post">
+				<form class="review-form" method="post">
 					<div class="review-form__rating">
 						<span>Рейтинг: </span>
 						<div class="rating">

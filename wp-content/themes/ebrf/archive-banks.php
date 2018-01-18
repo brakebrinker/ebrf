@@ -9,7 +9,6 @@ if ($_GET['post_type']) {
 } else {
 	$post_type = get_post_type();
 }
-echo get_post_type();
 ?>
 <main>
 	<div class="wrapper">
@@ -58,7 +57,7 @@ echo get_post_type();
 						wp_reset_query();
 						?>
 						<?php get_template_part( 'templates/union', 'order' ); ?>
-						<?php echo get_field('mfo_down_text', 6); ?>
+						<?php echo get_field('banks_down_text', 6); ?>
 					</div>
 				<?php else: ?>
 					<div class="catalog__content">
