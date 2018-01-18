@@ -196,9 +196,4 @@ if (urll.indexOf('sr_summ') + 1) { $('.sort input[value="sr_summ"]').prop('check
 if (urll.indexOf('sr_percent') + 1) { $('.sort input[value="sr_percent"]').prop('checked', true); }
 if (urll.indexOf('sr_timeterm') + 1) { $('.sort input[value="sr_timeterm"]').prop('checked', true); }
 
-if (urll.indexOf('recommended=true') + 1) { $('.checkbox input[name="recommended"]').prop('checked', true); }
-if (urll.indexOf('bad_ki=true') + 1) { $('.checkbox input[name="bad_ki"]').prop('checked', true); }
-if (urll.indexOf('allday=true') + 1) { $('.checkbox input[name="allday"]').prop('checked', true); }
-if (urll.indexOf('prolongation=true') + 1) { $('.checkbox input[name="prolongation"]').prop('checked', true); }
-
 });

@@ -4,9 +4,16 @@ $queried_object = get_queried_object();
 $taxonomy = $queried_object->taxonomy;
 $term_id = $queried_object->term_id;
 
+if ($_GET['post_type']) {
+	$post_type = $_GET['post_type'];
+} else {
+	$post_type = get_post_type();
+}
+echo $post_type;
+
 $args = array(
-	'post_type' => 'company',
-	'posts_per_page' => -1,
+	'post_type' => 'mfo',
+	'posts_per_page' => get_option('posts_per_page'),
 	'post_status' => 'publish',
 	'field' => 'slug',
 	'tax_query' => array(
@@ -16,20 +23,22 @@ $args = array(
 		)
 	)
 );
-// query_posts($args);
+query_posts($args);
 ?>
-<?php get_header(); ?>
+<?php get_header(); 
+?>
 <main>
 	<div class="wrapper">
 		<?php if (!dynamic_sidebar("catalog-widget-area") ) : ?> 
 		<?php endif; ?>
 	</div>
 	<?php if ( have_posts() ) : ?>
-	<?php get_template_part( 'templates/company', 'search' ); ?>
+	<?php get_template_part( 'templates/mfo', 'search' ); 
+	?>
 	<div class="wrapper">
 		<h1 class="archive-title"><?php single_cat_title(); ?></h1>
 		<div class="catalog aside-wrapper">
-			<?php get_template_part( 'aside' ); ?>
+			<?php get_template_part( 'aside', 'mfo' ); ?>
 			<div class="catalog__content">
 				<?php get_template_part( 'templates/company', 'sort' ); ?>
 				<?php if ($_GET && !empty($_GET)) { // если было передано что-то из формы

@@ -271,10 +271,10 @@ register_sidebar(array(
     'name' => __('Виджеты на страницах Каталог и Главная'),
     'id' => 'catalog-widget-area',
     'description' => __('Виджеты на страницах Каталог и Главная вверху'),
-    'before_widget' => '<div class="post-nav">',
-    'after_widget' => '</div>',
-    'before_title' => '<h4 class="post-nav__title">',
-    'after_title' => '</h4>',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '',
+    'after_title' => '',
 ));
 
 // Область виджетов страница Каталог внизу
@@ -403,6 +403,15 @@ function go_filter() {
         );
     }
 
+    if (!empty($_GET['s_percent'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_interest_rate_num', // название произвольного поля
+            'value' => (float) $_GET['s_percent'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            // 'type' => 'numeric',
+            'compare' => '<='
+        );
+    }
+
     if ($_GET['recommended'] === 'true') {
         $args['meta_query'][] = array( // пешем условия в meta_query
             'key' => 'company_recommended', // название произвольного поля
@@ -458,6 +467,488 @@ function go_filter() {
     query_posts(array_merge($args,$argSort,$wp_query->query)); // сшиваем текущие условия выборки стандартного цикла wp с новым массивом переданным из формы и фильтруем
 }
 
+//фильтр в мфо
+function go_mfo_filter() {
+    $sortkey = '';
+    $sortvalue = 'meta_value_num';
+
+    $args = array(); // подготовим массив 
+    $argSort = array();
+    $args['meta_query'] = array('relation' => 'AND'); // отношение между условиями, у нас это "И то И это", можно ИЛИ(OR)
+    global $wp_query; // нужно заглобалить текущую выборку постов
+
+    // if (!empty($_GET['payment'])) { // если передан массив с фильтром по комнатам
+    //     $args['meta_query'][] = array( // пешем условия в meta_query
+    //         'key' => 'company_cashout', // название произвольного поля
+    //         'value' => (int) $_GET['payment'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+    //         'compare' => 'LIKE'
+    //     );
+    // }
+
+    if (!empty($_GET['s_summ'])) {
+        $ressum = $_GET['s_summ'];
+        $compare = '>=';
+        $startField = 'company_summ_do';
+
+        // if ($_GET['s_summ'] == '') {
+        //     $ressum = 0;
+        //     $compare = '>=';
+        //     $startField = 'company_summ_ot';
+        // }
+        // if ($_GET['s_summ'] == 'bolshe') {
+        //     $ressum = 100000;
+        //     $compare = '>=';
+        //     $startField = 'company_summ_do';
+        // }
+
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => $startField, // название произвольного поля
+            'value' => (int) $ressum,
+            'type' => 'numeric', // тип поля - число
+            'compare' => $compare
+        );
+    }
+
+    if (!empty($_GET['s_timeterm'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_term_do', // название произвольного поля
+            'value' => (int) $_GET['s_timeterm'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '>='
+        );
+    }
+
+    if (!empty($_GET['s_percent'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_interest_rate_num', // название произвольного поля
+            'value' => (float) $_GET['s_percent'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '<='
+        );
+    }
+    
+    if (!empty($_GET['s_age'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_age', // название произвольного поля
+            'value' => (int) $_GET['s_age'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '>='
+        );
+    }
+
+    if ($_GET['recommended'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_recommended', // название произвольного поля
+            'value' => true, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '='
+        );
+    }
+
+    if ($_GET['bad_ki'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_credit_history', // название произвольного поля
+            'value' => 1, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '='
+        );
+    }
+
+    if ($_GET['allday'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_workmode_allday', // название произвольного поля
+            'value' => true, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '='
+        );
+    }
+
+    if ($_GET['prolongation'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_renewal', // название произвольного поля
+            'value' => 1, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '='
+        );
+    }
+
+    if (!empty($_GET['sort'])) {
+        if ($_GET['sort'] === 'sr_percent') {
+            $sortkey = 'company_interest_rate_num';
+        }
+
+        if ($_GET['sort'] === 'sr_timeterm') {
+            $sortkey = 'company_term_do';
+        }
+
+        if ($_GET['sort'] === 'sr_summ') {
+            $sortkey = 'company_summ_do';
+        }
+    }
+
+    $argSort = array(
+    'meta_key' => $sortkey,
+    'orderby'  => $sortvalue,
+    'order'    => 'DESC'
+    );
+
+    query_posts(array_merge($args,$argSort,$wp_query->query)); // сшиваем текущие условия выборки стандартного цикла wp с новым массивом переданным из формы и фильтруем
+}
+
+//фильтр в банках, ломбардах
+function go_banks_filter() {
+    $sortkey = '';
+    $sortvalue = 'meta_value_num';
+
+    $args = array(); // подготовим массив 
+    $argSort = array();
+    $args['meta_query'] = array('relation' => 'AND'); // отношение между условиями, у нас это "И то И это", можно ИЛИ(OR)
+    global $wp_query; // нужно заглобалить текущую выборку постов
+
+    // if (!empty($_GET['payment'])) { // если передан массив с фильтром по комнатам
+    //     $args['meta_query'][] = array( // пешем условия в meta_query
+    //         'key' => 'company_cashout', // название произвольного поля
+    //         'value' => (int) $_GET['payment'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+    //         'compare' => 'LIKE'
+    //     );
+    // }
+
+    if (!empty($_GET['s_summ'])) {
+        $ressum = $_GET['s_summ'];
+        $compare = '>=';
+        $startField = 'company_summ_do';
+
+        // if ($_GET['s_summ'] == '') {
+        //     $ressum = 0;
+        //     $compare = '>=';
+        //     $startField = 'company_summ_ot';
+        // }
+        // if ($_GET['s_summ'] == 'bolshe') {
+        //     $ressum = 100000;
+        //     $compare = '>=';
+        //     $startField = 'company_summ_do';
+        // }
+
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => $startField, // название произвольного поля
+            'value' => (int) $ressum,
+            'type' => 'numeric', // тип поля - число
+            'compare' => $compare
+        );
+    }
+
+    if (!empty($_GET['s_timeterm'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_term_do', // название произвольного поля
+            'value' => (int) $_GET['s_timeterm'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '>='
+        );
+    }
+
+    if (!empty($_GET['s_percent'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_interest_rate_num', // название произвольного поля
+            'value' => (float) $_GET['s_percent'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '<='
+        );
+    }
+    
+    if (!empty($_GET['s_age'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_age', // название произвольного поля
+            'value' => (int) $_GET['s_age'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '>='
+        );
+    }
+
+    if ($_GET['recommended'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_recommended', // название произвольного поля
+            'value' => true, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '='
+        );
+    }
+
+    if ($_GET['no_work'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_type_borrower', // название произвольного поля
+            'value' => 54, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if ($_GET['no_2ndfl'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_docs', // название произвольного поля
+            'value' => 93, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if ($_GET['with_passport'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_docs', // название произвольного поля
+            'value' => 30, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if ($_GET['pensioner'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_type_borrower', // название произвольного поля
+            'value' => 53, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if (!empty($_GET['sort'])) {
+        if ($_GET['sort'] === 'sr_percent') {
+            $sortkey = 'company_interest_rate_num';
+        }
+
+        if ($_GET['sort'] === 'sr_timeterm') {
+            $sortkey = 'company_term_do';
+        }
+
+        if ($_GET['sort'] === 'sr_summ') {
+            $sortkey = 'company_summ_do';
+        }
+    }
+
+    $argSort = array(
+    'meta_key' => $sortkey,
+    'orderby'  => $sortvalue,
+    'order'    => 'DESC'
+    );
+
+    query_posts(array_merge($args,$argSort,$wp_query->query)); // сшиваем текущие условия выборки стандартного цикла wp с новым массивом переданным из формы и фильтруем
+}
+
+//фильтр в кредитных картах
+function go_credit_cards_filter() {
+    $sortkey = '';
+    $sortvalue = 'meta_value_num';
+
+    $args = array(); // подготовим массив 
+    $argSort = array();
+    $args['meta_query'] = array('relation' => 'AND'); // отношение между условиями, у нас это "И то И это", можно ИЛИ(OR)
+    global $wp_query; // нужно заглобалить текущую выборку постов
+
+    if (!empty($_GET['s_limit'])) {
+        $ressum = $_GET['s_limit'];
+        $compare = '>=';
+        $startField = 'company_card_maxlim';
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => $startField, // название произвольного поля
+            'value' => (int) $ressum,
+            'type' => 'numeric', // тип поля - число
+            'compare' => $compare
+        );
+    }
+
+    if (!empty($_GET['s_no_percent_term'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_no_percent_termin', // название произвольного поля
+            'value' => (int) $_GET['s_no_percent_term'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '>='
+        );
+    }
+
+    if (!empty($_GET['s_percent'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_interest_rate_num_from', // название произвольного поля
+            'value' => (float) $_GET['s_percent'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '<='
+        );
+    }
+
+    if (!empty($_GET['s_age'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_age_from', // название произвольного поля
+            'value' => (int) $_GET['s_age'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '<='
+        );
+    }
+
+    if ($_GET['recommended'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_recommended', // название произвольного поля
+            'value' => true, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '='
+        );
+    }
+
+    if ($_GET['with_passport'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_docs', // название произвольного поля
+            'value' => 30, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if ($_GET['cash_back'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_cashback', // название произвольного поля
+            'value' => '', // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '!='
+        );
+    }
+
+    if ($_GET['apple_pay'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_pay_methods', // название произвольного поля
+            'value' => 135, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if ($_GET['android_pay'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_pay_methods', // название произвольного поля
+            'value' => 137, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if ($_GET['samsung_pay'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_pay_methods', // название произвольного поля
+            'value' => 136, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if (!empty($_GET['sort'])) {
+        if ($_GET['sort'] === 'sr_percent_rate') {
+            $sortkey = 'company_interest_rate_num_from';
+        }
+
+        if ($_GET['sort'] === 'sr_cost_service') {
+            $sortkey = 'company_maintenance_card';
+        }
+
+        if ($_GET['sort'] === 'sr_limit') {
+            $sortkey = 'company_card_maxlim';
+        }
+    }
+
+    $argSort = array(
+    'meta_key' => $sortkey,
+    'orderby'  => $sortvalue,
+    'order'    => 'DESC'
+    );
+
+    query_posts(array_merge($args,$argSort,$wp_query->query)); // сшиваем текущие условия выборки стандартного цикла wp с новым массивом переданным из формы и фильтруем
+}
+
+//фильтр в дебетовых картах
+function go_debet_cards_filter() {
+    $sortkey = '';
+    $sortvalue = 'meta_value_num';
+
+    $args = array(); // подготовим массив 
+    $argSort = array();
+    $args['meta_query'] = array('relation' => 'AND'); // отношение между условиями, у нас это "И то И это", можно ИЛИ(OR)
+    global $wp_query; // нужно заглобалить текущую выборку постов
+
+    if (!empty($_GET['s_open'])) {
+        $ressum = $_GET['s_open'];
+        $compare = '>=';
+        $startField = 'company_open_card';
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => $startField, // название произвольного поля
+            'value' => (int) $ressum,
+            'type' => 'numeric', // тип поля - число
+            'compare' => $compare
+        );
+    }
+
+    if (!empty($_GET['s_service'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_maintenance_card', // название произвольного поля
+            'value' => (int) $_GET['s_service'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '<='
+        );
+    }
+
+    if (!empty($_GET['s_age'])) { // если передан массив с фильтром по комнатам
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_age', // название произвольного поля
+            'value' => (int) $_GET['s_age'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'type' => 'numeric',
+            'compare' => '<='
+        );
+    }
+
+    if ($_GET['recommended'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_recommended', // название произвольного поля
+            'value' => true, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '='
+        );
+    }
+
+    if ($_GET['with_passport'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_docs', // название произвольного поля
+            'value' => 30, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if ($_GET['cash_back'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_cash_back', // название произвольного поля
+            'value' => '', // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => '!='
+        );
+    }
+
+    if ($_GET['apple_pay'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_pay_methods', // название произвольного поля
+            'value' => 135, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if ($_GET['android_pay'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_pay_methods', // название произвольного поля
+            'value' => 137, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if ($_GET['samsung_pay'] === 'true') {
+        $args['meta_query'][] = array( // пешем условия в meta_query
+            'key' => 'company_pay_methods', // название произвольного поля
+            'value' => 136, // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
+            'compare' => 'LIKE'
+        );
+    }
+
+    if (!empty($_GET['sort'])) {
+        if ($_GET['sort'] === 'sr_cost_service') {
+            $sortkey = 'company_maintenance_card';
+        }
+
+        if ($_GET['sort'] === 'sr_cost_open') {
+            $sortkey = 'company_open_card';
+        }
+    }
+
+    $argSort = array(
+    'meta_key' => $sortkey,
+    'orderby'  => $sortvalue,
+    'order'    => 'DESC'
+    );
+
+    query_posts(array_merge($args,$argSort,$wp_query->query)); // сшиваем текущие условия выборки стандартного цикла wp с новым массивом переданным из формы и фильтруем
+}
 //add_action('admin_print_scripts', 'my_action_javascript'); // такое подключение будет работать не всегда
 
 add_action('wp_ajax_link', 'my_change_link');
@@ -484,6 +975,53 @@ function myajax_data() {
         'ajaxurl' => admin_url('admin-ajax.php'),
     ));
 }
+
+//Button loadmore
+function true_loadmore_scripts() {
+    wp_register_script( 'true_loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery'), false, true);
+    wp_enqueue_script('true_loadmore');
+}
+ 
+add_action( 'wp_enqueue_scripts', 'true_loadmore_scripts' );
+
+function true_load_posts(){
+ 
+	$args = unserialize( stripslashes( $_POST['query'] ) );
+	$args['paged'] = $_POST['page'] + 1; // следующая страница
+	$args['post_status'] = 'publish';
+ 
+	// обычно лучше использовать WP_Query, но не здесь
+	query_posts( $args );
+	// если посты есть
+	if( have_posts() ) :
+ 
+		// запускаем цикл
+		while( have_posts() ): the_post();
+ 
+			get_template_part( 'templates/company', 'preview' );
+ 
+		endwhile;
+ 
+	endif;
+	die();
+}
+ 
+add_action('wp_ajax_loadmore', 'true_load_posts');
+add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
+
+// Удаление slug таксономии:
+// function taxonomy_link( $link, $term, $taxonomy ) {
+//     if ( $taxonomy !== 'waystopay' )
+//         return $link;
+//     return str_replace( 'waystopay/', '', $link );
+// }
+// add_filter( 'term_link', 'taxonomy_link', 10, 3 );
+
+// // Редирект:
+// function taxonomy_rewrite_rule() {
+//     add_rewrite_rule('contact/?$', '/waystopay/contact/', 'top');
+// }
+// add_action('init', 'taxonomy_rewrite_rule');
 
 
 
