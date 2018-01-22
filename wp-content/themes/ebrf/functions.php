@@ -1009,7 +1009,28 @@ function true_load_posts(){
 add_action('wp_ajax_loadmore', 'true_load_posts');
 add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
 
-// Удаление slug таксономии:
+//url redirect
+// function true_301_redirect() {
+	/* в массиве указываем все старые=>новые ссылки  */
+	// $rules = array(
+	// 	array('old'=>'/waystopay/contact/','new'=>'/mfo/contact/'),
+	// 	array('old'=>'/o-nas/','new'=>'/os-nas/')
+	// );
+	// foreach( $rules as $rule ) :
+		// если URL совпадает с одним из указанных в массиве, то редиректим
+	// 	if( urldecode($_SERVER['REQUEST_URI']) == $rule['old'] ) :
+	// 		wp_redirect( site_url( $rule['new'] ), 301 );
+	// 		exit();
+	// 	endif;
+    // endforeach;
+//     if( is_page('o-nas') && ! is_user_logged_in() ){
+// 		wp_redirect( home_url( '/signup/' ) );
+// 		exit();
+// 	}
+// }
+ 
+// add_action('template_redirect', 'true_301_redirect');
+
 // function taxonomy_link( $link, $term, $taxonomy ) {
 //     if ( $taxonomy !== 'waystopay' )
 //         return $link;
@@ -1017,11 +1038,28 @@ add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
 // }
 // add_filter( 'term_link', 'taxonomy_link', 10, 3 );
 
-// // Редирект:
+// Редирект:
 // function taxonomy_rewrite_rule() {
-//     add_rewrite_rule('contact/?$', '/waystopay/contact/', 'top');
+//     add_rewrite_rule('contact/?$', 'index.php?waystopay=contact', 'top');
 // }
 // add_action('init', 'taxonomy_rewrite_rule');
+
+//Удаление slug таксономии:
+function taxonomy_link( $link, $term, $taxonomy ) {
+    if (!empty($_GET['post_type'])) {
+
+    }
+    if ( $link !== 'waystopay' )
+        return $link;
+    return str_replace( 'waystopay/', '', $link );
+}
+add_filter( 'term_link', 'taxonomy_link', 10, 3 );
+
+// Редирект:
+function taxonomy_rewrite_rule() {
+    add_rewrite_rule('contact/?$', 'index.php?waystopay=contact', 'top');
+}
+add_action('init', 'taxonomy_rewrite_rule');
 
 
 
