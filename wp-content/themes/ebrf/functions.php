@@ -1016,10 +1016,17 @@ function taxonomy_link( $link, $term, $taxonomy ) {
 add_filter( 'term_link', 'taxonomy_link', 10, 3 );
 
 // Обновление урлов таксономий:
-function taxonomy_rewrite_rule() {
+/* function taxonomy_rewrite_rule() {
+    $postTypesArr = array('mfo', 'lombardy', 'banks', 'credit-cards', 'debet-cards');
 
-}
-add_action('init', 'taxonomy_rewrite_rule');
+    foreach($postTypesArr as $type) {
+        add_rewrite_rule($type . '\/contact\/?$', 'index.php?waystopay=contact&post_type=' . $type, 'top');
+        add_rewrite_rule($type . '\/nalichnymi\/?$', 'index.php?waystopay=nalichnymi&post_type=' . $type, 'top');
+    }
+
+    flush_rewrite_rules();
+} 
+add_action('init', 'taxonomy_rewrite_rule'); */
 
 add_action( 'create_term', 'taxonomy_rewrite_rule_when_create', 10, 3 );
 function taxonomy_rewrite_rule_when_create( $term_id, $tt_id, $taxonomy ){

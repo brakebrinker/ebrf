@@ -6,18 +6,19 @@ $term_id = $queried_object->term_id;
 echo '<br>' . 'term_id: ' . $term_id . '<br>';
 echo 'taxonomy: ' . $taxonomy . '<br>';
 
-$args = array(
-	// 'post_type' => array(mfo, lombardy, banks),
-    'posts_per_page' => -1
-);
-// query_posts($args);
 ?>
 <?php if ( have_posts() ) : ?>
-<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+<h1 class="archive-title"><?php post_type_archive_title(); ?></h1>
+<?php 
+// global $query_string;
+// query_posts($query_string . "&post_type=lombardy"); 
+?>
+<?php if ( have_posts() ) : ?>
 <?php while( have_posts() ){ 
     the_post();
     get_template_part( 'templates/company', 'preview' );
 }
+endif;
 if (  $wp_query->max_num_pages > 1 ) : ?>
     <script>
     var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
