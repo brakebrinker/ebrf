@@ -53,7 +53,8 @@ $anotherAll = get_terms( $argsAnother );
 		<fieldset class="filter__field" id="field1">
 			<?php foreach( $cashoutsAll as $cashouta ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($cashouta->term_id, 'waystopay') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($cashouta->term_id == $term_id) echo 'current'; ?>"><?php echo $cashouta->name; ?></a>
+			<?php echo get_term_link($cashouta->term_id, 'waystopay')?>
+				<a href="<?php echo get_term_link($cashouta->term_id, 'waystopay'); ?>" class="text-checkbox__item <?php if ($cashouta->term_id == $term_id) echo 'current'; ?>"><?php echo $cashouta->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
