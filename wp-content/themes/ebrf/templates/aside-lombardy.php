@@ -15,7 +15,7 @@ $argsCashout = array(
 
 $argsSumm = array(
 	'taxonomy' => 'summ',
-	'hide_empty' => false,
+	'hide_empty' => false, 
 );
 
 $argsTypeCredit = array(
