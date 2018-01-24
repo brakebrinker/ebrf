@@ -126,8 +126,8 @@ $reCaptcha = new ReCaptcha($secret);
 					<div class="cmp__text">
 						<h1 class="cmp__title"><?php the_title(); ?></h1>
 						<span>Обновлено <?php echo $dModified = get_the_modified_date(); ?></span>
-						<div class="cmp__rating">							
-							<?php if(function_exists('the_ratings')) { echo expand_ratings_template('%RATINGS_IMAGES% <a href="#reviews-block" class="rev-link">%RATINGS_USERS% отзывов</a><span class="rating-number"> (%RATINGS_AVERAGE% из %RATINGS_MAX%)</span>', get_the_ID()); } ?>
+						<div class="cmp__rating">	
+							<?php get_template_part( 'templates/rating-in', 'companies' ); ?>
 						</div>
 						<div class="cmp__links">
 							<?php the_excerpt(); ?>

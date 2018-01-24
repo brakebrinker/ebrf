@@ -4,11 +4,6 @@ $queried_object = get_queried_object();
 $taxonomy = $queried_object->taxonomy;
 $term_id = $queried_object->term_id;
 
-if ($_GET['post_type']) {
-	$post_type = $_GET['post_type'];
-} else {
-	$post_type = get_post_type();
-}
 ?>
 <main>
 	<div class="wrapper">
@@ -24,16 +19,6 @@ if ($_GET['post_type']) {
 					<div class="catalog__content">
 						<h1 class="archive-title"><?php post_type_archive_title(); ?></h1>
 						<?php get_template_part( 'templates/company', 'sort' ); ?>
-						<?php 
-						$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-						$args = array(
-							'post_type' => 'banks',
-							'posts_per_page' => get_option('posts_per_page'),
-							'post_status' => 'publish',
-							'paged' => $paged
-						);
-						query_posts($args);
-						?>
 						<?php if ($_GET && !empty($_GET)) { // если было передано что-то из формы
 							go_banks_filter(); // запускаем функцию фильтрации
 						} ?>
@@ -41,9 +26,6 @@ if ($_GET['post_type']) {
 							the_post();
 							get_template_part( 'templates/company', 'preview' );
 						}
-						if (  $wp_query->max_num_pages > 1 ) : ?>
-							
-						<?php endif;
 
 						if (  $wp_query->max_num_pages > 1 ) : ?>
 						<script>
@@ -63,7 +45,7 @@ if ($_GET['post_type']) {
 					<div class="catalog__content">
 						<div class="term-head">
 							<?php 
-								$image = get_field($post_type . '_tax_text_icon', $taxonomy . '_' . $term_id);
+								$image = get_field('banks_tax_text_icon', $taxonomy . '_' . $term_id);
 								if( !empty($image) ): 
 
 									// vars
@@ -82,20 +64,10 @@ if ($_GET['post_type']) {
 							<?php endif; ?>
 							<div class="term-head-content">
 								<h1 class="archive-title"><?php single_cat_title(); ?></h1>
-								<?php echo get_field($post_type . '_tax_text_up', $taxonomy . '_' . $term_id); ?>
+								<?php echo get_field('banks_tax_text_up', $taxonomy . '_' . $term_id); ?>
 							</div>
 						</div>
 						<?php get_template_part( 'templates/company', 'sort' ); ?>
-						<?php 
-						$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-						$args = array(
-							'post_type' => 'banks',
-							'posts_per_page' => get_option('posts_per_page'),
-							'post_status' => 'publish',
-							'paged' => $paged
-						);
-						query_posts($args);
-						?>
 						<?php if ($_GET && !empty($_GET)) { // если было передано что-то из формы
 							go_banks_filter(); // запускаем функцию фильтрации
 						} ?>
@@ -119,7 +91,7 @@ if ($_GET['post_type']) {
 						wp_reset_query();
 						?>
 						<?php get_template_part( 'templates/union', 'order' ); ?>
-						<?php echo get_field($post_type . '_tax_text_down', $taxonomy . '_' . $term_id); ?>
+						<?php echo get_field('banks_tax_text_down', $taxonomy . '_' . $term_id); ?>
 					</div>
 				<?php endif; ?>
 			<?php else: ?>

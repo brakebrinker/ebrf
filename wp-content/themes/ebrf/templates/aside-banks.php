@@ -72,7 +72,7 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field1">
 			<?php foreach( $adgesAll as $adgesa ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($adgesa->term_id, 'age') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($adgesa->term_id == $term_id) echo 'current'; ?>"><?php echo $adgesa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('banks') . $adgesa->slug; ?>" class="text-checkbox__item <?php if ($adgesa->term_id == $term_id) echo 'current'; ?>"><?php echo $adgesa->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -85,7 +85,7 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field2">
 			<?php foreach( $summAll as $summa ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($summa->term_id, 'summ') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($summa->term_id == $term_id) echo 'current'; ?>"><?php echo $summa->name . ' руб '; ?></a>
+				<a href="<?php echo get_post_type_archive_link('banks') . $summa->slug; ?>" class="text-checkbox__item <?php if ($summa->term_id == $term_id) echo 'current'; ?>"><?php echo $summa->name . ' руб '; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -98,7 +98,7 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field3" style="display: none;">
 			<?php foreach( $timetermAll as $timeterma ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($timeterma->term_id, 'timeterm') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($timeterma->term_id == $term_id) echo 'current'; ?>"><?php echo $timeterma->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('banks') . $timeterma->slug; ?>" class="text-checkbox__item <?php if ($timeterma->term_id == $term_id) echo 'current'; ?>"><?php echo $timeterma->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -111,7 +111,7 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field4" style="display: none;">
 			<?php foreach( $documentAll as $documenta ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($documenta->term_id, 'document') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($documenta->term_id == $term_id) echo 'current'; ?>"><?php echo $documenta->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('banks') . $documenta->slug; ?>" class="text-checkbox__item <?php if ($documenta->term_id == $term_id) echo 'current'; ?>"><?php echo $documenta->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -124,7 +124,7 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field5" style="display: none;">
 			<?php foreach( $typeofborrowerAll as $typeofborrowera ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($typeofborrowera->term_id, 'typeofborrower') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($typeofborrowera->term_id == $term_id) echo 'current'; ?>"><?php echo $typeofborrowera->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('banks') . $typeofborrowera->slug; ?>" class="text-checkbox__item <?php if ($typeofborrowera->term_id == $term_id) echo 'current'; ?>"><?php echo $typeofborrowera->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -137,7 +137,7 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field6" style="display: none;">
 			<?php foreach( $targetsAll as $targetsa ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($targetsa->term_id, 'targets') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($targetsa->term_id == $term_id) echo 'current'; ?>"><?php echo $targetsa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('banks') . $targetsa->slug; ?>" class="text-checkbox__item <?php if ($targetsa->term_id == $term_id) echo 'current'; ?>"><?php echo $targetsa->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -150,7 +150,7 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field7" style="display: none;">
 			<?php foreach( $cashoutsAll as $cashouta ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($cashouta->term_id, 'waystopay') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($cashouta->term_id == $term_id) echo 'current'; ?>"><?php echo $cashouta->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('banks') . $cashouta->slug; ?>" class="text-checkbox__item <?php if ($cashouta->term_id == $term_id) echo 'current'; ?>"><?php echo $cashouta->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -163,7 +163,7 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field8" style="display: none;">
 			<?php foreach( $speedsAll as $speeda ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($speeda->term_id, 'get-speeds') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($speeda->term_id == $term_id) echo 'current'; ?>"><?php echo $speeda->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('banks') . $speeda->slug; ?>" class="text-checkbox__item <?php if ($speeda->term_id == $term_id) echo 'current'; ?>"><?php echo $speeda->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -176,7 +176,7 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field9" style="display: none;">
 			<?php foreach( $anotherAll as $anothera ) { ?>
 			<div class="text-checkbox">
-				<a href="<?php echo get_term_link($anothera->term_id, 'another') . '?post_type=' . $post_type; ?>" class="text-checkbox__item <?php if ($anothera->term_id == $term_id) echo 'current'; ?>"><?php echo $anothera->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('banks') . $anothera->slug; ?>" class="text-checkbox__item <?php if ($anothera->term_id == $term_id) echo 'current'; ?>"><?php echo $anothera->name; ?></a>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -187,7 +187,6 @@ $speedsAll = get_terms( $argsSpeeds );
 		<div class="filter__item">
 			<h4 class="filter__title dropdown open" data-target="#field10">Опции</h4>
 			<fieldset class="filter__field" id="field10">
-				<input type="hidden" name="post_type" value="<?php echo $post_type?>">
 				<label class="block">
 					<input type="checkbox" class="custom-input checkbox" name="recommended" value="true" <?php if($_GET['recommended'] === 'true') echo checked; ?>>
 					<span>Рекомендуемые</span>

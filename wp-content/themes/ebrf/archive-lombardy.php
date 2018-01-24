@@ -4,11 +4,6 @@ $queried_object = get_queried_object();
 $taxonomy = $queried_object->taxonomy;
 $term_id = $queried_object->term_id;
 
-/* if ($_GET['post_type']) {
-	$post_type = $_GET['post_type'];
-} else {
-	$post_type = get_post_type();
-} */
 ?>
 <main>
 	<div class="wrapper">
@@ -25,17 +20,17 @@ $term_id = $queried_object->term_id;
 					<h1 class="archive-title"><?php post_type_archive_title(); ?></h1>
 					<?php get_template_part( 'templates/company', 'sort' ); ?>
 					<?php 
-					$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-					$args = array(
+					// $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+					/* $args = array(
 						'post_type' => 'lombardy',
 						'posts_per_page' => get_option('posts_per_page'),
 						'post_status' => 'publish',
 						'paged' => $paged
-					);
+					); */
 					// query_posts($args);
 					?>
 					<?php if ($_GET && !empty($_GET)) { // если было передано что-то из формы
-						// go_banks_filter(); // запускаем функцию фильтрации
+						go_banks_filter(); // запускаем функцию фильтрации
 					} ?>
 					<?php while( have_posts() ){ 
 						the_post();
@@ -84,17 +79,9 @@ $term_id = $queried_object->term_id;
 					</div>
 					<?php get_template_part( 'templates/company', 'sort' ); ?>
 					<?php 
-					$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-					$args = array(
-						'post_type' => 'lombardy',
-						'posts_per_page' => get_option('posts_per_page'),
-						'post_status' => 'publish',
-						'paged' => $paged
-					);
-					// query_posts($args);
 					?>
 					<?php if ($_GET && !empty($_GET)) { // если было передано что-то из формы
-						// go_banks_filter(); // запускаем функцию фильтрации
+						go_banks_filter(); // запускаем функцию фильтрации
 					} ?>
 					<?php while( have_posts() ){ 
 						the_post();

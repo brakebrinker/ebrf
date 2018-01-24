@@ -195,5 +195,9 @@ $('.sort').on('click', 'input', function(){
 if (urll.indexOf('sr_summ') + 1) { $('.sort input[value="sr_summ"]').prop('checked', true); }
 if (urll.indexOf('sr_percent') + 1) { $('.sort input[value="sr_percent"]').prop('checked', true); }
 if (urll.indexOf('sr_timeterm') + 1) { $('.sort input[value="sr_timeterm"]').prop('checked', true); }
+if (urll.indexOf('sr_limit') + 1) { $('.sort input[value="sr_limit"]').prop('checked', true); }
+if (urll.indexOf('sr_cost_service') + 1) { $('.sort input[value="sr_cost_service"]').prop('checked', true); }
+if (urll.indexOf('sr_cost_open') + 1) { $('.sort input[value="sr_cost_open"]').prop('checked', true); }
+if (urll.indexOf('sr_percent_rate') + 1) { $('.sort input[value="sr_percent_rate"]').prop('checked', true); }
 
 });

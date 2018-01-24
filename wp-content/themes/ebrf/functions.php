@@ -601,6 +601,9 @@ function go_banks_filter() {
     $args['meta_query'] = array('relation' => 'AND'); // отношение между условиями, у нас это "И то И это", можно ИЛИ(OR)
     global $wp_query; // нужно заглобалить текущую выборку постов
 
+    // global $query_string;
+    // query_posts($query_string . "&post_type=lombardy"); 
+
     // if (!empty($_GET['payment'])) { // если передан массив с фильтром по комнатам
     //     $args['meta_query'][] = array( // пешем условия в meta_query
     //         'key' => 'company_cashout', // название произвольного поля
@@ -768,7 +771,7 @@ function go_credit_cards_filter() {
             'key' => 'company_age_from', // название произвольного поля
             'value' => (int) $_GET['s_age'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
             'type' => 'numeric',
-            'compare' => '<='
+            'compare' => '>='
         );
     }
 
@@ -879,7 +882,7 @@ function go_debet_cards_filter() {
             'key' => 'company_age', // название произвольного поля
             'value' => (int) $_GET['s_age'], // переданное значения, $_GET['rooms'] содержит массив со значениями отмеченных чекбоксов
             'type' => 'numeric',
-            'compare' => '<='
+            'compare' => '>='
         );
     }
 
@@ -1015,37 +1018,60 @@ function taxonomy_link( $link, $term, $taxonomy ) {
 }
 add_filter( 'term_link', 'taxonomy_link', 10, 3 );
 
-// Обновление урлов таксономий:
-/* function taxonomy_rewrite_rule() {
-    $postTypesArr = array('mfo', 'lombardy', 'banks', 'credit-cards', 'debet-cards');
-
-    foreach($postTypesArr as $type) {
-        add_rewrite_rule($type . '\/contact\/?$', 'index.php?waystopay=contact&post_type=' . $type, 'top');
-        add_rewrite_rule($type . '\/nalichnymi\/?$', 'index.php?waystopay=nalichnymi&post_type=' . $type, 'top');
-    }
-
-    flush_rewrite_rules();
-} 
-add_action('init', 'taxonomy_rewrite_rule'); */
-
+// Добавление адреса таксономии при ее создании
 add_action( 'create_term', 'taxonomy_rewrite_rule_when_create', 10, 3 );
 function taxonomy_rewrite_rule_when_create( $term_id, $tt_id, $taxonomy ){
-
-    $term = get_term( $term_id, $taxonomy );
-    $slug = $term->slug;
-
-    tax_add_new_rewrite($slug);
+    taxonomy_rewrite_rule_refresh();
 }
 
-function tax_add_new_rewrite($term_slug) {
+// Добавление адреса таксономии при ее редактировании
+add_action( 'edited_terms', 'taxonomy_rewrite_rule_when_edided', 10, 2 ); 
+function taxonomy_rewrite_rule_when_edided( $term_id, $taxonomy ) {
+    taxonomy_rewrite_rule_refresh();
+}
+
+// Удаление адреса таксономии при ее удалении
+add_action( 'delete_term', 'taxonomy_rewrite_rule_when_delete', 10, 5 );
+function taxonomy_rewrite_rule_when_delete( $term, $tt_id, $taxonomy, $deleted_term, $object_ids ){
+	taxonomy_rewrite_rule_refresh();
+}
+
+// Обновление всех адресов таксономии
+function taxonomy_rewrite_rule_refresh() {
     $postTypesArr = array('mfo', 'lombardy', 'banks', 'credit-cards', 'debet-cards');
 
+    $args = array(
+        'taxonomy' => array('waystopay', 'summ', 'document', 'timeterm', 'typeofborrower', 'another', 'cities', 'age', 'category', 'get-speeds', 'pay-methods', 'type-cards', 'for-who', 'delivery', 'typeofcredit', 'targets', 'limits-credit-cards', 'grace-limit-credit-cards'),
+        'hide_empty' => false,
+    );
+    $terms = get_terms( $args );
+
     foreach($postTypesArr as $type) {
-        add_rewrite_rule($type . '\/' . $term_slug . '\/?$', 'index.php?waystopay=' . $term_slug . '&post_type=' . $type, 'top');
+        foreach($terms as $trm) {
+            $countt ++;
+            add_rewrite_rule($type . '\/' . $trm->slug . '\/?$', 'index.php?' . $trm->taxonomy . '=' . $trm->slug . '&post_type=' . $type, 'top');
+        }
     }
 
     flush_rewrite_rules();
 }
 
+
+//Редиректы
+function true_301_redirect() {
+	/* в массиве указываем все старые=>новые ссылки  */
+	$rules = array(
+		array('old'=>'/mfo/','new'=>'/'), //МФО
+	);
+	foreach( $rules as $rule ) :
+		// если URL совпадает с одним из указанных в массиве, то редиректим
+		if( urldecode($_SERVER['REQUEST_URI']) == $rule['old'] ) :
+			wp_redirect( site_url( $rule['new'] ), 301 );
+			exit();
+		endif;
+	endforeach;
+}
+ 
+add_action('template_redirect', 'true_301_redirect');
 
 
