@@ -53,7 +53,7 @@ $argsSpeeds = array(
 	'hide_empty' => false,
 );
 
-$adgesAll = get_terms( $argsAge );
+// $adgesAll = get_terms( $argsAge );
 $cashoutsAll = get_terms( $argsCashout );
 $summAll = get_terms( $argsSumm );
 $typeofcreditAll = get_terms( $argsTypeCredit );
@@ -65,19 +65,6 @@ $targetsAll = get_terms( $argsTargets );
 $speedsAll = get_terms( $argsSpeeds );
 ?>
 <aside class="catalog__aside"  id="filter">
-
-	<?php if ($adgesAll) { ?>
-	<div class="filter__item">
-		<h4 class="filter__title dropdown open" data-target="#field1">Возраст</h4>
-		<fieldset class="filter__field" id="field1">
-			<?php foreach( $adgesAll as $adgesa ) { ?>
-			<div class="text-checkbox">
-				<a href="<?php echo get_post_type_archive_link('banks') . $adgesa->slug; ?>" class="text-checkbox__item <?php if ($adgesa->term_id == $term_id) echo 'current'; ?>"><?php echo $adgesa->name; ?></a>
-			</div>
-			<?php } ?>
-		</fieldset>
-	</div>
-	<?php } ?>
 
     <?php if ($summAll) { ?>
 	<div class="filter__item">
