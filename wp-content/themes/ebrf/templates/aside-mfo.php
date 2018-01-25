@@ -73,7 +73,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('mfo') . $cashouta->slug; ?>" class="text-checkbox__item <?php if ($cashouta->term_id == $term_id) echo 'current'; ?>"><?php echo $cashouta->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('mfo') . $cashouta->taxonomy . '-' . $cashouta->slug; ?>" class="text-checkbox__item <?php if ($cashouta->term_id == $term_id) echo 'current'; ?>"><?php echo $cashouta->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -104,7 +104,7 @@ $citiesAll = get_terms( $argsCities );
 				<?php
 				$fa = get_posts($args);
 				if ($fa) { ?>
-				<a href="<?php echo get_post_type_archive_link('mfo') . $summa->slug; ?>" class="text-checkbox__item <?php if ($summa->term_id == $term_id) echo 'current'; ?>"><?php echo $summa->name . ' руб'; ?></a>
+				<a href="<?php echo get_post_type_archive_link('mfo') . $summa->taxonomy . '-' . $summa->slug; ?>" class="text-checkbox__item <?php if ($summa->term_id == $term_id) echo 'current'; ?>"><?php echo $summa->name . ' руб'; ?></a>
 				<?php 
 				} 
 				wp_reset_postdata();?>
@@ -134,7 +134,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('mfo') . $typeofcredita->slug; ?>" class="text-checkbox__item <?php if ($typeofcredita->term_id == $term_id) echo 'current'; ?>"><?php echo $typeofcredita->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('mfo') . $typeofcredita->taxonomy . '-' . $typeofcredita->slug; ?>" class="text-checkbox__item <?php if ($typeofcredita->term_id == $term_id) echo 'current'; ?>"><?php echo $typeofcredita->name; ?></a>
 				<?php 
 				} 
 				wp_reset_postdata();?>
@@ -164,7 +164,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('mfo') . $documenta->slug; ?>" class="text-checkbox__item <?php if ($documenta->term_id == $term_id) echo 'current'; ?>"><?php echo $documenta->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('mfo') . $documenta->taxonomy . '-' . $documenta->slug; ?>" class="text-checkbox__item <?php if ($documenta->term_id == $term_id) echo 'current'; ?>"><?php echo $documenta->name; ?></a>
 				<?php 
 				} 
 				wp_reset_postdata();?>
@@ -180,7 +180,7 @@ $citiesAll = get_terms( $argsCities );
 		<fieldset class="filter__field" id="field5" style="display: none;">
 			<?php foreach( $timetermAll as $timeterma ) { ?>
 			<div class="text-checkbox">
-			<?php 
+				<?php 
 					$args = array(
 						'posts_per_page' => -1,
 						'post_type'   => 'mfo',
@@ -194,7 +194,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('mfo') . $timeterma->slug; ?>" class="text-checkbox__item <?php if ($timeterma->term_id == $term_id) echo 'current'; ?>"><?php echo $timeterma->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('mfo') . $timeterma->taxonomy . '-' . $timeterma->slug; ?>" class="text-checkbox__item <?php if ($timeterma->term_id == $term_id) echo 'current'; ?>"><?php echo $timeterma->name; ?></a>
 				<?php 
 				} 
 				wp_reset_postdata();?>
@@ -224,7 +224,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('mfo') . $typeofborrowera->slug; ?>" class="text-checkbox__item <?php if ($typeofborrowera->term_id == $term_id) echo 'current'; ?>"><?php echo $typeofborrowera->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('mfo') . $typeofborrowera->taxonomy . '-' . $typeofborrowera->slug; ?>" class="text-checkbox__item <?php if ($typeofborrowera->term_id == $term_id) echo 'current'; ?>"><?php echo $typeofborrowera->name; ?></a>
 				<?php 
 				} 
 				wp_reset_postdata();?>
@@ -254,7 +254,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('mfo') . $anothera->slug; ?>" class="text-checkbox__item <?php if ($anothera->term_id == $term_id) echo 'current'; ?>"><?php echo $anothera->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('mfo') . $anothera->taxonomy . '-' . $anothera->slug; ?>" class="text-checkbox__item <?php if ($anothera->term_id == $term_id) echo 'current'; ?>"><?php echo $anothera->name; ?></a>
 				<?php 
 				} 
 				wp_reset_postdata();?>
@@ -284,7 +284,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('mfo') . $citya->slug; ?>" class="text-checkbox__item <?php if ($citya->term_id == $term_id) echo 'current'; ?>"><?php echo $citya->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('mfo') . $citya->taxonomy . '-' . $citya->slug; ?>" class="text-checkbox__item <?php if ($citya->term_id == $term_id) echo 'current'; ?>"><?php echo $citya->name; ?></a>
 				<?php 
 				} 
 				wp_reset_postdata();?>

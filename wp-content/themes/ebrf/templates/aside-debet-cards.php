@@ -75,7 +75,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('debet-cards') . $adgesa->slug; ?>" class="text-checkbox__item <?php if ($adgesa->term_id == $term_id) echo 'current'; ?>"><?php echo $adgesa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('debet-cards') . $adgesa->taxonomy . '-' . $adgesa->slug; ?>" class="text-checkbox__item <?php if ($adgesa->term_id == $term_id) echo 'current'; ?>"><?php echo $adgesa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -105,7 +105,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('debet-cards') . $documenta->slug; ?>" class="text-checkbox__item <?php if ($documenta->term_id == $term_id) echo 'current'; ?>"><?php echo $documenta->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('debet-cards') . $documenta->taxonomy . '-' . $documenta->slug; ?>" class="text-checkbox__item <?php if ($documenta->term_id == $term_id) echo 'current'; ?>"><?php echo $documenta->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -135,7 +135,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('debet-cards') . $typeCardsa->slug; ?>" class="text-checkbox__item <?php if ($typeCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $typeCardsa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('debet-cards') . $typeCardsa->taxonomy . '-' . $typeCardsa->slug; ?>" class="text-checkbox__item <?php if ($typeCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $typeCardsa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -165,7 +165,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('debet-cards') . $forWhoa->slug; ?>" class="text-checkbox__item <?php if ($forWhoa->term_id == $term_id) echo 'current'; ?>"><?php echo $forWhoa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('debet-cards') . $forWhoa->taxonomy . '-' . $forWhoa->slug; ?>" class="text-checkbox__item <?php if ($forWhoa->term_id == $term_id) echo 'current'; ?>"><?php echo $forWhoa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -195,7 +195,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('debet-cards') . $deliveryCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($deliveryCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $deliveryCreditCardsa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('debet-cards') . $deliveryCreditCardsa->taxonomy . '-' . $deliveryCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($deliveryCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $deliveryCreditCardsa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -225,7 +225,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('debet-cards') . $getSpeedCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($getSpeedCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $getSpeedCreditCardsa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('debet-cards') . $getSpeedCreditCardsa->taxonomy . '-' . $getSpeedCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($getSpeedCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $getSpeedCreditCardsa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -255,7 +255,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('debet-cards') . $anothera->slug; ?>" class="text-checkbox__item <?php if ($anothera->term_id == $term_id) echo 'current'; ?>"><?php echo $anothera->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('debet-cards') . $anothera->taxonomy . '-' . $anothera->slug; ?>" class="text-checkbox__item <?php if ($anothera->term_id == $term_id) echo 'current'; ?>"><?php echo $anothera->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -285,7 +285,7 @@ $getSpeedCreditCardsAll = get_terms( $argsGetSpeedCreditCards );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('debet-cards') . $citya->slug; ?>" class="text-checkbox__item <?php if ($citya->term_id == $term_id) echo 'current'; ?>"><?php echo $citya->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('debet-cards') . $citya->taxonomy . '-' . $citya->slug; ?>" class="text-checkbox__item <?php if ($citya->term_id == $term_id) echo 'current'; ?>"><?php echo $citya->name; ?></a>
 				<?php 
 				} 
 				wp_reset_postdata();?>

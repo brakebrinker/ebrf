@@ -86,7 +86,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('credit-cards') . $adgesa->slug; ?>" class="text-checkbox__item <?php if ($adgesa->term_id == $term_id) echo 'current'; ?>"><?php echo $adgesa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('credit-cards') . $adgesa->taxonomy . '-' . $adgesa->slug; ?>" class="text-checkbox__item <?php if ($adgesa->term_id == $term_id) echo 'current'; ?>"><?php echo $adgesa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -116,7 +116,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('credit-cards') . $documenta->slug; ?>" class="text-checkbox__item <?php if ($documenta->term_id == $term_id) echo 'current'; ?>"><?php echo $documenta->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('credit-cards') . $documenta->taxonomy . '-' . $documenta->slug; ?>" class="text-checkbox__item <?php if ($documenta->term_id == $term_id) echo 'current'; ?>"><?php echo $documenta->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -146,7 +146,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('credit-cards') . $typeCardsa->slug; ?>" class="text-checkbox__item <?php if ($typeCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $typeCardsa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('credit-cards') . $typeCardsa->taxonomy . '-' . $typeCardsa->slug; ?>" class="text-checkbox__item <?php if ($typeCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $typeCardsa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -176,7 +176,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('credit-cards') . $forWhoa->slug; ?>" class="text-checkbox__item <?php if ($forWhoa->term_id == $term_id) echo 'current'; ?>"><?php echo $forWhoa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('credit-cards') . $forWhoa->taxonomy . '-' . $forWhoa->slug; ?>" class="text-checkbox__item <?php if ($forWhoa->term_id == $term_id) echo 'current'; ?>"><?php echo $forWhoa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -206,7 +206,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('credit-cards') . $limitsCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($limitsCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $limitsCreditCardsa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('credit-cards') . $limitsCreditCardsa->taxonomy . '-' . $limitsCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($limitsCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $limitsCreditCardsa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -236,7 +236,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('credit-cards') . $graceLimitCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($graceLimitCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $graceLimitCreditCardsa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('credit-cards') . $graceLimitCreditCardsa->taxonomy . '-' . $graceLimitCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($graceLimitCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $graceLimitCreditCardsa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -266,7 +266,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('credit-cards') . $deliveryCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($deliveryCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $deliveryCreditCardsa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('credit-cards') . $deliveryCreditCardsa->taxonomy . '-' . $deliveryCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($deliveryCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $deliveryCreditCardsa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -296,7 +296,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('credit-cards') . $getSpeedCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($getSpeedCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $getSpeedCreditCardsa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('credit-cards') . $getSpeedCreditCardsa->taxonomy . '-' . $getSpeedCreditCardsa->slug; ?>" class="text-checkbox__item <?php if ($getSpeedCreditCardsa->term_id == $term_id) echo 'current'; ?>"><?php echo $getSpeedCreditCardsa->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -326,7 +326,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('credit-cards') . $anothera->slug; ?>" class="text-checkbox__item <?php if ($anothera->term_id == $term_id) echo 'current'; ?>"><?php echo $anothera->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('credit-cards') . $anothera->taxonomy . '-' . $anothera->slug; ?>" class="text-checkbox__item <?php if ($anothera->term_id == $term_id) echo 'current'; ?>"><?php echo $anothera->name; ?></a>
 				<?php 				
 				} 
 				wp_reset_postdata();?>
@@ -356,7 +356,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('credit-cards') . $citya->slug; ?>" class="text-checkbox__item <?php if ($citya->term_id == $term_id) echo 'current'; ?>"><?php echo $citya->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('credit-cards') . $citya->taxonomy . '-' . $citya->slug; ?>" class="text-checkbox__item <?php if ($citya->term_id == $term_id) echo 'current'; ?>"><?php echo $citya->name; ?></a>
 				<?php 
 				} 
 				wp_reset_postdata();?>

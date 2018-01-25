@@ -11,10 +11,12 @@
 	$post_type = get_post_type();
 	$seo_descr = get_field($post_type . '_seo_description', $taxonomy . '_' . $term_id);
 	?>
-	<?php if ($seo_descr) { ?>
-	<meta name="description" content="<?php echo $seo_descr; ?>"/>
-	<?php } ?>
 	<title><?php wp_title('«', true, 'right'); ?></title>
+	<?php
+	if ($seo_descr) { ?>
+	<meta name="description" content="<?php echo $seo_descr; ?>"/>
+	<?php } 
+	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">

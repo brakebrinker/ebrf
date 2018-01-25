@@ -63,7 +63,8 @@ $term_id = $queried_object->term_id;
 							<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
 							<?php endif; ?>
 							<div class="term-head-content">
-							<h1 class="archive-title"><?php if ($term_title = get_field('banks_term_title', $taxonomy . '_' . $term_id)) echo $term_title; else single_cat_title(); ?></h1>
+								<h1 class="archive-title"><?php if ($term_title = get_field('banks_term_title', $taxonomy . '_' . $term_id)) echo $term_title; else single_cat_title(); ?></h1>
+								<?php echo get_field('banks_tax_text_up', $taxonomy . '_' . $term_id); ?>
 							</div>
 						</div>
 						<?php get_template_part( 'templates/company', 'sort' ); ?>
@@ -74,9 +75,6 @@ $term_id = $queried_object->term_id;
 							the_post();
 							get_template_part( 'templates/company', 'preview' );
 						}
-						if (  $wp_query->max_num_pages > 1 ) : ?>
-							
-						<?php endif;
 
 						if (  $wp_query->max_num_pages > 1 ) : ?>
 						<script>

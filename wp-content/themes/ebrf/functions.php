@@ -1049,7 +1049,7 @@ function taxonomy_rewrite_rule_refresh() {
     foreach($postTypesArr as $type) {
         foreach($terms as $trm) {
             $countt ++;
-            add_rewrite_rule($type . '\/' . $trm->slug . '\/?$', 'index.php?' . $trm->taxonomy . '=' . $trm->slug . '&post_type=' . $type, 'top');
+            add_rewrite_rule($type . '\/'. $trm->taxonomy . '-' . $trm->slug . '\/?$', 'index.php?' . $trm->taxonomy . '=' . $trm->slug . '&post_type=' . $type, 'top');
         }
     }
 

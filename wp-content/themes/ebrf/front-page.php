@@ -29,7 +29,6 @@ $statiAlsoPosts = get_posts( $argsAtr );
 		<div class="catalog aside-wrapper">
 			<?php get_template_part( 'templates/aside', 'mfo' ); ?>
 			<div class="catalog__content">
-			<?php echo 'page_id: '$page_id; ?>
 				<h1 class="archive-title"><?php if ($main_title = get_field('home_title', 6)) echo $main_title; else echo $page_title;?></h1>
 				<?php get_template_part( 'templates/company', 'sort' ); ?>
 				<?php if ($_GET && !empty($_GET)) { // если было передано что-то из формы

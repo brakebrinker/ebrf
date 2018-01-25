@@ -92,7 +92,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('lombardy') . $summa->slug; ?>" class="text-checkbox__item <?php if ($summa->term_id == $term_id) echo 'current'; ?>"><?php echo $summa->name . ' руб '; ?></a>
+				<a href="<?php echo get_post_type_archive_link('lombardy') . $summa->taxonomy . '-' . $summa->slug; ?>" class="text-checkbox__item <?php if ($summa->term_id == $term_id) echo 'current'; ?>"><?php echo $summa->name . ' руб '; ?></a>
 				<?php
 				} 
 				wp_reset_postdata();?>
@@ -104,8 +104,8 @@ $citiesAll = get_terms( $argsCities );
 
 	<?php if ($timetermAll) { ?>
 	<div class="filter__item">
-		<h4 class="filter__title dropdown" data-target="#field3">Срок</h4>
-		<fieldset class="filter__field" id="field3" style="display: none;">
+		<h4 class="filter__title dropdown open" data-target="#field3">Срок</h4>
+		<fieldset class="filter__field" id="field3">
 			<?php foreach( $timetermAll as $timeterma ) { ?>
 			<div class="text-checkbox">
 				<?php 
@@ -122,7 +122,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('lombardy') . $timeterma->slug; ?>" class="text-checkbox__item <?php if ($timeterma->term_id == $term_id) echo 'current'; ?>"><?php echo $timeterma->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('lombardy') . $timeterma->taxonomy . '-' . $timeterma->slug; ?>" class="text-checkbox__item <?php if ($timeterma->term_id == $term_id) echo 'current'; ?>"><?php echo $timeterma->name; ?></a>
 				<?php
 				} 
 				wp_reset_postdata();?>
@@ -152,7 +152,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('lombardy') . $documenta->slug; ?>" class="text-checkbox__item <?php if ($documenta->term_id == $term_id) echo 'current'; ?>"><?php echo $documenta->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('lombardy') . $documenta->taxonomy . '-' . $documenta->slug; ?>" class="text-checkbox__item <?php if ($documenta->term_id == $term_id) echo 'current'; ?>"><?php echo $documenta->name; ?></a>
 				<?php
 				} 
 				wp_reset_postdata();?>
@@ -182,7 +182,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('lombardy') . $typeofborrowera->slug; ?>" class="text-checkbox__item <?php if ($typeofborrowera->term_id == $term_id) echo 'current'; ?>"><?php echo $typeofborrowera->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('lombardy') . $typeofborrowera->taxonomy . '-' . $typeofborrowera->slug; ?>" class="text-checkbox__item <?php if ($typeofborrowera->term_id == $term_id) echo 'current'; ?>"><?php echo $typeofborrowera->name; ?></a>
 				<?php
 				} 
 				wp_reset_postdata();?>
@@ -212,7 +212,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('lombardy') . $targetsa->slug; ?>" class="text-checkbox__item <?php if ($targetsa->term_id == $term_id) echo 'current'; ?>"><?php echo $targetsa->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('lombardy') . $targetsa->taxonomy . '-' . $targetsa->slug; ?>" class="text-checkbox__item <?php if ($targetsa->term_id == $term_id) echo 'current'; ?>"><?php echo $targetsa->name; ?></a>
 				<?php
 				} 
 				wp_reset_postdata();?>
@@ -242,7 +242,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('lombardy') . $cashouta->slug; ?>" class="text-checkbox__item <?php if ($cashouta->term_id == $term_id) echo 'current'; ?>"><?php echo $cashouta->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('lombardy') . $cashouta->taxonomy . '-' . $cashouta->slug; ?>" class="text-checkbox__item <?php if ($cashouta->term_id == $term_id) echo 'current'; ?>"><?php echo $cashouta->name; ?></a>
 				<?php
 				} 
 				wp_reset_postdata();?>
@@ -272,7 +272,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('lombardy') . $speeda->slug; ?>" class="text-checkbox__item <?php if ($speeda->term_id == $term_id) echo 'current'; ?>"><?php echo $speeda->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('lombardy') . $speeda->taxonomy . '-' . $speeda->slug; ?>" class="text-checkbox__item <?php if ($speeda->term_id == $term_id) echo 'current'; ?>"><?php echo $speeda->name; ?></a>
 				<?php
 				} 
 				wp_reset_postdata();?>
@@ -302,7 +302,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('lombardy') . $anothera->slug; ?>" class="text-checkbox__item <?php if ($anothera->term_id == $term_id) echo 'current'; ?>"><?php echo $anothera->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('lombardy') . $anothera->taxonomy . '-' . $anothera->slug; ?>" class="text-checkbox__item <?php if ($anothera->term_id == $term_id) echo 'current'; ?>"><?php echo $anothera->name; ?></a>
 				<?php
 				} 
 				wp_reset_postdata();?>
@@ -332,7 +332,7 @@ $citiesAll = get_terms( $argsCities );
 				?>
 				<?php
 				if (get_posts($args)) { ?>
-				<a href="<?php echo get_post_type_archive_link('lombardy') . $citya->slug; ?>" class="text-checkbox__item <?php if ($citya->term_id == $term_id) echo 'current'; ?>"><?php echo $citya->name; ?></a>
+				<a href="<?php echo get_post_type_archive_link('lombardy') . $citya->taxonomy . '-' . $citya->slug; ?>" class="text-checkbox__item <?php if ($citya->term_id == $term_id) echo 'current'; ?>"><?php echo $citya->name; ?></a>
 				<?php 
 				} 
 				wp_reset_postdata();?>

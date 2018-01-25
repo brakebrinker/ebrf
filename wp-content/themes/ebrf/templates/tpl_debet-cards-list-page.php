@@ -32,7 +32,10 @@ Template Name: Шаблон cписок Дебетовых карт
 					<?php 
 					$argsCompany = array(
 						'numberposts' => -1,
-						'post_type'   => 'debet-cards'
+						'post_type'   => 'debet-cards',
+						'orderby' => 'meta_value',
+						'meta_key' => 'ratings_users',
+						'order'   => 'DESC',
 					);
 
 					$companies = get_posts( $argsCompany );
@@ -40,15 +43,15 @@ Template Name: Шаблон cписок Дебетовых карт
 					<?php foreach($companies as $post){ setup_postdata($post); ?>
 					<div class="company-string">
 						<?php if ( has_post_thumbnail()) { ?>
-						<?php the_post_thumbnail('medium', array('alt' => get_the_title(),
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', array('alt' => get_the_title(),
 							'class' => "company-string__img"
-						)); ?>
+						)); ?></a>
 						<?php } else { ?>
-							<img src="<?php bloginfo('template_url'); ?>/img/post/no_photo.png" alt="" class="company-string__img">
+							<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/post/no_photo.png" alt="" class="company-string__img"></a>
 						<?php } ?>
-						<h3 class="company-string__title"><?php the_title(); ?></h3>
+						<a href="<?php the_permalink(); ?>"><h3 class="company-string__title"><?php the_title(); ?></h3></a>
 						<div class="company-string__info">
-							<?php if(function_exists('the_ratings')) { echo expand_ratings_template('%RATINGS_IMAGES% <a href="' . get_the_permalink() . '#reviews-block" class="rev-link">%RATINGS_USERS% отзывов</a><span class="rating-number"> (%RATINGS_AVERAGE% из %RATINGS_MAX%)</span>', get_the_ID()); } ?>
+						<?php if(function_exists('the_ratings')) { echo expand_ratings_template('<a href="' . get_the_permalink() . '#reviews-block" class="rev-img-link">%RATINGS_IMAGES%</a> <a href="' . get_the_permalink() . '#reviews-block" class="rev-link">%RATINGS_USERS% отзывов</a><span class="rating-number"> (%RATINGS_AVERAGE% из %RATINGS_MAX%)</span>', get_the_ID()); } ?>
 						</div>
 					</div>
 					<?php }
