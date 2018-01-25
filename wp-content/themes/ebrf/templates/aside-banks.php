@@ -53,6 +53,11 @@ $argsSpeeds = array(
 	'hide_empty' => false,
 );
 
+$argsCities = array(
+	'taxonomy' => 'cities',
+	'hide_empty' => false,
+);
+
 // $adgesAll = get_terms( $argsAge );
 $cashoutsAll = get_terms( $argsCashout );
 $summAll = get_terms( $argsSumm );
@@ -63,6 +68,7 @@ $typeofborrowerAll = get_terms( $argsTypeBorrower );
 $anotherAll = get_terms( $argsAnother );
 $targetsAll = get_terms( $argsTargets );
 $speedsAll = get_terms( $argsSpeeds );
+$citiesAll = get_terms( $argsCities );
 ?>
 <aside class="catalog__aside"  id="filter">
 
@@ -72,7 +78,24 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field2">
 			<?php foreach( $summAll as $summa ) { ?>
 			<div class="text-checkbox">
+				<?php 
+					$args = array(
+						'numberposts' => -1,
+						'post_type'   => 'banks',
+						'tax_query' => array(
+							array(
+								'taxonomy' => $summa->taxonomy,
+								'terms' => $summa->term_id
+							)
+						)
+					);
+				?>
+				<?php
+				if (get_posts($args)) { ?>
 				<a href="<?php echo get_post_type_archive_link('banks') . $summa->slug; ?>" class="text-checkbox__item <?php if ($summa->term_id == $term_id) echo 'current'; ?>"><?php echo $summa->name . ' руб '; ?></a>
+				<?php 				
+				} 
+				wp_reset_postdata();?>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -85,7 +108,24 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field3" style="display: none;">
 			<?php foreach( $timetermAll as $timeterma ) { ?>
 			<div class="text-checkbox">
+				<?php 
+					$args = array(
+						'numberposts' => -1,
+						'post_type'   => 'banks',
+						'tax_query' => array(
+							array(
+								'taxonomy' => $timeterma->taxonomy,
+								'terms' => $timeterma->term_id
+							)
+						)
+					);
+				?>
+				<?php
+				if (get_posts($args)) { ?>
 				<a href="<?php echo get_post_type_archive_link('banks') . $timeterma->slug; ?>" class="text-checkbox__item <?php if ($timeterma->term_id == $term_id) echo 'current'; ?>"><?php echo $timeterma->name; ?></a>
+				<?php 				
+				} 
+				wp_reset_postdata();?>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -98,7 +138,24 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field4" style="display: none;">
 			<?php foreach( $documentAll as $documenta ) { ?>
 			<div class="text-checkbox">
+				<?php 
+					$args = array(
+						'numberposts' => -1,
+						'post_type'   => 'banks',
+						'tax_query' => array(
+							array(
+								'taxonomy' => $documenta->taxonomy,
+								'terms' => $documenta->term_id
+							)
+						)
+					);
+				?>
+				<?php
+				if (get_posts($args)) { ?>
 				<a href="<?php echo get_post_type_archive_link('banks') . $documenta->slug; ?>" class="text-checkbox__item <?php if ($documenta->term_id == $term_id) echo 'current'; ?>"><?php echo $documenta->name; ?></a>
+				<?php 				
+				} 
+				wp_reset_postdata();?>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -111,7 +168,24 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field5" style="display: none;">
 			<?php foreach( $typeofborrowerAll as $typeofborrowera ) { ?>
 			<div class="text-checkbox">
+				<?php 
+					$args = array(
+						'numberposts' => -1,
+						'post_type'   => 'banks',
+						'tax_query' => array(
+							array(
+								'taxonomy' => $typeofborrowera->taxonomy,
+								'terms' => $typeofborrowera->term_id
+							)
+						)
+					);
+				?>
+				<?php
+				if (get_posts($args)) { ?>
 				<a href="<?php echo get_post_type_archive_link('banks') . $typeofborrowera->slug; ?>" class="text-checkbox__item <?php if ($typeofborrowera->term_id == $term_id) echo 'current'; ?>"><?php echo $typeofborrowera->name; ?></a>
+				<?php 				
+				} 
+				wp_reset_postdata();?>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -124,7 +198,24 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field6" style="display: none;">
 			<?php foreach( $targetsAll as $targetsa ) { ?>
 			<div class="text-checkbox">
+				<?php 
+					$args = array(
+						'numberposts' => -1,
+						'post_type'   => 'banks',
+						'tax_query' => array(
+							array(
+								'taxonomy' => $targetsa->taxonomy,
+								'terms' => $targetsa->term_id
+							)
+						)
+					);
+				?>
+				<?php
+				if (get_posts($args)) { ?>
 				<a href="<?php echo get_post_type_archive_link('banks') . $targetsa->slug; ?>" class="text-checkbox__item <?php if ($targetsa->term_id == $term_id) echo 'current'; ?>"><?php echo $targetsa->name; ?></a>
+				<?php 				
+				} 
+				wp_reset_postdata();?>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -137,7 +228,24 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field7" style="display: none;">
 			<?php foreach( $cashoutsAll as $cashouta ) { ?>
 			<div class="text-checkbox">
+				<?php 
+					$args = array(
+						'numberposts' => -1,
+						'post_type'   => 'banks',
+						'tax_query' => array(
+							array(
+								'taxonomy' => $cashouta->taxonomy,
+								'terms' => $cashouta->term_id
+							)
+						)
+					);
+				?>
+				<?php
+				if (get_posts($args)) { ?>
 				<a href="<?php echo get_post_type_archive_link('banks') . $cashouta->slug; ?>" class="text-checkbox__item <?php if ($cashouta->term_id == $term_id) echo 'current'; ?>"><?php echo $cashouta->name; ?></a>
+				<?php 				
+				} 
+				wp_reset_postdata();?>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -150,7 +258,24 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field8" style="display: none;">
 			<?php foreach( $speedsAll as $speeda ) { ?>
 			<div class="text-checkbox">
+				<?php 
+					$args = array(
+						'numberposts' => -1,
+						'post_type'   => 'banks',
+						'tax_query' => array(
+							array(
+								'taxonomy' => $speeda->taxonomy,
+								'terms' => $speeda->term_id
+							)
+						)
+					);
+				?>
+				<?php
+				if (get_posts($args)) { ?>
 				<a href="<?php echo get_post_type_archive_link('banks') . $speeda->slug; ?>" class="text-checkbox__item <?php if ($speeda->term_id == $term_id) echo 'current'; ?>"><?php echo $speeda->name; ?></a>
+				<?php 				
+				} 
+				wp_reset_postdata();?>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -163,7 +288,54 @@ $speedsAll = get_terms( $argsSpeeds );
 		<fieldset class="filter__field" id="field9" style="display: none;">
 			<?php foreach( $anotherAll as $anothera ) { ?>
 			<div class="text-checkbox">
+				<?php 
+					$args = array(
+						'numberposts' => -1,
+						'post_type'   => 'banks',
+						'tax_query' => array(
+							array(
+								'taxonomy' => $anothera->taxonomy,
+								'terms' => $anothera->term_id
+							)
+						)
+					);
+				?>
+				<?php
+				if (get_posts($args)) { ?>
 				<a href="<?php echo get_post_type_archive_link('banks') . $anothera->slug; ?>" class="text-checkbox__item <?php if ($anothera->term_id == $term_id) echo 'current'; ?>"><?php echo $anothera->name; ?></a>
+				<?php 				
+				} 
+				wp_reset_postdata();?>
+			</div>
+			<?php } ?>
+		</fieldset>
+	</div>
+	<?php } ?>
+
+	<?php if ($citiesAll) { ?>
+	<div class="filter__item">
+		<h4 class="filter__title dropdown" data-target="#field10">Города</h4>
+		<fieldset class="filter__field" id="field10" style="display: none;">
+			<?php foreach( $citiesAll as $citya ) { ?>
+			<div class="text-checkbox">
+			<?php 
+					$args = array(
+						'posts_per_page' => -1,
+						'post_type'   => 'banks',
+						'tax_query' => array(
+							array(
+								'taxonomy' => $citya->taxonomy,
+								'terms' => $citya->term_id
+							)
+						)
+					);
+				?>
+				<?php
+				if (get_posts($args)) { ?>
+				<a href="<?php echo get_post_type_archive_link('banks') . $citya->slug; ?>" class="text-checkbox__item <?php if ($citya->term_id == $term_id) echo 'current'; ?>"><?php echo $citya->name; ?></a>
+				<?php 
+				} 
+				wp_reset_postdata();?>
 			</div>
 			<?php } ?>
 		</fieldset>
@@ -172,8 +344,8 @@ $speedsAll = get_terms( $argsSpeeds );
 
 	<form class="filter" method="get">
 		<div class="filter__item">
-			<h4 class="filter__title dropdown open" data-target="#field10">Опции</h4>
-			<fieldset class="filter__field" id="field10">
+			<h4 class="filter__title dropdown open" data-target="#field11">Опции</h4>
+			<fieldset class="filter__field" id="field11">
 				<label class="block">
 					<input type="checkbox" class="custom-input checkbox" name="recommended" value="true" <?php if($_GET['recommended'] === 'true') echo checked; ?>>
 					<span>Рекомендуемые</span>

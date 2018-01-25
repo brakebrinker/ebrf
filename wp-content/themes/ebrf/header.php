@@ -3,6 +3,17 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-RU-Compatible" content="IE=edge">
+	<?php 
+	$queried_object = get_queried_object();
+	$taxonomy = $queried_object->taxonomy;
+	$term_id = $queried_object->term_id;
+
+	$post_type = get_post_type();
+	$seo_descr = get_field($post_type . '_seo_description', $taxonomy . '_' . $term_id);
+	?>
+	<?php if ($seo_descr) { ?>
+	<meta name="description" content="<?php echo $seo_descr; ?>"/>
+	<?php } ?>
 	<title><?php wp_title('«', true, 'right'); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
 
