@@ -57,34 +57,34 @@ $('input.custom-input').each(function(){
 	$(this).after('<span class="input__item" />');
 })
 //Таки обрезание(текста)
-var truncate = function(el) {
-	var text = el.text(),
-		height = el.height(),
-		clone = el.clone();
+// var truncate = function(el) {
+// 	var text = el.text(),
+// 		height = el.height(),
+// 		clone = el.clone();
 
-  clone.css({
-		position: 'absolute',
-		visibility: 'hidden',
-		height: 'auto'
-	});
-	el.after(clone);
+//   clone.css({
+// 		position: 'absolute',
+// 		visibility: 'hidden',
+// 		height: 'auto'
+// 	});
+// 	el.after(clone);
 
-	var l = text.length - 1;
-	for (; l >= 0 && clone.height() > height; --l) {
-		clone.text(text.substring(0, l) + '...');
-	}
+// 	var l = text.length - 1;
+// 	for (; l >= 0 && clone.height() > height; --l) {
+// 		clone.text(text.substring(0, l) + '...');
+// 	}
 
-	el.text(clone.text());
-	clone.remove();
-};
+// 	el.text(clone.text());
+// 	clone.remove();
+// };
 
-$.fn.truncateText = function() {
-	return this.each(function () {
-		truncate($(this));
-	});
-};
+// $.fn.truncateText = function() {
+// 	return this.each(function () {
+// 		truncate($(this));
+// 	});
+// };
 
-$('.post-loop__text').truncateText();
+// $('.post-loop__text').truncateText();
 
 //перемещение контента в мобильной версии
 function relocate(){
