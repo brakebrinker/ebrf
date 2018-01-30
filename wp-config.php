@@ -20,13 +20,15 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'ebrf');
+define('WP_CACHE', true);
+define( 'WPCACHEHOME', '/home/a/alccmagw/ebrf.ru/public_html/wp-content/plugins/wp-super-cache/' );
+define('DB_NAME', 'alccmagw_ebrf');
 
 /** Имя пользователя MySQL */
-define('DB_USER', 'ebrf');
+define('DB_USER', 'alccmagw_ebrf');
 
 /** Пароль к базе данных MySQL */
-define('DB_PASSWORD', 'THV8nwBZN6sVDtuH');
+define('DB_PASSWORD', '4@e3*bc?');
 
 /** Имя сервера MySQL */
 define('DB_HOST', 'localhost');

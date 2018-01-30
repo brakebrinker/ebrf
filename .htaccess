@@ -2,6 +2,11 @@
 
 # BEGIN WPSuperCache
 # END WPSuperCache
+
+RewriteCond %{HTTP_HOST} ^(www\.)?ebrf\.ru$ [NC]
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^(.*)$ https://ebrf.ru/$1 [R=301,L]
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On

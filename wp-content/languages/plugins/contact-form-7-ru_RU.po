@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Contact Form 7 - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-11-29 09:29:16+0000\n"
+"PO-Revision-Date: 2018-01-14 15:36:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -818,7 +818,7 @@ msgstr "Вставить тег"
 #: modules/recaptcha.php:490 modules/select.php:230 modules/submit.php:75
 #: modules/text.php:298 modules/textarea.php:172
 msgid "Class attribute"
-msgstr "атрибут класса"
+msgstr "Атрибут class"
 
 #: modules/acceptance.php:177 modules/checkbox.php:339 modules/date.php:199
 #: modules/file.php:267 modules/number.php:207 modules/quiz.php:212
@@ -826,7 +826,7 @@ msgstr "атрибут класса"
 #: modules/recaptcha.php:485 modules/select.php:225 modules/submit.php:70
 #: modules/text.php:293 modules/textarea.php:167
 msgid "Id attribute"
-msgstr "атрибут Id"
+msgstr "Атрибут Id"
 
 #: modules/acceptance.php:171
 msgid "Make this work inversely"

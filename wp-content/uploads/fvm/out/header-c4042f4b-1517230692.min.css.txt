@@ -1,0 +1,11 @@
+PROCESSED on Tue, 30 Jan 2018 07:16:15 +0000
+/wp-includes/css/dashicons.min.css --- Debug: Fetched from transients cache with key fvm-cache-1517230692c6b41266 ---
+/wp-includes/css/admin-bar.min.css --- Debug: Fetched from transients cache with key fvm-cache-1517230692c3041215 ---
+/wp-content/plugins/contact-form-7/includes/css/styles.css --- Debug: Fetched from transients cache with key fvm-cache-1517230692f44e1b97 ---
+/wp-content/plugins/google-captcha/css/gglcptch.css --- Debug: Fetched from transients cache with key fvm-cache-15172306923f111906 ---
+/wp-content/plugins/wp-postratings/css/postratings-css.css --- Debug: Fetched from transients cache with key fvm-cache-1517230692060f1c42 ---
+/wp-content/plugins/wordpress-seo/css/dist/adminbar-620.min.css --- Debug: Fetched from transients cache with key fvm-cache-151723069288e61cf1 ---
+/wp-content/themes/ebrf/css/stl.css --- Debug: Fetched from transients cache with key fvm-cache-1517230692d94712b2 ---
+/wp-content/themes/ebrf/css/font-awesome.css --- Debug: Fetched from transients cache with key fvm-cache-151723069292f01634 ---
+/wp-content/plugins/duplicate-post/duplicate-post.css --- Debug: [duplicate-post] File was opened from /home/a/alccmagw/ebrf.ru/public_html/wp-content/plugins/duplicate-post/duplicate-post.css ---
+PROCESSED from https://ebrf.ru/credit-cards/tinkoff-platinum/

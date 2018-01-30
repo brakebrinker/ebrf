@@ -1,0 +1,10 @@
+PROCESSED on Tue, 30 Jan 2018 07:15:45 +0000
+/wp-includes/css/dashicons.min.css --- Debug: [dashicons] File was opened from /home/a/alccmagw/ebrf.ru/public_html/wp-includes/css/dashicons.min.css ---
+/wp-includes/css/admin-bar.min.css --- Debug: [admin-bar] File was opened from /home/a/alccmagw/ebrf.ru/public_html/wp-includes/css/admin-bar.min.css ---
+/wp-content/plugins/contact-form-7/includes/css/styles.css --- Debug: [contact-form-7] File was opened from /home/a/alccmagw/ebrf.ru/public_html/wp-content/plugins/contact-form-7/includes/css/styles.css ---
+/wp-content/plugins/google-captcha/css/gglcptch.css --- Debug: [gglcptch] File was opened from /home/a/alccmagw/ebrf.ru/public_html/wp-content/plugins/google-captcha/css/gglcptch.css ---
+/wp-content/plugins/wp-postratings/css/postratings-css.css --- Debug: [wp-postratings] File was opened from /home/a/alccmagw/ebrf.ru/public_html/wp-content/plugins/wp-postratings/css/postratings-css.css ---
+/wp-content/plugins/wordpress-seo/css/dist/adminbar-620.min.css --- Debug: [yoast-seo-adminbar] File was opened from /home/a/alccmagw/ebrf.ru/public_html/wp-content/plugins/wordpress-seo/css/dist/adminbar-620.min.css ---
+/wp-content/themes/ebrf/css/stl.css --- Debug: [stl] File was opened from /home/a/alccmagw/ebrf.ru/public_html/wp-content/themes/ebrf/css/stl.css ---
+/wp-content/themes/ebrf/css/font-awesome.css --- Debug: [font-awe] File was opened from /home/a/alccmagw/ebrf.ru/public_html/wp-content/themes/ebrf/css/font-awesome.css ---
+PROCESSED from https://ebrf.ru/

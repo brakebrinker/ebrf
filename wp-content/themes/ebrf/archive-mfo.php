@@ -16,7 +16,7 @@ $term_id = $queried_object->term_id;
 			<?php if ( have_posts() ) : ?>
 				<?php if ($term_id == '') : ?>
 				<div class="catalog__content">
-					<h1 class="archive-title"><?php post_type_archive_title(); ?></h1>
+					<h1 class="archive-title"><?php if ($arch_title = get_field('mfo_down_title', 6)) echo $arch_title; else post_type_archive_title(); ?></h1>
 					<?php get_template_part( 'templates/company', 'sort' ); ?>
 					<?php if ($_GET && !empty($_GET)) { // если было передано что-то из формы
 						go_mfo_filter(); // запускаем функцию фильтрации
